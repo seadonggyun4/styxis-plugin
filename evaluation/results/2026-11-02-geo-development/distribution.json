@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-02T07:17:37.890530+00:00",
+  "url": "https://agent-plugins.directory/api/v1/plugins/seadonggyun4/truthound",
+  "http_status": 200,
+  "version_fields_as_returned": [
+    "0.1.5"
+  ],
+  "core_versions_in_descriptions": [
+    "3.3.0"
+  ],
+  "current_public_release": {
+    "local_plugin": "0.1.7",
+    "core": "3.3.1"
+  },
+  "sync_state": "Returned metadata still differs from current release",
+  "documented_write_endpoints": {
+    "/api/mcp": [
+      "post"
+    ]
+  },
+  "action": "Read-only inspection; inspected OpenAPI has no listing refresh/update operation. Its POST MCP endpoint validates manifests, not directory updates. No outreach or new account used.",
+  "scope": "Third-party metadata freshness, not proof of use by an AI search engine."
+}

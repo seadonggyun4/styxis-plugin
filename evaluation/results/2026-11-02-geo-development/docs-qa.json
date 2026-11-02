@@ -3,54 +3,54 @@
     {
       "check": "prepare-full",
       "passed": true,
-      "seconds": 2.41
+      "seconds": 2.73
     },
     {
       "check": "prepare-public",
       "passed": true,
-      "seconds": 1.93
+      "seconds": 1.38
     },
     {
       "check": "links-full",
       "passed": true,
-      "seconds": 1.03
+      "seconds": 0.94
     },
     {
       "check": "links-public",
       "passed": true,
-      "seconds": 0.97
+      "seconds": 0.93
     },
     {
       "check": "docs-contracts",
       "passed": true,
-      "seconds": 4.91
+      "seconds": 3.56
     },
     {
       "check": "strict-full-build",
       "passed": true,
-      "seconds": 25.38
+      "seconds": 17.33
     },
     {
       "check": "full-korean",
       "passed": true,
-      "seconds": 11.26
+      "seconds": 10.97
     },
     {
       "check": "strict-public-build",
       "passed": true,
-      "seconds": 17.64
+      "seconds": 20.37
     },
     {
       "check": "public-surface",
       "passed": true,
-      "seconds": 0.18
+      "seconds": 0.2
     },
     {
       "check": "public-korean",
       "passed": true,
-      "seconds": 4.57
+      "seconds": 5.63
     }
   ],
   "status": "passed",
-  "scope_note": "Build/HTML checks are not search indexing or AI recommendation evidence. Private implementation paths and build logs omitted; website checks are a summary, not publicly reproducible source evidence."
+  "scope_note": "Public documentation serving/build verification. Owner-console indexing and AI recommendation are not inferred."
 }

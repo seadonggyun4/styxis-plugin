@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "direct_url_tool_reads": [
+    {
+      "url": "https://truthound.netlify.app/en/guides/local-mcp-example/",
+      "status": "not_accessible_via_search_tool",
+      "http_status": null
+    },
+    {
+      "url": "https://truthound.netlify.app/guides/local-mcp-example/",
+      "status": "not_accessible_via_search_tool",
+      "http_status": null
+    },
+    {
+      "url": "https://styxis-io.com/en/open-source/truthound",
+      "status": "not_accessible_via_search_tool",
+      "http_status": null
+    },
+    {
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "status": "not_accessible_via_search_tool",
+      "http_status": null
+    }
+  ],
+  "direct_read_scope": "Search tool returned no HTTP status. Independent direct HTTP serving succeeded in separate live receipts; these tool errors do not establish a server/WAF block or lack of indexing.",
+  "branded_queries": [
+    "Truthound MCP data validation CSV Parquet",
+    "site:truthound.netlify.app \"data validation MCP\""
+  ],
+  "branded_returned_source_urls": [
+    "https://truthound.netlify.app/en/guides/datasources/files/",
+    "https://truthound.netlify.app/en/cli/core/check/",
+    "https://sourceweft.com/mcp/io.github.seadonggyun4%2Ftruthound",
+    "https://mcpbeat.com/mcp-servers/seadonggyun4/truthound/",
+    "https://truthound.netlify.app/en/cli/",
+    "https://truthound.netlify.app/en/cli/core/read/",
+    "https://truthound.netlify.app/en/cli/core/learn/",
+    "https://truthound.netlify.app/guides/mcp/",
+    "https://truthound.netlify.app/guides/datasources/files/",
+    "https://mcprush.com/seadonggyun4/truthound-mcp",
+    "https://truthound.netlify.app/en/python-api/datasources/",
+    "https://mcprush.com/seadonggyun4",
+    "https://odr.chalmers.se/bitstreams/40737974-d230-4e43-bdc3-426133bcbbbd/download",
+    "https://docs.cloudera.com/data-catalog/cloud/understanding-profilers-V2/dc-understanding-profilers-V2.pdf",
+    "https://docs.cloudera.com/machine-learning/cloud/release-notes/ml-release-notes.pdf",
+    "https://assets.contentstack.io/v3/assets/bltb564490bc5201f31/blt2092fdd09711aa1b/mcp-ai-whitepaper.pdf",
+    "https://www.datacouncil.ai/hubfs/DataEngConf/Data%20Council/Slides%20SF%2019/Scalable%20Data%20Ingestion%20Architecture%20Using%20Airflow%20and%20Spark.pdf?hsLang=en",
+    "https://docs.aiqc.io/_/downloads/en/latest/pdf/"
+  ],
+  "branded_scope": "Legacy official file/CLI/MCP references and external directories returned. Branded/site-restricted diagnostics were run after the unbranded recheck and are excluded from organic success metrics.",
+  "followup": "Contextual MCP guide/example links added on legacy file-source and check-CLI pages; no causal ranking effect inferred."
+}

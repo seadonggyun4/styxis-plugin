@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-02T07:18:23.013680+00:00",
+  "client": "Next.js production HTML inspection",
+  "model": null,
+  "checks": {
+    "pages": [
+      "/en/open-source/truthound",
+      "/en/open-source/truthound/use-cases",
+      "/en/open-source/truthound/security",
+      "/en/open-source/truthound/evidence",
+      "/ko/open-source/truthound",
+      "/ko/open-source/truthound/use-cases",
+      "/ko/open-source/truthound/security",
+      "/ko/open-source/truthound/evidence"
+    ],
+    "canonical": true,
+    "hreflang": true,
+    "json_ld": true,
+    "sitemap": true,
+    "llms_txt": true,
+    "core_version": "3.3.1",
+    "noindex_absent": true,
+    "guide_links_and_scoped_metadata": true,
+    "example_sha256": "6a9b192b551db764b0fa1fec0b4c2e4a408bffbb81e75a9ddd4e06d6e1c79207"
+  },
+  "base_url": "https://styxis-io.com",
+  "deployment_verified": true,
+  "scope_note": "Actual public serving verification; owner-console indexing and engine recommendation are not inferred. Private build-source identifiers omitted."
+}
