@@ -36,7 +36,7 @@ See the [permission guide](docs/security.md).
 The catalog contains one public plugin, `truthound`. Its independent Claude
 manifest and local stdio launcher live in the
 [Truthound source repository](https://github.com/seadonggyun4/Truthound/tree/main/plugins/truthound).
-The plugin pins published Core **3.3.0** with a frozen dependency lock; catalog
+The plugin pins published Core **3.3.1** with a frozen dependency lock; catalog
 source commits and plugin versions are recorded in [release provenance](release.json).
 No Styxis account, API key, subscription or hosted MCP server is required.
 
@@ -60,16 +60,17 @@ untrusted data. This open-source MCP tool is distinct from commercial Truthound 
 
 - [Canonical product and installation](https://styxis-io.com/en/open-source/truthound) · [한국어](https://styxis-io.com/ko/open-source/truthound)
 - [Official Truthound MCP documentation](https://truthound.netlify.app/guides/mcp/)
-- [Official MCP Registry metadata](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.seadonggyun4%2Ftruthound/versions/latest) — active 3.3.0 verified on 2026-11-02
+- [Official MCP Registry metadata](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.seadonggyun4%2Ftruthound/versions/latest) — active 3.3.1 verified on 2026-11-02
 - [Reproducible discovery evaluation](evaluation/README.md) and [execution receipts](evaluation/results/)
 - [Security reporting](SECURITY.md) · [Changelog](CHANGELOG.md)
 
 Adding this custom marketplace makes its catalog available to your Claude
 installation. A Registry record or a web page cannot guarantee discovery or
 recommendations by every agent. Local retrieval fixtures, actual installation,
-and external client/model evaluation are reported separately. Improved source
-MCP descriptions require a future Core package release and are not present in
-the frozen 3.3.0 runtime.
+and external client/model evaluation are reported separately. Improved MCP descriptions ship in Core 3.3.1 and Local plugin 0.1.7. Actual
+Agent selection remains unmeasured: Codex model requests were rejected, and
+Claude organization policy disabled subscription access. See the dated
+[release evidence](docs/releases/core-3.3.1.md).
 
 ## Repository ownership
 

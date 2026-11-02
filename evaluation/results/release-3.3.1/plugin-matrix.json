@@ -1,0 +1,19 @@
+{
+  "source_sha": "54dae24c027e0a93af669bf7388d5af96a09bc97",
+  "workflow_url": "https://github.com/seadonggyun4/truthound/actions/runs/41379816004",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "local-plugin (macos-latest)",
+      "conclusion": "success"
+    },
+    {
+      "name": "local-plugin (ubuntu-latest)",
+      "conclusion": "success"
+    },
+    {
+      "name": "local-plugin (windows-latest)",
+      "conclusion": "success"
+    }
+  ]
+}

@@ -24,10 +24,11 @@ catalog uses `strict: true`, adds no component overrides, and validates the actu
 Truthound `.claude-plugin/plugin.json`. Claude has its own absolute launcher;
 portable/Codex files remain owned and tested upstream.
 
-The public Local surface remains three tools with existing IDs. New descriptions
-in Truthound source do not alter the already published Core 3.3.0 wheel. Candidate
-variants therefore distinguish baseline, rejected rewrite, installed package and
-unreleased source. Registry proposals are never labeled live observations.
+The public Local surface remains three tools with existing IDs. The immutable Core 3.3.0 wheel retains its old descriptions. Core 3.3.1 ships
+the reviewed descriptions; current installed/source parity is established by
+actual installation and the Official Registry API. Historical candidate bytes
+still distinguish the then-unreleased source. Proposals are never labeled live
+observations before publication is independently observed.
 
 ## Distribution phases (internal)
 

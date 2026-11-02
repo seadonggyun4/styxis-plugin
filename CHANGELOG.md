@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-02 — Core 3.3.1 publication
+
+- Publish exact same-source verified Core wheel/sdist and Local/Core MCPB artifacts.
+- Publish immutable Official MCP Registry 3.3.1 with reviewed task wording.
+- Repin Local plugin 0.1.7 to published Core 3.3.1 with the frozen dependency lock.
+- Record real CLI readiness failures separately from unmeasured Agent selection.
+- Preserve repository About, the visible README banner and its retention comment.
+
 ## 2026-11-02 — Agent discovery distribution
 
 - Require the upstream standalone Claude plugin manifest; remove the synthetic

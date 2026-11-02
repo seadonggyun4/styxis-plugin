@@ -18,7 +18,9 @@
     "contents": [
       "mcp-0.sources.json",
       "mcp-0.xml"
-    ]
+    ],
+    "backup_commit": "9d63c46be0f986c6141d963aa21a8153c6dc3679",
+    "original_removed_for_same_name_retry": true
   },
   "local_reproduction": {
     "source_changed": false,
@@ -42,7 +44,13 @@
   },
   "retry": {
     "maximum_attempts": 1,
-    "status": "pending"
+    "status": "passed",
+    "workflow_attempt": 2,
+    "source_changed": false,
+    "completed_at": "2026-11-02T02:31:19Z",
+    "job_id": 125057845405,
+    "job_url": "https://github.com/seadonggyun4/truthound/actions/runs/41371907329/job/125057845405",
+    "complete_release_gate": "success"
   },
   "root_cause": "unconfirmed; do not claim a fix or classify the failure as an Agent choice error"
 }

@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "plugin_versions": {
+    "truthound": "0.1.7",
+    "truthound-core": "0.2.1"
+  },
+  "enabled_preserved": true,
+  "environment_preserved": true,
+  "permission_files_unchanged": true,
+  "other_marketplaces_updated": false,
+  "fresh_registered_runtime": {
+    "truthound": {
+      "core_version": "3.3.1",
+      "protocol": "2025-11-25",
+      "tool_count": 3,
+      "command_source": "actual updated codex mcp list registration",
+      "file_calls_performed": false
+    },
+    "truthound-core": {
+      "core_version": "3.3.1",
+      "protocol": "2025-11-25",
+      "tool_count": 176,
+      "command_source": "actual updated codex mcp list registration",
+      "file_calls_performed": false
+    }
+  },
+  "current_chat_connection_reloaded": false,
+  "current_chat_refresh": {
+    "required_for_current_tool_metadata": true,
+    "blocker": "Computer Use explicitly disallows controlling com.openai.codex for safety reasons. No alternate UI-control method was used.",
+    "action": "Start a new chat or restart the desktop app after this task.",
+    "official_guidance": "https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually"
+  }
+}

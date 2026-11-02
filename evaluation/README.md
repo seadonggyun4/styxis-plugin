@@ -20,9 +20,13 @@ add telemetry or reproduce a proprietary vendor's ranking algorithm.
 - `registry-2026-11-02.json`: actual public API observation; separate from those
   local candidate fixtures. The full ecosystem was not downloaded or indexed.
 - `before`: original catalog/published contracts. `rejected`: first rewrite that
-  reduced plugin recall. `installed`: new plugin summary + unchanged published
-  Core 3.3.0 tools/live Registry. `source`: new **unreleased** tool descriptions and
-  **unpublished** Registry wording. Never combine these into an “installed lift”.
+  reduced plugin recall. Current `installed` and `source` capture Core 3.3.1,
+  Local 0.1.7 and the active Official Registry 3.3.1 record. Parity is established
+  from installed tools/list and a separate public API snapshot.
+- `candidates-2026-11-02-core3.3.0.json` preserves the exact prior corpus, including
+  then-unreleased source metadata. Use `--candidates` with this file to reproduce
+  historical reports and the availability probe hashes. Never relabel old runtime
+  observations as a new installed measurement.
 
 ## Run the local baseline
 
@@ -41,7 +45,8 @@ reviewed source and a passed actual E2E receipt:
 
 ```bash
 python3 scripts/snapshot_metadata.py --truthound-root /path/to/Truthound \
-  --e2e /tmp/truthound-e2e.json
+  --e2e /tmp/truthound-e2e.json \
+  --registry-snapshot evaluation/results/release-3.3.1/registry.json
 ```
 
 ## Import actual client/model observations
@@ -140,7 +145,7 @@ See [results](results/) and the [audit/result interpretation](../docs/audit-2026
 ## Verify canonical web deployment
 
 ```bash
-python3 scripts/verify_web.py --base-url https://styxis-io.com --output /tmp/live-web.json
+python3 scripts/verify_web.py --base-url https://styxis-io.com --expect-core-version 3.3.1 --output /tmp/live-web.json
 ```
 
 This fetches the eight localized public pages, parses canonical/hreflang/JSON-LD,

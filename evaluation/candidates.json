@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "registry_snapshot": "evaluation/registry-2026-11-02.json",
+  "registry_snapshot": "evaluation/results/release-3.3.1/registry.json",
   "scope": "Closed, curated local candidate fixture: 17 server/plugin candidates and 19 tool candidates. Distractors are task sketches, not real Registry entries. Not a live registry/model benchmark.",
   "variants": {
     "before": {
@@ -280,281 +280,8 @@
       "registry": [
         {
           "id": "truthound",
-          "text": "Truthound Validate local data files, summarize profiles and detect PII without returning raw values.",
-          "provenance": "live Registry 3.3.0 snapshot"
-        },
-        {
-          "id": "dataset-editor",
-          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "cloud-uploader",
-          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "schema-migration",
-          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "model-trainer",
-          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "chart-builder",
-          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "privacy-law",
-          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "file-search",
-          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "code-validator",
-          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "great-expectations",
-          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "pandera",
-          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "soda",
-          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "cloud-dlp",
-          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "data-catalog",
-          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "etl-transform",
-          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "rag-evaluator",
-          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "pii-redactor",
-          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        }
-      ],
-      "plugin": [
-        {
-          "id": "truthound",
-          "text": "Truthound Truthound is a local-first data quality and validation tool for AI agents. Validate CSV/Parquet missing values and duplicate rows, profile columns, and scan sampled PII in approved directories without uploading raw values. 승인한 로컬 데이터의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지.",
-          "provenance": "Claude marketplace/standalone manifest"
-        },
-        {
-          "id": "dataset-editor",
-          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "cloud-uploader",
-          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "schema-migration",
-          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "model-trainer",
-          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "chart-builder",
-          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "privacy-law",
-          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "file-search",
-          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "code-validator",
-          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "great-expectations",
-          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "pandera",
-          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "soda",
-          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "cloud-dlp",
-          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "data-catalog",
-          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "etl-transform",
-          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "rag-evaluator",
-          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        },
-        {
-          "id": "pii-redactor",
-          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
-          "provenance": "author-written task distractor; not an official vendor listing"
-        }
-      ],
-      "tool": [
-        {
-          "id": "check_file",
-          "text": "check_file Check nulls and duplicate rows in a local file; quality failures are successful tool executions.",
-          "provenance": "published Core 3.3.0 tools/list"
-        },
-        {
-          "id": "profile_file",
-          "text": "profile_file Return bounded column types and aggregate statistics; no sample values.",
-          "provenance": "published Core 3.3.0 tools/list"
-        },
-        {
-          "id": "scan_pii",
-          "text": "scan_pii Detect potential PII using Core sampling; finding counts are estimates.",
-          "provenance": "published Core 3.3.0 tools/list"
-        },
-        {
-          "id": "dataset-editor",
-          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "cloud-uploader",
-          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "schema-migration",
-          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "model-trainer",
-          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "chart-builder",
-          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "privacy-law",
-          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "file-search",
-          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "code-validator",
-          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "great-expectations",
-          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "pandera",
-          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "soda",
-          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "cloud-dlp",
-          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "data-catalog",
-          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "etl-transform",
-          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "rag-evaluator",
-          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
-          "provenance": "author-written distractor function"
-        },
-        {
-          "id": "pii-redactor",
-          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
-          "provenance": "author-written distractor function"
-        }
-      ]
-    },
-    "source": {
-      "registry": [
-        {
-          "id": "truthound",
           "text": "Truthound Local data quality for CSV/Parquet: nulls, duplicates, profiles, sampled PII; directory consent.",
-          "provenance": "checked-in manifest; source Registry metadata UNPUBLISHED"
+          "provenance": "Live official Registry 3.3.1 snapshot"
         },
         {
           "id": "dataset-editor",
@@ -728,17 +455,290 @@
         {
           "id": "check_file",
           "text": "check_file Validate an approved local CSV or Parquet dataset for missing values (nulls) and duplicate rows. Use for data-quality checks, RAG ingestion preparation or evaluation dataset validation when these checks are sufficient. Returns bounded aggregate check results; quality failures are successful tool executions, not transport errors. Runs locally with explicit directory consent; no raw values are returned or uploaded. Does not edit data, accept custom schema/rules, judge RAG answer quality or certify compliance. 데이터 품질: 승인된 로컬 CSV·Parquet의 결측값과 중복 행 검사.",
-          "provenance": "UNRELEASED Truthound source tools/list"
+          "provenance": "Published Core 3.3.1 tools/list"
         },
         {
           "id": "profile_file",
           "text": "profile_file Profile an approved local CSV or Parquet dataset before analysis, RAG ingestion or evaluation. Use to inspect column types and aggregate statistics, including null counts. Returns a bounded summary with truncation indicators, without sample/raw values. Runs locally with explicit directory consent and does not upload or edit data. Inferred types are observations, not validation against a supplied schema; no charts or semantic RAG evaluation. 데이터 프로파일링: 승인된 로컬 파일의 열 타입·집계 통계.",
-          "provenance": "UNRELEASED Truthound source tools/list"
+          "provenance": "Published Core 3.3.1 tools/list"
         },
         {
           "id": "scan_pii",
           "text": "scan_pii Scan an approved local CSV or Parquet dataset for likely PII (sensitive personal data). Use for sensitive-data screening before RAG ingestion or sharing an evaluation dataset. Returns bounded finding summaries and sampled count estimates, never matched raw values. Runs locally with explicit directory consent and does not upload or edit data. Sampling can miss PII; a clean scan is not proof of absence or a legal compliance determination. Not cloud DLP or redaction. 개인정보·민감정보 탐지: 표본 기반 로컬 검사.",
-          "provenance": "UNRELEASED Truthound source tools/list"
+          "provenance": "Published Core 3.3.1 tools/list"
+        },
+        {
+          "id": "dataset-editor",
+          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "cloud-uploader",
+          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "schema-migration",
+          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "model-trainer",
+          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "chart-builder",
+          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "privacy-law",
+          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "file-search",
+          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "code-validator",
+          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "great-expectations",
+          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "pandera",
+          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "soda",
+          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "cloud-dlp",
+          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "data-catalog",
+          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "etl-transform",
+          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "rag-evaluator",
+          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
+          "provenance": "author-written distractor function"
+        },
+        {
+          "id": "pii-redactor",
+          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
+          "provenance": "author-written distractor function"
+        }
+      ]
+    },
+    "source": {
+      "registry": [
+        {
+          "id": "truthound",
+          "text": "Truthound Local data quality for CSV/Parquet: nulls, duplicates, profiles, sampled PII; directory consent.",
+          "provenance": "Reviewed source; matches published Registry record"
+        },
+        {
+          "id": "dataset-editor",
+          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "cloud-uploader",
+          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "schema-migration",
+          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "model-trainer",
+          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "chart-builder",
+          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "privacy-law",
+          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "file-search",
+          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "code-validator",
+          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "great-expectations",
+          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "pandera",
+          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "soda",
+          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "cloud-dlp",
+          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "data-catalog",
+          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "etl-transform",
+          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "rag-evaluator",
+          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "pii-redactor",
+          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        }
+      ],
+      "plugin": [
+        {
+          "id": "truthound",
+          "text": "Truthound Truthound is a local-first data quality and validation tool for AI agents. Validate CSV/Parquet missing values and duplicate rows, profile columns, and scan sampled PII in approved directories without uploading raw values. 승인한 로컬 데이터의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지.",
+          "provenance": "Claude marketplace/standalone manifest"
+        },
+        {
+          "id": "dataset-editor",
+          "text": "Edit dataset CSV Parquet tables, fill missing values, remove duplicates and overwrite files. 데이터 편집 저장 결측값 채우기 중복 제거.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "cloud-uploader",
+          "text": "Upload local CSV Parquet files to S3 cloud storage. 클라우드 파일 업로드.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "schema-migration",
+          "text": "Migrate PostgreSQL database schema with SQL DDL and versioned migrations. 데이터베이스 스키마 마이그레이션.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "model-trainer",
+          "text": "Train and fine tune machine learning models on datasets. 모델 학습 훈련.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "chart-builder",
+          "text": "Visualize CSV datasets in charts histograms dashboards. 데이터 시각화 차트.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "privacy-law",
+          "text": "Provide legal privacy guidance GDPR compliance review. 개인정보보호법 법적 준수 판정 상담.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "file-search",
+          "text": "Find files on a computer by name and extension. 파일 이름 검색 CSV 찾기.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "code-validator",
+          "text": "Validate TypeScript and Python source code static analysis. 소스 코드 검증 정적 분석 보안.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "great-expectations",
+          "text": "Great Expectations expectation suite data quality validation for database and warehouse pipelines. 데이터 품질 기대값 규칙.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "pandera",
+          "text": "Pandera DataFrameSchema pandas dataframe custom schema type validation constraints regex rules. 스키마 열 제약조건 검증.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "soda",
+          "text": "Soda SQL data quality checks for Snowflake warehouse. 데이터 품질 SQL 검사.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "cloud-dlp",
+          "text": "Cloud DLP sensitive data scanning and organization privacy policies across buckets. 클라우드 민감정보 유출 방지.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "data-catalog",
+          "text": "Search data catalog assets metadata and lineage. 데이터 카탈로그 메타데이터 계보.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "etl-transform",
+          "text": "ETL transformation of CSV and Parquet, fill nulls rename columns save outputs. 데이터 변환.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "rag-evaluator",
+          "text": "Evaluate RAG answer faithfulness relevance retrieval quality and semantic eval labels. RAG 답변 의미 품질 평가 정답 라벨.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        },
+        {
+          "id": "pii-redactor",
+          "text": "Redact sensitive PII raw values and write cleaned CSV datasets. 개인정보 삭제 마스킹 저장.",
+          "provenance": "author-written task distractor; not an official vendor listing"
+        }
+      ],
+      "tool": [
+        {
+          "id": "check_file",
+          "text": "check_file Validate an approved local CSV or Parquet dataset for missing values (nulls) and duplicate rows. Use for data-quality checks, RAG ingestion preparation or evaluation dataset validation when these checks are sufficient. Returns bounded aggregate check results; quality failures are successful tool executions, not transport errors. Runs locally with explicit directory consent; no raw values are returned or uploaded. Does not edit data, accept custom schema/rules, judge RAG answer quality or certify compliance. 데이터 품질: 승인된 로컬 CSV·Parquet의 결측값과 중복 행 검사.",
+          "provenance": "Reviewed source; metadata matches installed artifact"
+        },
+        {
+          "id": "profile_file",
+          "text": "profile_file Profile an approved local CSV or Parquet dataset before analysis, RAG ingestion or evaluation. Use to inspect column types and aggregate statistics, including null counts. Returns a bounded summary with truncation indicators, without sample/raw values. Runs locally with explicit directory consent and does not upload or edit data. Inferred types are observations, not validation against a supplied schema; no charts or semantic RAG evaluation. 데이터 프로파일링: 승인된 로컬 파일의 열 타입·집계 통계.",
+          "provenance": "Reviewed source; metadata matches installed artifact"
+        },
+        {
+          "id": "scan_pii",
+          "text": "scan_pii Scan an approved local CSV or Parquet dataset for likely PII (sensitive personal data). Use for sensitive-data screening before RAG ingestion or sharing an evaluation dataset. Returns bounded finding summaries and sampled count estimates, never matched raw values. Runs locally with explicit directory consent and does not upload or edit data. Sampling can miss PII; a clean scan is not proof of absence or a legal compliance determination. Not cloud DLP or redaction. 개인정보·민감정보 탐지: 표본 기반 로컬 검사.",
+          "provenance": "Reviewed source; metadata matches installed artifact"
         },
         {
           "id": "dataset-editor",
@@ -1096,7 +1096,7 @@
       ]
     }
   },
-  "installed_plugin_version": "0.1.6",
-  "installed_core_version": "3.3.0",
-  "source_metadata_status": "UNRELEASED Core descriptions and UNPUBLISHED Registry description"
+  "installed_plugin_version": "0.1.7",
+  "installed_core_version": "3.3.1",
+  "source_metadata_status": "Matches tested installed artifact and observed Registry record"
 }

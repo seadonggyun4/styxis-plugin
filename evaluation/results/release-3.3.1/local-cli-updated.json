@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "installer": "uv tool; isolated Python 3.13",
+  "active_cli_version": "3.3.1",
+  "legacy_cli": {
+    "version": "1.2.5",
+    "module_missing_before": true,
+    "launcher_preserved_privately": true,
+    "global_dependencies_modified": false,
+    "existing_cli_path_redirects_to_managed_install": true
+  },
+  "canonical_package_parity": {
+    "core_version": "3.3.1",
+    "package_members_verified": 1187,
+    "mcp_sdk": "1.30.0"
+  },
+  "user_permission_files_changed": false
+}

@@ -14,26 +14,38 @@
 7. Refresh installed/source candidate snapshots; retain query version/hash and
    negative cases. Run before/rejected/installed/source variants. Record model
    selection as pending unless actual observations were imported.
-8. Review EN/KO web definitions and visible structured data. Verify local build;
+8. Review EN/KO web definitions and visible structured data. Verify local build and served pages with --expect-core-version for the release;
    distinguish pushed source from confirmed deployment and search indexing.
 9. Commit logically with Korean conventional messages and push the matching remote.
    A release/tag or package publish is a separate, explicitly verified event.
 
-## Registry update preparation
+## Core and Registry publication
 
-3.3.0 was already active on 2026-11-02. Existing version content is immutable.
+Core 3.3.1 and matching stable Registry metadata were published on 2026-11-02.
+See [release evidence](releases/core-3.3.1.md). Existing version content is immutable.
+
+For a Core release, complete the existing same-commit Release verification gate,
+then dispatch Release PyPI with that successful run ID. Publish the canonical
+artifacts from that run without rebuilding; compare public PyPI hashes. Only
+after PyPI exists, repin plugin manifests/pyproject/frozen lock and verify real
+installation. Publish the aligned new Registry version through existing
+namespace authorization, then observe the official active/latest record. Keep
+Core artifact and later plugin-repin source SHAs distinct. Preserve failed CI
+evidence and require successful actual execution; never weaken a gate.
+
+For a later Registry-only wording change:
 Truthound's `verification/mcp_registry.py` can prepare and validate a distinct
 Registry-only prerelease while retaining the published package pin:
 
 ```bash
 python verification/mcp_registry.py \
-  --prepare-registry-version 3.3.0-discovery.1 --output /tmp/server.json
+  --prepare-registry-version 3.3.1-discovery.1 --output /tmp/server.json
 ```
 
 Review the generated metadata, package identity and exact invocation before
-namespace-authorized publication. Do not overwrite the live 3.3.0 entry. Some
-aggregators may omit prereleases; a future stable Core release should carry the
-source tool descriptions and aligned Registry metadata. Preparation is not
+namespace-authorized publication. Do not overwrite an existing stable entry. Some
+aggregators may omit prereleases; future Core metadata changes require a new stable release and
+aligned Registry metadata. Preparation is not
 publication. No login or publish is performed by this repository's validators.
 
 ## Vendor distribution policy

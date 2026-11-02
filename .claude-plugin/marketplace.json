@@ -20,11 +20,11 @@
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "plugins/truthound",
         "ref": "main",
-        "sha": "c36ac00f061738d1fd3aaf21a28c36e53f4526c9"
+        "sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
       },
       "strict": true,
       "homepage": "https://truthound.netlify.app/guides/mcp/",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "repository": "https://github.com/seadonggyun4/Truthound",
       "license": "Apache-2.0",
       "category": "data-quality",
