@@ -1,53 +1,20 @@
 {
-  "schema_version": 1,
-  "date": "2026-11-02",
-  "plugin_version": "0.1.7",
-  "core_package_version": "3.3.1",
-  "truthound_source_sha": "54dae24c027e0a93af669bf7388d5af96a09bc97",
-  "truthound_source_ref": "main",
-  "source_url": "https://github.com/seadonggyun4/Truthound.git",
-  "source_path": "plugins/truthound",
-  "source_file_sha256": {
-    "plugins/truthound/.claude-plugin/plugin.json": "e1c9279f5df8a18907eb76fc4814ac9ce80e587f1222c6bb7cddbd3d0398a833",
-    "plugins/truthound/.mcp.json": "b0bc8f26f33ba51f1b51082415ad290a024501671f4b16c84a6568b1f60249e9",
-    "plugins/truthound/mcp.json": "5925b6a411d5b522f89501ffa321ebf6a54debe4c5b418ff9f62c444fecbd7e4",
-    "plugins/truthound/pyproject.toml": "59bbd5943310c8eb438f7d1cb3b1b523b2383e4ca4cbb8d560fe60be2686f00b",
-    "plugins/truthound/server.py": "2cab7ff676fc9cdac4a5f86c971d592d0c308e5b3586bfbf1d352fd454140ff1",
-    "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24",
-    "plugins/truthound/uv.lock": "29e62874c955f2a2c8938757c01ba68c967299230b25ff6a0010de1072ac7b62"
-  },
-  "publication": {
-    "source_commit_on_origin_main": true,
-    "default_branch_merged": true,
-    "upstream_default_branch_merged": true,
-    "new_core_metadata_package_published": true,
-    "registry_description_update_published": true,
-    "web_deployment_verified": true,
-    "local_cli_updated": true,
-    "local_mcp_installations_updated": true,
-    "current_chat_mcp_cache_reloaded": true,
-    "source_release_docs_live_verified": true,
-    "task_temporary_branches_removed": true
-  },
-  "note": "Public repository changes are integrated into main and task-created temporary branches are removed locally and remotely. Private repository details are omitted from the public integration summary. Core 3.3.1 canonical artifacts, Official Registry 3.3.1, public default-catalog installation, live canonical web/docs, local CLI and Local/Core MCP installations are verified. Core artifact source and later plugin-repin source remain distinct. About, the visible README banner and existing grants are preserved. Actual Agent selection remains unmeasured after account access rejection. After the user restarted Codex, current-chat Local tool descriptions and Core check_file matched the published installation. This metadata observation does not constitute an Agent selection benchmark.",
-  "verification": {
-    "remote_e2e": "evaluation/results/release-3.3.1/installed-e2e.json",
-    "web_html": "evaluation/results/release-3.3.1/web-build.json",
-    "about_policy": "About description, homepage and topics are preserved. Private repository identifiers and field values are omitted from public records.",
-    "default_e2e": "evaluation/results/release-3.3.1/default-e2e.json",
-    "live_web": "evaluation/results/release-3.3.1/live-web.json",
-    "integration_cleanup": "evaluation/results/release-3.3.1/integration.json",
-    "core_publication": "evaluation/results/release-3.3.1/core-publication.json",
-    "official_registry": "evaluation/results/release-3.3.1/registry.json",
-    "agent_availability": "evaluation/results/release-3.3.1/agent-availability.json",
-    "publication_gate": "evaluation/results/release-3.3.1/publication-gate.json",
-    "plugin_matrix": "evaluation/results/release-3.3.1/plugin-matrix.json",
-    "postpublication_qa": "evaluation/results/release-3.3.1/postpublication-qa.json",
-    "local_cli": "evaluation/results/release-3.3.1/local-cli-updated.json",
-    "local_mcp": "evaluation/results/release-3.3.1/local-mcp-updated.json",
-    "preservation": "evaluation/results/release-3.3.1/preservation.json",
-    "source_docs_live": "evaluation/results/release-3.3.1/live-source-docs.json",
-    "current_chat_refresh": "evaluation/results/release-3.3.1/current-chat-refresh.json"
-  },
-  "core_artifact_source_sha": "80f8092d30918c825154e3ff8e5ed3ca4c328b17"
+  "schema_version": 2,
+  "plugins": {
+    "truthound": {
+      "plugin_version": "0.1.7",
+      "source_url": "https://github.com/seadonggyun4/Truthound.git",
+      "source_path": "plugins/truthound",
+      "source_file_sha256": {
+        "plugins/truthound/.claude-plugin/plugin.json": "e1c9279f5df8a18907eb76fc4814ac9ce80e587f1222c6bb7cddbd3d0398a833",
+        "plugins/truthound/.mcp.json": "b0bc8f26f33ba51f1b51082415ad290a024501671f4b16c84a6568b1f60249e9",
+        "plugins/truthound/mcp.json": "5925b6a411d5b522f89501ffa321ebf6a54debe4c5b418ff9f62c444fecbd7e4",
+        "plugins/truthound/pyproject.toml": "59bbd5943310c8eb438f7d1cb3b1b523b2383e4ca4cbb8d560fe60be2686f00b",
+        "plugins/truthound/server.py": "2cab7ff676fc9cdac4a5f86c971d592d0c308e5b3586bfbf1d352fd454140ff1",
+        "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24",
+        "plugins/truthound/uv.lock": "29e62874c955f2a2c8938757c01ba68c967299230b25ff6a0010de1072ac7b62"
+      },
+      "source_sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-name: Validate discovery contracts
+name: Validate plugin catalog
 on:
   pull_request:
   push:
@@ -6,12 +6,9 @@ on:
 permissions:
   contents: read
 jobs:
-  offline-contracts:
+  catalog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: Validate catalog and evaluation contracts
-        run: |
-          python3 scripts/validate_metadata.py
-          python3 -m unittest discover -s tests -v
-          python3 scripts/evaluate.py --variant installed --output /tmp/discovery.json
+      - run: python3 -m unittest discover -s tests -v
+      - run: ./scripts/validate.sh

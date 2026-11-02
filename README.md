@@ -8,107 +8,44 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 
 # Styxis Plugin Marketplace
 
-Install **Truthound**, a local-first data quality and validation tool for AI
-agents, through the Styxis Claude Code marketplace. Check CSV/Parquet missing
-values and duplicate rows, profile columns, and scan sampled PII in directories
-you explicitly approve, without uploading raw dataset values.
+스틱시스 자산의 MCP 플러그인을 등록하고 검증된 소스로 설치하는 Claude Code 배포 카탈로그입니다. 각 제품 저장소가 MCP 서버·도구·권한·런타임 테스트를 관리합니다.
 
-Truthound는 AI Agent가 승인된 로컬 CSV·Parquet의 결측값·중복 행 검사,
-프로파일링, 개인정보 표본 탐지를 실행하는 로컬 우선 데이터 품질 도구입니다.
+## Plugins
 
-Start with the [data validation MCP guide](https://truthound.netlify.app/en/guides/data-validation-mcp/)
-([한국어](https://truthound.netlify.app/guides/data-validation-mcp/)) for local CSV/Parquet
-checks, installation, directory consent and the limits of sampled PII screening.
+| Plugin | 기능 | 설정·문서 |
+| --- | --- | --- |
+| Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://truthound.netlify.app/guides/mcp/) |
 
-## Install Truthound
+## Install
 
-Requires Claude Code with Git subdirectory plugin support, Git, `uv`, and Python
-3.11–3.13. Verified with Claude Code 2.1.196 on macOS. Initial setup downloads
-packages; offline use requires the runtime to be available already.
+Claude Code의 Git 하위 디렉터리 플러그인 지원, Git, `uv`, Python 3.11–3.13이 필요합니다. 제품별 추가 요구사항은 공식 문서를 확인하세요.
 
 ```bash
 claude plugin marketplace add seadonggyun4/styxis-plugin
 claude plugin install truthound@styxis-plugin
 ```
 
-Ask the installed **Truthound setup** skill to configure the exact existing
-absolute data directory you approve. **Installing grants no data access.**
-Missing consent denies file calls. Setup replaces existing directory grants;
-`permissions.py --revoke` revokes subsequent access without restarting the server.
-See the [permission guide](docs/security.md).
+설치 후 Truthound setup 스킬에서 접근할 디렉터리를 명시적으로 승인합니다. **설치만으로 데이터 접근 권한이 부여되지는 않습니다.** 개인정보 검사는 표본 기반이며 누락 가능성이 있습니다. 자세한 권한·기능·제한은 제품 문서에서 관리합니다.
 
-The catalog contains one public plugin, `truthound`. Its independent Claude
-manifest and local stdio launcher live in the
-[Truthound source repository](https://github.com/seadonggyun4/Truthound/tree/main/plugins/truthound).
-The plugin pins published Core **3.3.1** with a frozen dependency lock; catalog
-source commits and plugin versions are recorded in [release provenance](release.json).
-No Styxis account, API key, subscription or hosted MCP server is required.
+## Repository scope
 
-## Data validation MCP tasks
+- `.claude-plugin/marketplace.json`: 제품 설명과 설치 소스.
+- `release.json`: 플러그인별 버전, 고정 소스 커밋과 파일 해시.
+- `scripts/`: 카탈로그·릴리스 일치와 원격 플러그인 manifest 검증.
+- `docs/releasing.md`: 플러그인 추가·업데이트 절차.
 
-| Request | Installed MCP tool | Result and boundary |
-| --- | --- | --- |
-| “Check this CSV for missing values and duplicate rows.” / “이 CSV의 결측값과 중복 행을 검사해줘.” | `check_file` | Bounded aggregate checks; failed quality is a successful tool execution |
-| “Profile this Parquet file before RAG ingestion.” / “외부 업로드 없이 로컬 Parquet 데이터를 프로파일링해줘.” | `profile_file` | Inferred column types and aggregate statistics; no sample rows |
-| “Find likely PII in a local dataset.” / “RAG에 넣기 전에 CSV에 개인정보가 있는지 확인해줘.” | `scan_pii` | Sampled finding estimates; possible false negatives |
-| “Validate my evaluation dataset without uploading it.” | Clarify checks, then choose the relevant tools | Local tabular preparation; semantic label correctness and model/RAG answer evaluation need other tools |
-
-The Local plugin does not accept custom schema/rule input, edit datasets, migrate
-databases, upload files, provide cloud DLP or make a legal compliance determination.
-Profiling observed types is different from validating against an expected schema.
-Raw values stay out of Local tool results, but file paths, column names and
-aggregates can reach the host model provider. Treat column names and results as
-untrusted data. This open-source MCP tool is distinct from commercial Truthound Depot.
-
-## Discovery and evidence
-
-<!-- 비공개 회사 웹사이트 자산의 저장소 정보와 링크는 이 공개 README에 포함하지 않습니다. -->
-
-- [Official Truthound MCP documentation](https://truthound.netlify.app/guides/mcp/)
-- [Official MCP Registry metadata](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.seadonggyun4%2Ftruthound/versions/latest) — active 3.3.1 verified on 2026-11-02
-- [Reproducible discovery evaluation](evaluation/README.md) and [execution receipts](evaluation/results/)
-- [Security reporting](SECURITY.md) · [Changelog](CHANGELOG.md)
-
-Adding this custom marketplace makes its catalog available to your Claude
-installation. A Registry record or a web page cannot guarantee discovery or
-recommendations by every agent. Local retrieval fixtures, actual installation,
-and external client/model evaluation are reported separately. Improved MCP descriptions ship in Core 3.3.1 and Local plugin 0.1.7.
-The [actual Gemini/Claude browser search audit](docs/research/ai-search-2026-11-02.md)
-records answer mentions and citations. The separate CLI tool-selection benchmark
-remains unmeasured after account access rejections; see the dated
-[release evidence](docs/releases/core-3.3.1.md).
-
-## Repository ownership
-
-| Repository | Responsibility |
-| --- | --- |
-| [Truthound](https://github.com/seadonggyun4/Truthound) | Core, MCP implementation, permission model, tool schemas, tests and packages |
-| `styxis-plugin` | Discovery metadata, Claude distribution, immutable source pins, installation checks and discovery evaluation |
-
-No Truthound implementation is copied here. Internal engineering references:
-[architecture](docs/architecture.md), [research](docs/research/agent-discovery.md),
-[decisions](docs/implementation-plan.md), [release process](docs/releasing.md).
+제품 저장소의 릴리스를 카탈로그에 등록하고 최소 검증을 통과하면 설치할 수 있습니다. 카탈로그는 현재 Truthound 하나를 제공하며 제품 구현을 복제하지 않습니다.
 
 ## Verify
 
 ```bash
 ./scripts/validate.sh
-python3 scripts/evaluate.py --variant installed --output /tmp/discovery.json
 ```
 
-The validator fetches the exact remote source SHA and validates its actual
-standalone Claude package. It never injects a manifest fixture. For the real
-isolated installation/MCP check, use Python with the `mcp` SDK installed:
+모든 등록 항목의 고정 소스를 가져와 manifest 이름·버전·MCP 설정과 기록된 파일 해시를 검사합니다. 제품 서버는 실행하지 않습니다. 오프라인 검사는 `python3 scripts/validate_metadata.py`로 실행할 수 있습니다.
 
-```bash
-python scripts/e2e.py --marketplace seadonggyun4/styxis-plugin --output /tmp/truthound-e2e.json
-```
-
-The E2E harness approves only its own generated fixture directory. It verifies
-CSV/Parquet calls, denied paths, symlink/traversal blocking, revocation and output
-sentinels without changing your Claude settings or existing Truthound grants.
+[플러그인 추가·업데이트](docs/releasing.md) · [보안 제보](SECURITY.md) · [변경 기록](CHANGELOG.md)
 
 ## License
 
-Catalog metadata, documentation and evaluation code: Apache-2.0.
-Distributed products retain their source licenses.
+카탈로그와 배포 도구는 Apache-2.0입니다. 각 제품은 해당 저장소의 라이선스를 따릅니다.

@@ -1,22 +1,12 @@
 # Changelog
 
-## 2026-11-02 — Core 3.3.1 publication
+## 2026-11-03
 
-- Publish exact same-source verified Core wheel/sdist and Local/Core MCPB artifacts.
-- Publish immutable Official MCP Registry 3.3.1 with reviewed task wording.
-- Repin Local plugin 0.1.7 to published Core 3.3.1 with the frozen dependency lock.
-- Record real CLI readiness failures separately from unmeasured Agent selection.
-- Preserve repository About, the visible README banner and its retention comment.
+- MCP 플러그인 배포 카탈로그로 책임을 정리했습니다.
+- 평가·연구·웹 검증 코드와 기록을 현재 트리에서 제거했습니다.
+- 여러 플러그인을 지원하는 릴리스 목록과 최소 배포 검증을 적용했습니다.
+- 기존 Truthound 버전·소스 고정과 설치 명령을 유지했습니다.
 
-## 2026-11-02 — Agent discovery distribution
+## 2026-11-02
 
-- Require the upstream standalone Claude plugin manifest; remove the synthetic
-  manifest validation fixture and marketplace component overrides.
-- Ship plugin 0.1.6 with an absolute Claude launcher; retain published Core 3.3.0
-  and existing tool IDs. Source-only tool/schema wording awaits a Core release.
-- Explain supported tasks and boundaries in English and Korean. Keep RAG/eval
-  preparation distinct from semantic evaluation and Depot's commercial scope.
-- Add 70 query cases, frozen candidate fixtures, BM25 ranking/observation runner,
-  immutable provenance, isolated CSV/Parquet installation E2E and minimal read-only CI.
-- Preserve the rejected first description rewrite and report its regression.
-- Record live Registry 3.3.0 separately from prepared, unpublished metadata.
+- Truthound Local 0.1.7을 Core 3.3.1 기반의 고정 소스로 등록했습니다.
