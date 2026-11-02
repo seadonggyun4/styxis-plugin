@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02",
+  "observations": [
+    {
+      "url": "https://truthound.netlify.app/robots.txt",
+      "http_status": 404
+    },
+    {
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "http_status": 200,
+      "x_robots_tag": null,
+      "robots_meta": [],
+      "robots_txt": null
+    },
+    {
+      "url": "https://styxis-io.com/robots.txt",
+      "http_status": 200,
+      "x_robots_tag": null,
+      "robots_meta": [],
+      "robots_txt": "User-Agent: *\nAllow: /\nDisallow: /api/\n\nUser-Agent: Googlebot\nAllow: /\n\nUser-Agent: Yeti\nAllow: /\n\nUser-Agent: Bingbot\nAllow: /\n\nUser-Agent: Daumoa\nAllow: /\n\nHost: https://styxis-io.com\nSitemap: https://styxis-io.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://styxis-io.com/en/open-source/truthound",
+      "http_status": 200,
+      "x_robots_tag": null,
+      "robots_meta": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "robots_txt": null
+    }
+  ],
+  "scope": "Public crawl directives and response headers only. This does not prove indexing or provider retrieval."
+}

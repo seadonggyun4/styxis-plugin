@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "queries": [
+    {
+      "id": "u01",
+      "language": "ko",
+      "intent": "broad",
+      "prompt": "데이터 검증에 사용할 MCP 서버를 찾고 있어. 웹에서 검색해서 현재 공개된 프로젝트 3개를 추천해줘. 각 후보의 실제 기능, 로컬 실행 여부, 공식 문서나 GitHub 출처 URL을 짧게 제시하고, 확인할 수 없는 내용은 표시해줘."
+    },
+    {
+      "id": "u02",
+      "language": "en",
+      "intent": "broad",
+      "prompt": "Find three publicly available MCP servers for data quality and validation. Search the web, briefly compare what each actually validates and whether it runs locally, and cite official documentation or GitHub URLs. Mark anything you cannot verify."
+    },
+    {
+      "id": "u03",
+      "language": "ko",
+      "intent": "local-csv",
+      "prompt": "외부로 원본 데이터를 업로드하지 않고 로컬 CSV 파일의 결측값과 중복 행을 검사할 MCP 서버를 찾고 있어. 웹에서 검색해서 적합한 공개 프로젝트를 최대 3개 추천하고, 공식 출처 URL과 설치 방법, 파일 접근 권한 방식을 짧게 알려줘."
+    },
+    {
+      "id": "u04",
+      "language": "en",
+      "intent": "local-profile",
+      "prompt": "Search the web for up to three MCP servers that profile local CSV or Parquet files and report column types, missing values and aggregate statistics without sending raw rows to a hosted service. Cite official project URLs and briefly explain setup and limitations."
+    },
+    {
+      "id": "u05",
+      "language": "ko",
+      "intent": "pii-rag",
+      "prompt": "RAG에 넣기 전 CSV나 Parquet 데이터셋에서 개인정보가 있을 가능성을 로컬에서 검사하고 싶어. 원본 값을 외부로 보내지 않는 MCP 서버를 웹에서 찾아 최대 3개 추천하고, 공식 출처와 표본 검사 여부, 탐지 한계를 설명해줘."
+    },
+    {
+      "id": "u06",
+      "language": "en",
+      "intent": "evaluation-preparation",
+      "prompt": "I need an MCP server to check a local evaluation dataset for nulls and duplicate rows and screen for likely PII before sharing it. Search the web for up to three existing projects, cite official sources and install instructions, and distinguish tabular data checks from evaluating LLM answer quality."
+    }
+  ],
+  "design": {
+    "brand_names_in_prompts": false,
+    "query_text_fixed_before_first_submission": true,
+    "languages": [
+      "ko",
+      "en"
+    ],
+    "independent_private_chat_for_each_query": true,
+    "web_search_explicitly_requested": true,
+    "brand_or_official_url_followups_used": false,
+    "scope": "Small operator-authored convenience sample, not a blinded or representative benchmark."
+  }
+}

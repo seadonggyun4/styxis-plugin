@@ -26,4 +26,6 @@ comes from the runtime, not metadata hints or a retrieval score.
 
 See [primary-source research](research/agent-discovery.md),
 [traceable decisions](implementation-plan.md), and [evaluation protocol](../evaluation/README.md).
+The [actual Gemini/Claude search observation](research/ai-search-2026-11-02.md)
+records unbranded web-answer visibility separately from installed tool selection.
 Internal distribution phase policy lives in [architecture](architecture.md).

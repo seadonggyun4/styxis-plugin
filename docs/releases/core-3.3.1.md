@@ -25,13 +25,18 @@ Existing installations must refresh/reinstall and reconnect to use the new pin.
 were rejected before any evaluation query was sent. Codex reported
 `model_not_found`; Claude organization policy disabled subscription access.
 CLI-owned system/tool context was not audited. No new account/key or policy
-bypass was attempted. Observed decisions are zero; accuracy and false-selection
+bypass was attempted. Observed decisions in that CLI benchmark are zero; accuracy and false-selection
 rates are unmeasured. These failures are not wrong tool choices.
 
 The optional `scripts/evaluate_agent.py` validates metadata-conditioned closed-set
 choices when a CLI model is available. It is not autonomous MCP discovery or a
 live Registry ranking experiment. Synthetic deterministic-provider Core tests
 are native lifecycle QA, not an external Agent benchmark.
+
+A later [Gemini/Claude browser search audit](../research/ai-search-2026-11-02.md)
+observes real unbranded web-answer mentions and citations through the services'
+web UIs. It does not measure installed MCP tool-call selection or replace the
+separate CLI benchmark.
 
 ## Retrieval and CI limits
 

@@ -145,6 +145,15 @@ visibility, live Registry/plugin ranking and external model selection stay pendi
 
 See [results](results/) and the [audit/result interpretation](../docs/audit-2026-11-02.md).
 
+## Actual AI web-search observations
+
+The [2026-11-02 Gemini/Claude UI evaluation](../docs/research/ai-search-2026-11-02.md)
+uses six fixed, unbranded questions in fresh private chats per provider. It records
+answer mentions and citations separately from this repository's local retrieval
+metrics and installed Agent tool-selection benchmark. Missing mentions are not
+converted into successes, and provider failures must not enter the denominator
+as completed answers. See the dated receipts under `results/2026-11-02-ai-search/`.
+
 
 ## Verify canonical web deployment
 

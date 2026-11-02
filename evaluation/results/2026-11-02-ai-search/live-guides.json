@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-02T04:41:29.832242+00:00",
+  "status": "passed",
+  "public_source_sha": "1cafe6c885d1fe781350444764871649322103f7",
+  "observations": [
+    {
+      "url": "https://truthound.netlify.app/guides/data-validation-mcp/",
+      "checks": {
+        "http_200": true,
+        "expected_title": true,
+        "version_3_3_1": true,
+        "local_tools": true,
+        "canonical": true
+      },
+      "passed": true
+    },
+    {
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "checks": {
+        "http_200": true,
+        "expected_title": true,
+        "version_3_3_1": true,
+        "local_tools": true,
+        "canonical": true
+      },
+      "passed": true
+    }
+  ],
+  "both_urls_in_sitemap": true,
+  "scope": "Served documents and sitemap verified; external search indexing and recommendation are not implied."
+}

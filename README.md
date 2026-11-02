@@ -16,6 +16,10 @@ you explicitly approve, without uploading raw dataset values.
 Truthound는 AI Agent가 승인된 로컬 CSV·Parquet의 결측값·중복 행 검사,
 프로파일링, 개인정보 표본 탐지를 실행하는 로컬 우선 데이터 품질 도구입니다.
 
+Start with the [data validation MCP guide](https://truthound.netlify.app/en/guides/data-validation-mcp/)
+([한국어](https://truthound.netlify.app/guides/data-validation-mcp/)) for local CSV/Parquet
+checks, installation, directory consent and the limits of sampled PII screening.
+
 ## Install Truthound
 
 Requires Claude Code with Git subdirectory plugin support, Git, `uv`, and Python
@@ -40,7 +44,7 @@ The plugin pins published Core **3.3.1** with a frozen dependency lock; catalog
 source commits and plugin versions are recorded in [release provenance](release.json).
 No Styxis account, API key, subscription or hosted MCP server is required.
 
-## Choose a task
+## Data validation MCP tasks
 
 | Request | Installed MCP tool | Result and boundary |
 | --- | --- | --- |
@@ -68,9 +72,10 @@ untrusted data. This open-source MCP tool is distinct from commercial Truthound 
 Adding this custom marketplace makes its catalog available to your Claude
 installation. A Registry record or a web page cannot guarantee discovery or
 recommendations by every agent. Local retrieval fixtures, actual installation,
-and external client/model evaluation are reported separately. Improved MCP descriptions ship in Core 3.3.1 and Local plugin 0.1.7. Actual
-Agent selection remains unmeasured: Codex model requests were rejected, and
-Claude organization policy disabled subscription access. See the dated
+and external client/model evaluation are reported separately. Improved MCP descriptions ship in Core 3.3.1 and Local plugin 0.1.7.
+The [actual Gemini/Claude browser search audit](docs/research/ai-search-2026-11-02.md)
+records answer mentions and citations. The separate CLI tool-selection benchmark
+remains unmeasured after account access rejections; see the dated
 [release evidence](docs/releases/core-3.3.1.md).
 
 ## Repository ownership
