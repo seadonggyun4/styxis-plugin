@@ -54,5 +54,5 @@
   "false_selection_rate": null,
   "claude_auth": "Existing claude.ai Max Keychain login verified outside sandbox",
   "api_key_environment_present": false,
-  "note": "Codex model requests were rejected; Claude organization policy disables subscription access for Claude Code. No user data, qrels or tool schemas were sent in readiness trials. These are availability failures, not tool-selection errors. No new account/key or policy bypass was attempted."
+  "note": "Codex model requests were rejected; Claude organization policy disables subscription access for Claude Code. Readiness prompts contained no evaluation queries, qrels or dataset contents. CLI-owned system/tool context was not audited. These are availability failures, not tool-selection errors. No new account/key or policy bypass was attempted."
 }

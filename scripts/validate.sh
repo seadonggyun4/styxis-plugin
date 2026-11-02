@@ -22,13 +22,26 @@ plugin="$tmp_dir/source/$source_path"
 test -f "$plugin/.mcp.json"
 test -f "$plugin/.claude-plugin/plugin.json"
 test -f "$plugin/skills/truthound-setup/SKILL.md"
-python3 - "$plugin/.claude-plugin/plugin.json" "$plugin_version" <<'PY'
-import json,sys
+python3 - "$plugin/.claude-plugin/plugin.json" "$plugin_version" "$repo_root/release.json" "$tmp_dir/source" <<'PYCODE'
+import hashlib,json,sys,tomllib
+from pathlib import Path
 manifest=json.load(open(sys.argv[1]))
 assert manifest['name']=='truthound' and manifest['version']==sys.argv[2]
 args=manifest['mcpServers']['truthound']['args']
 assert '--directory' in args and '${CLAUDE_PLUGIN_ROOT}' in args
-PY
+release=json.load(open(sys.argv[3]))
+source=Path(sys.argv[4]).resolve()
+for relative,expected in release['source_file_sha256'].items():
+    path=source/relative
+    assert not path.is_symlink() and path.resolve().is_relative_to(source)
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==expected, relative
+plugin=Path(sys.argv[1]).parents[1]
+project=tomllib.loads((plugin/'pyproject.toml').read_text())['project']
+assert 'truthound[mcp]=='+release['core_package_version'] in project['dependencies']
+lock=tomllib.loads((plugin/'uv.lock').read_text())
+core=next(p for p in lock['package'] if p['name']=='truthound')
+assert core['version']==release['core_package_version']
+PYCODE
 # Validate the actual remote package. Never inject a fixture manifest.
 claude plugin validate "$plugin"
 python3 -m unittest discover -s "$repo_root/tests" -v

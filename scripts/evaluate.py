@@ -196,7 +196,7 @@ def main():
         'retrieval_method': 'observed-client' if args.observations else 'BM25 k1=1.5 b=0.75; EN words/KO bigrams; no query expansion',
         'top_k': STAGES, 'selection_method': 'explicit client observation only',
         'e2e_receipts': [str(path) for path in args.e2e],
-        'scope_warning': 'Local fixture rankings do not measure live Registry, Claude recommendation, or model selection. Source variant contains UNRELEASED metadata.',
+        'scope_warning': 'Local fixture rankings do not measure live Registry, Claude recommendation, or model selection. Source metadata status: '+corpus.get('source_metadata_status','not established'),
         'metrics': summary, 'execution': execution, 'slices': slices, 'failures': failures, 'rows': rows,
         'pending': ['live_registry_ranking', 'real_client_plugin_ranking', 'external_model_selection',
                     'web_citation_visibility', 'earned_vs_owned_source_selection'],

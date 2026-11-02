@@ -1,8 +1,9 @@
 # Reproducible discovery evaluation
 
 This harness separates **candidate retrieval**, **observed selection**, and
-**execution conversion**. It does not implement a production tool router, call a
-paid model, add telemetry or reproduce a proprietary vendor's ranking algorithm.
+**execution conversion**. The local baseline calls no model. The optional Agent
+runner uses an existing CLI login; it does not implement a production tool router,
+add telemetry or reproduce a proprietary vendor's ranking algorithm.
 
 ## Inputs and scope
 
@@ -68,6 +69,29 @@ or call local Recall@10 “Registry recall”. Supply `--candidates` and `--data
 for the corresponding frozen real observations and qrels. Unknown/duplicate
 candidates or query-stage rows are rejected. Adapter/API collection is intentionally
 not invented for unavailable client ranking exports. No credential is requested.
+
+## Attempt actual Agent selection
+
+```bash
+python3 scripts/evaluate_agent.py --model EXACT_MODEL_ID \
+  --output /tmp/agent.json --observations-out /tmp/choices.jsonl
+```
+
+This runner first sends a readiness prompt through the installed Codex CLI. Only
+after success does it send a balanced 14-query sample and frozen tool metadata.
+It withholds relevance labels and validates complete, unique decisions against
+the candidate set. This measures metadata-conditioned closed-set selection,
+not autonomous MCP search, live Registry ranking or execution. CLI-owned system
+and tool context is outside this harness's audit. Import successful observations
+with `evaluate.py --observations`; inspect positive and negative denominators.
+
+The [2026-11-02 availability record](results/release-3.3.1/agent-availability.json)
+contains actual readiness requests through existing Codex and Claude logins.
+Codex requests returned `model_not_found`; Claude's organization disabled
+subscription access for Claude Code. No evaluation queries were submitted after
+those failures, and no new key/account or policy bypass was attempted. Observed
+decisions are zero; selection accuracy and false-selection rate remain null.
+Authentication availability failures are not incorrect tool choices.
 
 ## Execute actual installation and invocation
 

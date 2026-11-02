@@ -33,7 +33,9 @@ def main():
     provenance = json.loads((ROOT/'release.json').read_text())
     assert provenance['truthound_source_sha'] == entry['source']['sha']
     assert provenance['plugin_version'] == entry['version']
-    assert provenance['core_package_version'] == '3.3.0'
+    assert re.fullmatch(r'\d+\.\d+\.\d+', provenance['core_package_version'])
+    corpus = json.loads((ROOT/'evaluation/candidates.json').read_text())
+    assert corpus['installed_core_version'] == provenance['core_package_version']
     print('Offline catalog, provenance and query contracts passed')
 
 if __name__ == '__main__':
