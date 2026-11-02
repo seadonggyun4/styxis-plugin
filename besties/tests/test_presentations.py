@@ -38,6 +38,25 @@ def site(mirror=False):
 
 
 class PresentationTests(unittest.TestCase):
+    def test_layout_lock_allows_editorial_changes_but_rejects_ui_and_format_drift(self):
+        from besties.layout import freeze_layout, verify_layout
+        plan = compose(facts(), persona()); files = render(plan, site(), plan_digest(plan))
+        lock = freeze_layout(files)
+        changed = dict(files); changed['index.html'] = files['index.html'].replace(b'Choose a question', b'Consider a question')
+        self.assertTrue(verify_layout(changed, lock)['passed'])
+        for name, value in [('style.css', files['style.css'] + b'body{color:red}'), ('index.html', files['index.html'].replace(b'<h1>', b'<h2>'))]:
+            changed = dict(files); changed[name] = value
+            with self.assertRaises(ContractError): verify_layout(changed, lock)
+        changed = dict(files); changed.pop('facts.md')
+        with self.assertRaises(ContractError): verify_layout(changed, lock)
+
+    def test_vercel_flat_receipt(self):
+        from besties.hosting import StaticPublisher
+        with tempfile.TemporaryDirectory() as tmp:
+            p = StaticPublisher('vercel', ('cli',), 'project', 'team', False,
+                                lambda command, directory: {'id': 'receipt', 'url': 'https://example.org', 'readyState': 'READY'})
+            self.assertIn('receipt', p.deploy(Path(tmp)))
+
     def test_official_cli_state_cannot_modify_bundle_working_directory(self):
         from besties.hosting import execute
         from unittest.mock import patch

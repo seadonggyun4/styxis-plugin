@@ -46,10 +46,12 @@ class StaticPublisher:
         else:
             raw = self.runner([*self.cli, *args], directory)
         if self.provider == 'vercel':
-            require(raw.get('status') == 'ok' and isinstance(raw.get('deployment'), dict),
-                    'Unexpected Vercel receipt; reconcile provider state')
-            raw = raw['deployment']
-            require(raw.get('readyState') == 'READY', 'Vercel deployment not ready')
+            # Agent-mode CLIs wrap the response; regular CLI JSON may be flat.
+            if 'deployment' in raw:
+                require(raw.get('status') in ('ok', 'success') and isinstance(raw['deployment'], dict),
+                        'Unexpected Vercel receipt; reconcile provider state')
+                raw = raw['deployment']
+            require(raw.get('readyState', 'READY') == 'READY', 'Vercel deployment not ready')
         # Restrict receipts to identifiers; never persist raw provider responses.
         selected = {key: raw[key] for key in ('id', 'deploy_id', 'url', 'deploy_url', 'site_id')
                     if key in raw and isinstance(raw[key], str)}

@@ -72,7 +72,7 @@ class ReleaseJournal:
             f.flush(); os.fsync(f.fileno())
 
 
-def publish(files, directory, target, adapter: Publisher, journal: ReleaseJournal, verify):
+def publish(files, directory, target, adapter: Publisher, journal: ReleaseJournal, verify, layout_lock=None):
     """No retries on uncertain external effects; inspect/reconcile them first.
 
     Rollback uses this same function with a retained, verified prior bundle.
@@ -80,6 +80,9 @@ def publish(files, directory, target, adapter: Publisher, journal: ReleaseJourna
     """
     identifier(target)
     verify_files(files, directory)
+    if layout_lock is not None:
+        from .layout import verify_layout
+        verify_layout(files, layout_lock)
     release = digest(encoded({k: digest(v) for k, v in sorted(files.items())}))
     prior = [r for r in journal.rows() if r['target'] == target]
     require(not prior or prior[-1]['status'] not in ('started', 'uncertain'), 'Reconcile prior deployment before retry')

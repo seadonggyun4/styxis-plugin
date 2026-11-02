@@ -30,3 +30,21 @@ For CI, inject credentials from the CI secret store rather than committing a fil
 This does not enable Git-connected hosting: deployment still uploads static files.
 
 No environment file, including this template, is accepted in a deployment bundle.
+
+## Fixed public addresses and presentation layout
+
+The environment contains actual baseline origins and a literal `{number}` URL rule
+for each provider. `BESTIES_PERSONA_FIRST=1` and `BESTIES_PERSONA_LAST=16` bound the
+current range. `site_url(provider, role, number)` resolves the exact origin; duplicate
+origins, unknown placeholders and out-of-range numbers are rejected. Changing a
+URL setting does not rename a hosted project: the operator must migrate and verify
+it explicitly. Canonical URLs must be rebuilt from the same configured addresses.
+
+`BESTIES_LAYOUT_LOCK_PATH` points to a private approved release-lock registry.
+Each target lock freezes HTML structure and accessibility hooks, CSS hashes and
+artifact names, while permitting editorial text and URL changes. Publication calls
+`publish(..., layout_lock=approved_lock)` before contacting the provider. The current
+baseline and presentation layouts are frozen separately; changing their design
+requires an explicitly approved new lock. Do not regenerate locks during routine
+publication. A layout lock complements exact release verification; it is not a
+full visual regression or semantic accessibility certification.
