@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "kind": "Operator-authored unbranded search diagnostics, fixed before product edits; not a representative or blinded benchmark",
+  "search_queries": [
+    "CSV Parquet 데이터 품질 검증 개인정보 탐지 MCP 서버 로컬",
+    "MCP server local dataset missing values duplicate rows PII screening",
+    "data validation MCP server CSV Parquet aggregate profiling",
+    "데이터 검증 MCP 서버 결측값 중복 행"
+  ],
+  "agent_prompt": "Search the web for existing MCP servers that can inspect local CSV and Parquet datasets for missing values and duplicate rows and screen likely PII. Recommend up to three projects with official source links, explain whether raw rows are returned, and distinguish sampled PII screening from a complete privacy audit. Mark anything you cannot verify.",
+  "design": {
+    "brands_or_target_urls_supplied": false,
+    "same_search_queries_before_and_after": true,
+    "search_service_and_consumer_ai_ui_results_separate": true,
+    "direct_url_reads_excluded_from_organic_discovery": true,
+    "no_regeneration_until_a_target_hit": true
+  }
+}

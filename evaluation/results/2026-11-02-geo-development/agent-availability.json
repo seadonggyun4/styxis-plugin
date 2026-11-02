@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "client": "Existing Claude Code CLI login, WebSearch-only allowed tools",
+  "prompt_file": "queries.json",
+  "attempted": 1,
+  "completed_answers": 0,
+  "observed_search_results": 0,
+  "status": "blocked_before_answer",
+  "reason": "Existing organization subscription-access policy rejected the request. No new API key or account changes attempted.",
+  "consumer_web_ui_recheck": {
+    "attempted": 0,
+    "reason": "Browser-control tool unavailable in this session"
+  },
+  "rate": null,
+  "scope": "Unavailable evaluations are not negative search answers. Raw account/session details omitted."
+}
