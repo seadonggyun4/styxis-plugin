@@ -12,14 +12,6 @@
       "remote_task_branch_removed": true
     },
     {
-      "repository": "styxis-io",
-      "branch": "feature/core-3.3.1-web",
-      "verified_main_head": "6dede712525b175c1802c8c51ec0e73e5c70c231",
-      "merged_task_head": "6dede712525b175c1802c8c51ec0e73e5c70c231",
-      "local_task_branch_removed": true,
-      "remote_task_branch_removed": true
-    },
-    {
       "repository": "styxis-plugin",
       "branch": "feature/core-3.3.1-distribution",
       "verified_main_head": "c004497fb9e5976f9a13b45eb8be49323800dd7c",
@@ -29,5 +21,10 @@
     }
   ],
   "public_default_e2e": "default-e2e.json",
-  "scope": "Only these three task-created, fully merged temporary branches were removed."
+  "scope": "Public repository records only, plus a marked summary of private checks. Only fully merged task-created temporary branches were removed; unrelated branches were preserved. Private source details are omitted and cannot be independently reproduced from this public receipt.",
+  "private_repository_summary": {
+    "main_integration_verified": true,
+    "task_branches_removed_locally_and_remotely": true,
+    "repository_branch_and_commit_identifiers_omitted": true
+  }
 }

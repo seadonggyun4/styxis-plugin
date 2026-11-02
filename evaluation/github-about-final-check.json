@@ -25,14 +25,15 @@
     },
     "Truthound": {
       "description_homepage_topics_match_before": true
-    },
-    "styxis-io": {
-      "description_homepage_topics_match_before": true
     }
   },
   "policy_locations": {
     "styxis-plugin": "AGENTS.md (tracked)",
-    "Truthound": "AGENTS.md (existing ignored local instruction file; appended, not force-added)",
-    "styxis-io": "AGENTS.md (tracked)"
-  }
+    "Truthound": "AGENTS.md (existing ignored local instruction file; appended, not force-added)"
+  },
+  "private_repository_summary": {
+    "description_homepage_topics_unchanged": true,
+    "identifiers_field_values_and_policy_locations_omitted": true
+  },
+  "disclosure": "Public repository entries are retained. Private repository details are omitted from this summary."
 }

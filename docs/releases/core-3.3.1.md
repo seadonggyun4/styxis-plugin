@@ -57,9 +57,10 @@ The [public GitHub catalog E2E](../../evaluation/results/release-3.3.1/default-e
 explicitly installs `seadonggyun4/styxis-plugin` and passes all 16 checks against
 plugin source `54dae24c027e0a93af669bf7388d5af96a09bc97`, Local 0.1.7 and Core
 3.3.1. The [integration receipt](../../evaluation/results/release-3.3.1/integration.json)
-records all three repositories on main and removal of only the three fully merged
-task branches. Live website and documentation receipts confirm the deployed
-3.3.1 content separately from the source commits.
+records public repository main integration and task branch removal, with private
+repository identifiers omitted from a separately marked summary. Live website
+and documentation receipts confirm the deployed 3.3.1 content separately from
+the source commits.
 
 ## Local installation update
 

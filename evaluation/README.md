@@ -154,5 +154,7 @@ python3 scripts/verify_web.py --base-url https://styxis-io.com --expect-core-ver
 
 This fetches the eight localized public pages, parses canonical/hreflang/JSON-LD,
 and checks sitemap and llms.txt. It verifies served content, not search indexing
-or citation lift. `--web-root /path/to/styxis-io` instead inspects production build
+or citation lift. `--web-root /path/to/site-build` instead inspects production build
 HTML and always leaves deployment unverified.
+
+<!-- 비공개 소스 저장소의 식별 정보는 공개 검증 기록에서 제외합니다. 공개 웹 응답 검사와 소스 저장소 정보는 별개입니다. -->

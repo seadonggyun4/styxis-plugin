@@ -1,8 +1,8 @@
 # Architecture
 
 Truthound owns every runtime and permission implementation. This catalog owns
-metadata, immutable release references and evaluation. Styxis-io owns canonical
-web definitions. No MCP implementation is vendored into this repository.
+metadata, immutable release references and evaluation. No MCP implementation is
+vendored into this repository.
 
 ```text
 web / GitHub / connected Registry / explicitly added marketplace
