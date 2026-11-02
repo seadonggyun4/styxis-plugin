@@ -1,0 +1,33 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "styxis-plugin",
+  "description": "Local-first agent tools from Styxis",
+  "owner": {
+    "name": "Styxis",
+    "url": "https://styxis-io.com"
+  },
+  "plugins": [
+    {
+      "name": "truthound",
+      "displayName": "Truthound",
+      "description": "Validate, profile, and scan approved local CSV and Parquet datasets without uploading raw values.",
+      "author": {
+        "name": "Styxis",
+        "url": "https://styxis-io.com"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Truthound.git",
+        "path": "plugins/truthound",
+        "ref": "main",
+        "sha": "7a44d145ecbf733bef54a1304a1a5878a10a8baf"
+      },
+      "strict": false,
+      "skills": [
+        "./skills/truthound-setup"
+      ],
+      "mcpServers": "./.mcp.json",
+      "homepage": "https://truthound.netlify.app/guides/mcp/"
+    }
+  ]
+}
