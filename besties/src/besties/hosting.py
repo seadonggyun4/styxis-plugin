@@ -6,12 +6,13 @@ from tempfile import TemporaryDirectory
 from .model import identifier, require
 
 
-def execute(command, directory):
+def execute(command, directory, environment=None):
     # Provider CLIs write local state. Keep that state out of immutable artifacts
     # so a later rollback can verify and reuse the exact original bundle.
     with TemporaryDirectory(prefix='besties-provider-') as control:
         result = subprocess.run(command, cwd=control, stdin=subprocess.DEVNULL,
-                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=240)
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=240,
+                                env=environment)
     require(result.returncode == 0, 'Provider command did not complete successfully; reconcile before retry')
     return json.loads(result.stdout)
 
@@ -29,7 +30,8 @@ class StaticPublisher:
         require(self.provider in ('vercel', 'netlify'), 'Unsupported provider')
         identifier(self.project); identifier(self.team)
         require(bool(self.cli) and all(isinstance(v, str) and v for v in self.cli), 'Explicit CLI required')
-        require(not any(p.name in ('.git', '.env', '.env.local') for p in directory.rglob('*')), 'Source or environment data in static directory')
+        require(not any(p.name == '.git' or p.name == '.env' or p.name.startswith('.env.')
+                        or p.name.startswith('env-') for p in directory.rglob('*')), 'Source or environment data in static directory')
         if self.provider == 'vercel':
             args = ['deploy', str(directory), '--prod', '--yes', '--project', self.project,
                     '--scope', self.team, '--json']
@@ -38,7 +40,11 @@ class StaticPublisher:
             args = ['deploy', '--dir', str(directory), '--prod', '--no-build', '--json']
             args += (['--site-name', self.project, '--team', self.team] if self.create_if_missing
                      else ['--site', self.project])
-        raw = self.runner([*self.cli, *args], directory)
+        if self.runner is execute:
+            from .environment import process_environment
+            raw = execute([*self.cli, *args], directory, environment=process_environment(self.provider))
+        else:
+            raw = self.runner([*self.cli, *args], directory)
         if self.provider == 'vercel':
             require(raw.get('status') == 'ok' and isinstance(raw.get('deployment'), dict),
                     'Unexpected Vercel receipt; reconcile provider state')

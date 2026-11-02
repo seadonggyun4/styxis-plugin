@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "resource_url": "https://truthound-geo-no-1.netlify.app",
-  "canonical_url": "https://truthound-geo-no-1.vercel.app/",
+  "resource_url": "https://truthound-geo-baseline.netlify.app",
+  "canonical_url": "https://truthound-geo-baseline.vercel.app/",
   "documentation_url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
   "product_url": "https://styxis-io.com/en/open-source/truthound",
   "seo": {

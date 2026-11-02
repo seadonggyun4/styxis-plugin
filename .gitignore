@@ -3,3 +3,9 @@
 *.log
 __pycache__/
 *.py[cod]
+.env
+.env.*
+!.env.template
+env-*/**
+!env-*/.env.template
+!env-*/README.md

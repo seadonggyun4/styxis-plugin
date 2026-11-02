@@ -91,3 +91,16 @@ replicates when their canonical policies intentionally consolidate them.
 
 Private research materials are omitted from this public guide; this is not a complete
 public record of any private experiment.
+
+## Operator environment
+
+Product-specific operator settings are loaded explicitly through `OperatorEnvironment`;
+see [the environment template and setup](../env-truthound/README.md). Static pages
+have no runtime environment variables. File settings are overridden by explicit
+process variables; only the selected provider credential reaches its CLI subprocess.
+All `.env` variants and `env-*` directories are rejected from upload bundles.
+The renderer never receives operator configuration.
+
+The original baseline sites now use `truthound-geo-baseline` on both hosts.
+Historical receipts retain the URLs observed at that time and must not be treated
+as evidence of the current contents of a repurposed URL.

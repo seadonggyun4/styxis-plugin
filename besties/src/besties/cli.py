@@ -13,7 +13,7 @@ from .resources import ResourceSite, build, verify_directory, verify_live
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="besties")
-    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live", "plan-persona", "build-persona", "verify-persona", "verify-persona-live"))
+    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live", "plan-persona", "build-persona", "verify-persona", "verify-persona-live", "validate-environment"))
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--live", action="store_true", help="Allow GET requests to configured target URLs")
@@ -24,6 +24,10 @@ def main(argv=None):
     parser.add_argument("--approved-plan-sha256", help="Digest of the exact editorial plan reviewed for publication")
     args = parser.parse_args(argv)
     try:
+        if args.command == "validate-environment":
+            from .environment import OperatorEnvironment
+            print(json.dumps(OperatorEnvironment.load(args.manifest).summary()))
+            return 0
         if args.command in ("plan-persona", "build-persona", "verify-persona", "verify-persona-live"):
             from .persona_cli import run
             result = run(args, parser)

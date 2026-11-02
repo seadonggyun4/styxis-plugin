@@ -159,7 +159,7 @@ Publishing rules (implemented gates and remaining automation are distinguished b
 
 ### What works today and what is planned
 
-Besties **0.4.0** is an independently installable Python development tool in
+Besties **0.4.1** is an independently installable Python development tool in
 [`besties/`](besties/), with no runtime dependencies. It currently validates public
 input manifests, creates evidence-linked review drafts, inspects configured HTML
 pages and imports explicit search/AI-answer observations. It also generates a
@@ -185,12 +185,15 @@ observation comparisons are separate boundaries. See the
 runtime or hosting SDK is required. See the [resource publishing guide](docs/besties-resources.md)
 for commands, deployment configuration and verification boundaries.
 
-Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) (Hobby)
-and [Netlify resource site](https://truthound-geo-no-1.netlify.app/) (Free Legacy)
+Pilot status: [Vercel resource site](https://truthound-geo-baseline.vercel.app/) (Hobby)
+and [Netlify resource site](https://truthound-geo-baseline.netlify.app/) (Free Legacy)
 are live. The dated receipts distinguish the initial resource release from the
 SEO expansion and record each host’s verified artifact hashes. **Besties deploys only generated static artifacts.**
 The original Vercel Git connection has been disconnected; Netlify also uses static
-publication. A Git push does not deploy either resource site.
+publication. A Git push does not deploy either resource site. Operator settings use
+[`env-truthound/.env.template`](env-truthound/.env.template); actual `.env.local`
+values are excluded from Git and all deployment artifacts. Existing CLI login
+stores remain the default authentication method.
 SEO/GEO effectiveness remains under evaluation. The planned seven-week review is
 2026-12-21; see the [comparison protocol](docs/research/besties-seo-2026-11-02.md).
 See the [SEO deployment verification](evaluation/results/2026-11-02-besties-seo/summary.json)
