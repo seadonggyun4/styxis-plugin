@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-02",
+  "repository": "seadonggyun4/styxis-plugin",
+  "workflow": "Validate discovery contracts",
+  "head_sha": "fdca3d314103b1edfe28d0453f8d55bdaae4ad9a",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/seadonggyun4/styxis-plugin/actions/runs/41369861176",
+  "scope": "Read-only offline catalog/provenance/query/metric checks; actual remote installation is recorded separately."
+}
