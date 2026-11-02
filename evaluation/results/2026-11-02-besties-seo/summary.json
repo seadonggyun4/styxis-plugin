@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "besties_version": "0.3.0",
+  "implementation_commit": "3a5ea9fe627c302a6499715a72499748ce7a2059",
+  "input_sha256": {
+    "resource-project.json": "e6985ac9399a2408b21ecb0b190188076fbe6b65c96b7facb99becb603178615",
+    "resource-site-netlify.json": "87b7d799b9d8cb3159f5dc8145330585abde1592decda5da7a06e13fcf2d30f6",
+    "resource-site-vercel.json": "7ea5996380e6dd77a6c0108081652f741c5b69e842f3f16b782103dfbed61118"
+  },
+  "planned_review_date": "2026-12-21",
+  "scheduled_automation": false,
+  "tests": {
+    "besties_source": 26,
+    "besties_isolated_install": 26,
+    "catalog": 10,
+    "metadata": "passed",
+    "ci_run": 41434249285,
+    "ci_result": "success"
+  },
+  "deployments": {
+    "vercel": {
+      "receipt": "vercel-live.json",
+      "delivery": "Git-connected",
+      "public_artifacts_passed": 10
+    },
+    "netlify": {
+      "receipt": "netlify-live.json",
+      "delivery": "Verified ZIP to existing project",
+      "public_artifacts_passed": 10
+    }
+  },
+  "seo": {
+    "html_pages_per_host": 4,
+    "canonical_host": "truthound-geo-no-1.vercel.app",
+    "checks": [
+      "unique title and description",
+      "one H1",
+      "language",
+      "Open Graph metadata agreement",
+      "WebPage JSON-LD agreement",
+      "canonical routes",
+      "internal link targets",
+      "canonical sitemap coverage",
+      "no HTML noindex",
+      "exact live bytes and MIME types"
+    ],
+    "nonexistent_route_status": {
+      "vercel": 404,
+      "netlify": 404
+    },
+    "mobile": {
+      "viewport_width": 390,
+      "document_scroll_width": 390,
+      "visual_review": "passed"
+    },
+    "field_web_vitals": "unmeasured",
+    "rich_results_test": "not-run"
+  },
+  "preservation": {
+    "about": "No writes",
+    "readme_banner": "Asset and preservation comment unchanged",
+    "product_and_documentation_sites": "No source or deployment changes"
+  },
+  "indexing": "unmeasured",
+  "geo_effect": "under-evaluation",
+  "evidence_limits": "Private source and account UI details are omitted. This summary is not a complete original UI capture. HTTP receipts are bounded direct observations."
+}

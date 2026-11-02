@@ -187,7 +187,9 @@ SEO expansion and record each host’s verified artifact hashes. Vercel uses Git
 static ZIP upload and is not automatically synchronized after a Git push.
 SEO/GEO effectiveness remains under evaluation. The planned seven-week review is
 2026-12-21; see the [comparison protocol](docs/research/besties-seo-2026-11-02.md).
-See the [dated verification record](evaluation/results/2026-11-02-besties-resources/summary.json).
+See the [SEO deployment verification](evaluation/results/2026-11-02-besties-seo/summary.json)
+(ten public artifacts checked per host) and the
+[initial resource verification](evaluation/results/2026-11-02-besties-resources/summary.json).
 
 See the [architecture and local commands](docs/besties-development.md) and the
 [Truthound deployment and search evaluation](docs/research/besties-truthound-2026-11-02.md).

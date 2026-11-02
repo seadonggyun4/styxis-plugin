@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "planned_review_date": "2026-12-21",
+  "queries": [
+    {
+      "id": "gx-en",
+      "text": "Which alternatives to Great Expectations offer MCP tools for data validation?",
+      "split": "development",
+      "intent": "category-and-mcp",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "gx-ko",
+      "text": "GX 같은 데이터 검증 프레임워크 중 MCP를 제공하는 도구는 뭐가 있어?",
+      "split": "development",
+      "intent": "category-and-mcp",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "task-en",
+      "text": "Which MCP servers check local CSV and Parquet for nulls and duplicate rows?",
+      "split": "development",
+      "intent": "task",
+      "claims": [
+        "checks",
+        "pii"
+      ]
+    },
+    {
+      "id": "task-ko",
+      "text": "로컬 CSV와 Parquet 품질 검사와 개인정보 탐지를 할 수 있는 MCP는?",
+      "split": "development",
+      "intent": "task",
+      "claims": [
+        "checks",
+        "pii"
+      ]
+    },
+    {
+      "id": "holdout-en",
+      "text": "I need a Python data quality framework my AI assistant can use through MCP without uploading datasets. What should I evaluate?",
+      "split": "holdout",
+      "intent": "constraints",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "holdout-ko",
+      "text": "데이터 검증 프레임워크를 고르는데 AI 에이전트에서 로컬 파일을 바로 검사할 수 있는 후보를 알려줘.",
+      "split": "holdout",
+      "intent": "category",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    }
+  ],
+  "source": "Existing category-project query set; holdouts excluded from generated public resource content"
+}

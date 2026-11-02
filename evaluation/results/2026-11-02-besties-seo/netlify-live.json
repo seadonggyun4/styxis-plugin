@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-02T11:08:31.384090+00:00",
+  "pages": [
+    {
+      "path": "index.html",
+      "url": "https://truthound-geo-no-1.netlify.app/",
+      "status": 200,
+      "sha256": "012c81bd990940ad1bd4e02add82ae5e533df0c5bae644f5a3c8957c2d6b0820",
+      "expected_sha256": "012c81bd990940ad1bd4e02add82ae5e533df0c5bae644f5a3c8957c2d6b0820",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "style.css",
+      "url": "https://truthound-geo-no-1.netlify.app/style.css",
+      "status": 200,
+      "sha256": "63684f8c1266619197b50148fb915c2210813870ecd878d7bcfa0a50f110d6f3",
+      "expected_sha256": "63684f8c1266619197b50148fb915c2210813870ecd878d7bcfa0a50f110d6f3",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "facts.json",
+      "url": "https://truthound-geo-no-1.netlify.app/facts.json",
+      "status": 200,
+      "sha256": "b4ff43b55d04902a506d9523012633cc6665954551bda017ff512411e2c0b1fb",
+      "expected_sha256": "b4ff43b55d04902a506d9523012633cc6665954551bda017ff512411e2c0b1fb",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "facts.md",
+      "url": "https://truthound-geo-no-1.netlify.app/facts.md",
+      "status": 200,
+      "sha256": "47d925359fe524938540ede4667c80eabfd24f8c716d483a3633636a24499978",
+      "expected_sha256": "47d925359fe524938540ede4667c80eabfd24f8c716d483a3633636a24499978",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "robots.txt",
+      "url": "https://truthound-geo-no-1.netlify.app/robots.txt",
+      "status": 200,
+      "sha256": "1fc8dfbcea3fd061b342cacc9a6eb719a7e6a13c3d52e91393df005582397ef3",
+      "expected_sha256": "1fc8dfbcea3fd061b342cacc9a6eb719a7e6a13c3d52e91393df005582397ef3",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "sitemap.xml",
+      "url": "https://truthound-geo-no-1.netlify.app/sitemap.xml",
+      "status": 200,
+      "sha256": "b67a9aaf370d81cc7a841a6d031319f07ee93412d6d5718847e0151d2830db8b",
+      "expected_sha256": "b67a9aaf370d81cc7a841a6d031319f07ee93412d6d5718847e0151d2830db8b",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "guides/local-csv-parquet-validation/index.html",
+      "url": "https://truthound-geo-no-1.netlify.app/guides/local-csv-parquet-validation/",
+      "status": 200,
+      "sha256": "935b9b95be4436067065956c7476be06d13d20249b96be7ca689dfd77f8c593b",
+      "expected_sha256": "935b9b95be4436067065956c7476be06d13d20249b96be7ca689dfd77f8c593b",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "guides/great-expectations-alternative-mcp/index.html",
+      "url": "https://truthound-geo-no-1.netlify.app/guides/great-expectations-alternative-mcp/",
+      "status": 200,
+      "sha256": "9892872d84f4b31a1b23095c875932b7b3c5cd9798b6189df6294705458a3aa3",
+      "expected_sha256": "9892872d84f4b31a1b23095c875932b7b3c5cd9798b6189df6294705458a3aa3",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "guides/profiling-and-pii-screening/index.html",
+      "url": "https://truthound-geo-no-1.netlify.app/guides/profiling-and-pii-screening/",
+      "status": 200,
+      "sha256": "4abc436783e3498f93f3ff60079a67cb4223a54b190cbfc21de6c853d40f2704",
+      "expected_sha256": "4abc436783e3498f93f3ff60079a67cb4223a54b190cbfc21de6c853d40f2704",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    },
+    {
+      "path": "release.json",
+      "url": "https://truthound-geo-no-1.netlify.app/release.json",
+      "status": 200,
+      "sha256": "a1032293b93dc4c1d58a29d4434fb80811fc2eefe57ec40fe62db0588dd53c78",
+      "expected_sha256": "a1032293b93dc4c1d58a29d4434fb80811fc2eefe57ec40fe62db0588dd53c78",
+      "mime_ok": true,
+      "robots_ok": true,
+      "passed": true
+    }
+  ],
+  "indexing": "unmeasured",
+  "geo_effect": "under-evaluation"
+}

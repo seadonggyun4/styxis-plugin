@@ -75,3 +75,15 @@ If delivery passes but discovery remains absent, the observed result is no measu
 discovery benefit, not a reason to redefine deployment success as GEO success.
 One product and two mirrored hosts cannot establish general effectiveness across
 products. A subsequent independent-product or controlled rollout is needed.
+
+## Deployment verification
+
+Both hosts passed ten public artifact checks, including four HTML pages. The
+[dated summary](../../evaluation/results/2026-11-02-besties-seo/summary.json) records
+input hashes, implementation commit, test counts and delivery modes. The
+[frozen query set](../../evaluation/results/2026-11-02-besties-seo/evaluation-queries.json)
+is an evaluation artifact, not part of either resource site's generated bundle.
+Source and isolated-package tests each passed 26 cases; catalog tests passed 10.
+A nonexistent path returned 404 on both hosts. The 390px mobile viewport had no
+horizontal overflow and was visually inspected. No index coverage or field
+performance measurements are implied by these checks.
