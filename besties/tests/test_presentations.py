@@ -38,6 +38,20 @@ def site(mirror=False):
 
 
 class PresentationTests(unittest.TestCase):
+    def test_official_cli_state_cannot_modify_bundle_working_directory(self):
+        from besties.hosting import execute
+        from unittest.mock import patch
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            bundle = Path(tmp)
+            def fake(command, **options):
+                self.assertNotEqual(Path(options['cwd']), bundle)
+                (Path(options['cwd'])/'provider-state').write_text('local state')
+                return subprocess.CompletedProcess(command, 0, b'{"deploy_id":"receipt"}', b'')
+            with patch('besties.hosting.subprocess.run', side_effect=fake):
+                self.assertEqual(execute(['official-cli'], bundle)['deploy_id'], 'receipt')
+            self.assertEqual(list(bundle.iterdir()), [])
+
     def test_standalone_cli_review_build_and_verify(self):
         from besties.cli import main
         import contextlib

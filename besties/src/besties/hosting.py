@@ -2,12 +2,16 @@
 from dataclasses import dataclass
 import json
 import subprocess
+from tempfile import TemporaryDirectory
 from .model import identifier, require
 
 
 def execute(command, directory):
-    result = subprocess.run(command, cwd=directory, stdin=subprocess.DEVNULL,
-                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=240)
+    # Provider CLIs write local state. Keep that state out of immutable artifacts
+    # so a later rollback can verify and reuse the exact original bundle.
+    with TemporaryDirectory(prefix='besties-provider-') as control:
+        result = subprocess.run(command, cwd=control, stdin=subprocess.DEVNULL,
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=240)
     require(result.returncode == 0, 'Provider command did not complete successfully; reconcile before retry')
     return json.loads(result.stdout)
 
