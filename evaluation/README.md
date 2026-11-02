@@ -111,3 +111,15 @@ method, k, denominators, slices, failure cases and rerun command. Unobserved web
 visibility, live Registry/plugin ranking and external model selection stay pending.
 
 See [results](results/) and the [audit/result interpretation](../docs/audit-2026-11-02.md).
+
+
+## Verify canonical web deployment
+
+```bash
+python3 scripts/verify_web.py --base-url https://styxis-io.com --output /tmp/live-web.json
+```
+
+This fetches the eight localized public pages, parses canonical/hreflang/JSON-LD,
+and checks sitemap and llms.txt. It verifies served content, not search indexing
+or citation lift. `--web-root /path/to/styxis-io` instead inspects production build
+HTML and always leaves deployment unverified.

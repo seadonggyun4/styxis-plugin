@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-11-02T00:56:16.312065+00:00",
+  "date": "2026-11-02T01:01:22.735633+00:00",
   "client": "local-bm25-harness",
   "model": null,
   "python": "3.14.7",
@@ -79,7 +79,7 @@
   },
   "selection_method": "explicit client observation only",
   "e2e_receipts": [
-    "evaluation/results/2026-11-02-remote-e2e.json"
+    "evaluation/results/2026-11-02-default-e2e.json"
   ],
   "scope_warning": "Local fixture rankings do not measure live Registry, Claude recommendation, or model selection. Source variant contains UNRELEASED metadata.",
   "metrics": {
@@ -7747,5 +7747,5 @@
     "web_citation_visibility",
     "earned_vs_owned_source_selection"
   ],
-  "reproduce": "python3 scripts/evaluate.py --variant installed --e2e evaluation/results/2026-11-02-remote-e2e.json --output evaluation/results/2026-11-02-installed.json"
+  "reproduce": "python3 scripts/evaluate.py --variant installed --e2e evaluation/results/2026-11-02-default-e2e.json --output evaluation/results/2026-11-02-installed.json"
 }

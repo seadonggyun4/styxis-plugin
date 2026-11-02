@@ -15,18 +15,20 @@
     "plugins/truthound/uv.lock": "c8fd5c344a8300eab0fbe824dd09bd0be98e4875072d86ba534c4005837a2af7"
   },
   "publication": {
-    "source_feature_branch_pushed": true,
-    "default_branch_merged": false,
-    "core_package_published": false,
-    "registry_metadata_published": false,
-    "web_deployment_verified": false,
+    "source_commit_on_origin_main": true,
+    "default_branch_merged": true,
     "upstream_default_branch_merged": true,
-    "web_source_default_branch_merged": true
+    "web_source_default_branch_merged": true,
+    "new_core_metadata_package_published": false,
+    "registry_description_update_published": false,
+    "web_deployment_verified": true
   },
-  "note": "Truthound source and web source are integrated into main. Plugin 0.1.6 uses published Core 3.3.0; new tool descriptions remain source-only. About is preserved. Catalog integration and default-install verification are recorded separately.",
+  "note": "All three repository changes are integrated into main. Public default-catalog installation and live canonical web pages are verified. Plugin 0.1.6 uses published Core 3.3.0; new tool descriptions await a future Core package release and the Registry wording update is prepared but unpublished. GitHub About is preserved.",
   "verification": {
     "remote_e2e": "evaluation/results/2026-11-02-remote-e2e.json",
     "web_html": "evaluation/results/2026-11-02-web-build.json",
-    "about_policy": "GitHub About is preserved. Initial task changes were restored and verified against before snapshots."
+    "about_policy": "GitHub About is preserved. Initial task changes were restored and verified against before snapshots.",
+    "default_e2e": "evaluation/results/2026-11-02-default-e2e.json",
+    "live_web": "evaluation/results/2026-11-02-live-web.json"
   }
 }
