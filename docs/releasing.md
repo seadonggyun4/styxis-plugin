@@ -11,6 +11,9 @@
 6. Run `scripts/e2e.py` in an isolated Claude configuration. Require startup from
    an unrelated cwd, tools/list, approved CSV/Parquet, denial before consent,
    unapproved/symlink/traversal denial, revocation and raw-sentinel non-disclosure.
+   After main integration, explicitly pass `--marketplace seadonggyun4/styxis-plugin`
+   and the expected immutable source SHA. The harness default is a local checkout;
+   verify the receipt's marketplace field before claiming public-catalog rollout.
 7. Refresh installed/source candidate snapshots; retain query version/hash and
    negative cases. Run before/rejected/installed/source variants. Record model
    selection as pending unless actual observations were imported.

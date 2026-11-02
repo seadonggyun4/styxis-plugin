@@ -110,6 +110,10 @@ python3 scripts/evaluate.py --variant installed --e2e /tmp/truthound-e2e.json \
 ```
 
 `--marketplace` can select a reviewed local catalog or Git source. The harness
+defaults to this checkout for prepublication QA. To verify the public catalog,
+always pass `--marketplace seadonggyun4/styxis-plugin` and `--expect-source-sha`
+with the published plugin-source commit; a local run does not establish remote
+catalog rollout. The harness
 creates synthetic fixtures, explicitly approves only that generated directory,
 launches the installed command from unrelated cwd, and checks initialization,
 `tools/list`, first CSV call, all three tools on CSV/Parquet, consent denial,

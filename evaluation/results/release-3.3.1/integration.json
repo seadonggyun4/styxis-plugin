@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-02T03:15:20.987715+00:00",
+  "core_version": "3.3.1",
+  "core_artifact_source_sha": "80f8092d30918c825154e3ff8e5ed3ca4c328b17",
+  "repositories": [
+    {
+      "repository": "truthound",
+      "branch": "feature/core-3.3.1-release",
+      "verified_main_head": "54dae24c027e0a93af669bf7388d5af96a09bc97",
+      "merged_task_head": "54dae24c027e0a93af669bf7388d5af96a09bc97",
+      "local_task_branch_removed": true,
+      "remote_task_branch_removed": true
+    },
+    {
+      "repository": "styxis-io",
+      "branch": "feature/core-3.3.1-web",
+      "verified_main_head": "6dede712525b175c1802c8c51ec0e73e5c70c231",
+      "merged_task_head": "6dede712525b175c1802c8c51ec0e73e5c70c231",
+      "local_task_branch_removed": true,
+      "remote_task_branch_removed": true
+    },
+    {
+      "repository": "styxis-plugin",
+      "branch": "feature/core-3.3.1-distribution",
+      "verified_main_head": "c004497fb9e5976f9a13b45eb8be49323800dd7c",
+      "merged_task_head": "c004497fb9e5976f9a13b45eb8be49323800dd7c",
+      "local_task_branch_removed": true,
+      "remote_task_branch_removed": true
+    }
+  ],
+  "public_default_e2e": "default-e2e.json",
+  "scope": "Only these three task-created, fully merged temporary branches were removed."
+}

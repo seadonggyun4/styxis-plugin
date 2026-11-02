@@ -18,7 +18,7 @@
   },
   "publication": {
     "source_commit_on_origin_main": true,
-    "default_branch_merged": false,
+    "default_branch_merged": true,
     "upstream_default_branch_merged": true,
     "web_source_default_branch_merged": true,
     "new_core_metadata_package_published": true,
@@ -27,16 +27,17 @@
     "local_cli_updated": true,
     "local_mcp_installations_updated": true,
     "current_chat_mcp_cache_reloaded": false,
-    "source_release_docs_live_verified": true
+    "source_release_docs_live_verified": true,
+    "task_temporary_branches_removed": true
   },
-  "note": "Core 3.3.1 and immutable Registry 3.3.1 are published. The exact Core artifact source and later Local 0.1.7 plugin source are distinct. Upstream main, live canonical web, local CLI and installed Local/Core MCP runtimes are verified. Default-catalog rollout and task-branch cleanup are finalized in separate receipts. About and the visible README banner are preserved. Actual Agent decisions remain unmeasured after account access rejection. Current chat tool-cache refresh requires a new chat or app restart because host UI control is unavailable.",
+  "note": "All three repository changes are integrated into main and the three task-created temporary branches are removed locally and remotely. Core 3.3.1 canonical artifacts, Official Registry 3.3.1, public default-catalog installation, live canonical web/docs, local CLI and Local/Core MCP installations are verified. Core artifact source and later plugin-repin source remain distinct. About, the visible README banner and existing grants are preserved. Actual Agent selection remains unmeasured after account access rejection. Current-chat tool-cache refresh requires a new chat or app restart; host policy blocks controlling the Codex app UI.",
   "verification": {
     "remote_e2e": "evaluation/results/release-3.3.1/installed-e2e.json",
     "web_html": "evaluation/results/release-3.3.1/web-build.json",
     "about_policy": "Description, homepage and topics are unchanged for all three repositories in this release.",
-    "default_e2e": null,
+    "default_e2e": "evaluation/results/release-3.3.1/default-e2e.json",
     "live_web": "evaluation/results/release-3.3.1/live-web.json",
-    "integration_cleanup": null,
+    "integration_cleanup": "evaluation/results/release-3.3.1/integration.json",
     "core_publication": "evaluation/results/release-3.3.1/core-publication.json",
     "official_registry": "evaluation/results/release-3.3.1/registry.json",
     "agent_availability": "evaluation/results/release-3.3.1/agent-availability.json",

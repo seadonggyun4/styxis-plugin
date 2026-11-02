@@ -96,7 +96,7 @@ standalone Claude package. It never injects a manifest fixture. For the real
 isolated installation/MCP check, use Python with the `mcp` SDK installed:
 
 ```bash
-python scripts/e2e.py --output /tmp/truthound-e2e.json
+python scripts/e2e.py --marketplace seadonggyun4/styxis-plugin --output /tmp/truthound-e2e.json
 ```
 
 The E2E harness approves only its own generated fixture directory. It verifies
