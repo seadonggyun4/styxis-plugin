@@ -19,7 +19,7 @@
         "source": "git-subdir",
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "plugins/truthound",
-        "ref": "feature/agent-discovery",
+        "ref": "main",
         "sha": "c36ac00f061738d1fd3aaf21a28c36e53f4526c9"
       },
       "strict": true,

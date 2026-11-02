@@ -27,13 +27,6 @@ claude plugin marketplace add seadonggyun4/styxis-plugin
 claude plugin install truthound@styxis-plugin
 ```
 
-The 0.1.6 update is currently on the review branch. Until it is merged into the
-default branch, test that exact catalog with:
-
-```bash
-claude plugin marketplace add seadonggyun4/styxis-plugin@feature/agent-discovery
-```
-
 Ask the installed **Truthound setup** skill to configure the exact existing
 absolute data directory you approve. **Installing grants no data access.**
 Missing consent denies file calls. Setup replaces existing directory grants;
