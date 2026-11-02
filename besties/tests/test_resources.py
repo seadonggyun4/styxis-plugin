@@ -13,6 +13,8 @@ class ResourceTests(unittest.TestCase):
     def setUp(self):
         self.project = Project.parse(json.loads((ROOT / 'examples/truthound/category-project.json').read_text()))
         self.config = json.loads((ROOT / 'examples/truthound/resource-site-netlify.json').read_text())
+        self.config.pop('seo')
+        self.config['schema_version'] = 1
         self.site = ResourceSite.parse(self.config, self.project)
 
     def test_separate_host_is_mandatory(self):

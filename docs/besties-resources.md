@@ -121,3 +121,35 @@ the raw HTTP responses returned to Besties, not every provider-injected browser
 representation. Both pages retain their official documentation links. Existing
 product and documentation sites were not modified. Search ingestion and improved
 AI discovery remain unmeasured for this release.
+
+## SEO generation in 0.3.0
+
+Resource-site schema v2 adds a bounded, operator-approved `seo` input: language,
+landing title/description/heading/intro, and task pages with stable slugs, unique
+metadata, claim IDs and editorial evidence IDs. Schema v1 remains supported for
+existing inputs. No product names or hosting SDKs are hard-coded into the SEO
+renderer. Editorial text is reviewed input, not automatically verified truth.
+
+The Truthound v2 input generates four HTML pages: a local data validation MCP
+landing page and task guides for CSV/Parquet checks, Great Expectations alternatives,
+and profiling/PII screening. Each guide retains the relevant capabilities, all
+supplied limitation claims, and links to evidence and the other guides. No
+competitor feature table, rating, review or unverified performance claim is invented.
+
+Each HTML page has a unique title and description, one H1, language declaration,
+Open Graph metadata, a per-page canonical and WebPage JSON-LD matching the visible
+metadata. Guide breadcrumbs point to the resource home. Structured data is not a
+rich-result guarantee; fake ratings and FAQ rich-result claims are excluded.
+The sitemap lists the four canonical Vercel URLs on both hosts. The Netlify mirror
+is not expected to count as four additional independent search results.
+Raw fact formats retain their `noindex` headers and direct accessibility.
+
+Independent structural checks reject duplicate/missing metadata, broken internal
+links, wrong canonicals, malformed or inconsistent JSON-LD, HTML noindex and
+sitemap disagreement. Exact live checks include nested HTML routes and refuse an
+unexpected redirect/noindex response. These are bounded technical checks, not
+Search Console verification, Core Web Vitals field data or proof of rankings.
+
+The generation inputs and evaluation protocol are frozen for the planned review
+on 2026-12-21 (seven weeks after 2026-11-02), subject to necessary factual/security
+corrections being logged. No reminder or scheduled job is created by this plan.

@@ -22,8 +22,14 @@ class ResourceSite:
 
     @classmethod
     def parse(cls, data, project):
-        fields(data, ('schema_version', 'resource_url', 'canonical_url', 'documentation_url', 'product_url'))
-        require(type(data['schema_version']) is int and data['schema_version'] == 1, 'Unsupported site schema')
+        require(isinstance(data, dict), 'Site configuration must be an object')
+        version = data.get('schema_version')
+        require(type(version) is int and version in (1, 2), 'Unsupported site schema')
+        keys = ('schema_version', 'resource_url', 'canonical_url', 'documentation_url', 'product_url')
+        fields(data, keys + (('seo',) if version == 2 else ()))
+        if version == 2:
+            from .seo import validate_seo
+            validate_seo(data['seo'], project)
         for key in ('resource_url', 'canonical_url', 'documentation_url', 'product_url'):
             public_url(data[key])
             require(not any(c.isspace() or ord(c) < 32 for c in data[key]), 'Whitespace in URL')
@@ -70,10 +76,16 @@ def render_bundle(project, site):
              'robots.txt': f'User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n'.encode(),
              'sitemap.xml': f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{escape(base)}/</loc></url></urlset>'.encode(),
              '_headers': b'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/facts.json\n  Content-Type: application/json; charset=utf-8\n  X-Robots-Tag: noindex\n/facts.md\n  Content-Type: text/markdown; charset=utf-8\n  X-Robots-Tag: noindex\n/release.json\n  X-Robots-Tag: noindex\n'}
+    if site.data['schema_version'] == 2:
+        from .seo import render_pages, inspect_seo
+        files.update(render_pages(project, site))
+        files['style.css'] += b' .guide-list{padding-left:24px}.guide-list li{margin:24px 0}.guide-list p{margin:4px 0}.skip{position:absolute;left:-9999px}.skip:focus{position:static}h1{overflow-wrap:anywhere}section{min-width:0}a{overflow-wrap:anywhere}'
     files['release.json'] = encoded({'schema_version': 1, 'product': facts['product'],
                                     'facts_sha256': digest(files['facts.json']),
                                     'resource_url': base, 'geo_effect': 'under-evaluation',
                                     'files': {p: digest(b) for p, b in sorted(files.items())}})
+    if site.data['schema_version'] == 2:
+        inspect_seo(files, site)
     return files
 
 
@@ -82,6 +94,7 @@ def build(project, site, output):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     for name, data in files.items():
+        (output / name).parent.mkdir(parents=True, exist_ok=True)
         (output / name).write_bytes(data)
     return {'passed': True, 'files': len(files), 'geo_effect': 'under-evaluation'}
 
@@ -94,7 +107,11 @@ def verify_directory(project, site, directory):
     require(not any(p.is_symlink() for p in directory.rglob('*')), 'Symlinks are not release artifacts')
     for name, data in expected.items():
         require((directory / name).read_bytes() == data, 'Resource content drift')
-    return {'passed': True, 'files': len(expected), 'geo_effect': 'under-evaluation'}
+    result = {'passed': True, 'files': len(expected), 'geo_effect': 'under-evaluation'}
+    if site.data['schema_version'] == 2:
+        from .seo import inspect_seo
+        result['seo'] = inspect_seo(expected, site)
+    return result
 
 
 def verify_live(project, site, fetch=None):
@@ -117,13 +134,16 @@ def verify_live(project, site, fetch=None):
     for name, data in expected.items():
         if name == '_headers':
             continue  # Hosting control file; its effects are verified on the responses.
-        url = site.data['resource_url'] + ('/' if name == 'index.html' else '/' + name)
+        route = '/' + name
+        if name.endswith('index.html'):
+            route = route[:-10]
+        url = site.data['resource_url'] + route
         try:
             status, headers, raw = (fetch or http)(url)
             mime = headers.get('content-type', '').split(';')[0].strip().lower()
-            mime_ok = mime == types[name] or (name == 'sitemap.xml' and mime == 'text/xml')
+            mime_ok = mime == ('text/html' if name.endswith('.html') else types[name]) or (name == 'sitemap.xml' and mime == 'text/xml')
             robots = headers.get('x-robots-tag', '').lower()
-            robots_ok = 'noindex' in robots if name in ('facts.json', 'facts.md', 'release.json') else name != 'index.html' or not any(t in robots for t in ('noindex', 'none'))
+            robots_ok = 'noindex' in robots if name in ('facts.json', 'facts.md', 'release.json') else not name.endswith('.html') or not any(t in robots for t in ('noindex', 'none'))
             rows.append({'path': name, 'url': url, 'status': status,
                          'sha256': digest(raw), 'expected_sha256': digest(data),
                          'mime_ok': mime_ok, 'robots_ok': robots_ok,

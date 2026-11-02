@@ -1,6 +1,6 @@
 # Besties: independent Truthound pilot
 
-Besties 0.2.0 is an independently installable, standard-library-only proposal and
+Besties 0.3.0 is an independently installable, standard-library-only proposal and
 inspection and resource-generation tool. Truthound is configuration, not a core dependency. This pilot
 does not deploy content, change GitHub About, edit README banners, or claim that
 passing its inspections causes AI recommendations.

@@ -159,11 +159,13 @@ Publishing rules (implemented gates and remaining automation are distinguished b
 
 ### What works today and what is planned
 
-Besties **0.2.0** is an independently installable Python development tool in
+Besties **0.3.0** is an independently installable Python development tool in
 [`besties/`](besties/), with no runtime dependencies. It currently validates public
 input manifests, creates evidence-linked review drafts, inspects configured HTML
 pages and imports explicit search/AI-answer observations. It also generates a
-separate HTML resource landing page, JSON facts, Markdown, sitemap and hashed
+separate HTML resource landing page and evidence-bound task guides with unique
+search titles/descriptions, canonical URLs, social metadata and WebPage JSON-LD,
+plus JSON facts, Markdown, sitemap and hashed
 release manifest from shared facts. Local verification rejects missing, changed,
 extra or symlinked files; live verification checks exact bytes, HTTP status,
 content types and indexing headers. The operator supplies
@@ -180,10 +182,11 @@ for commands, deployment configuration and verification boundaries.
 
 Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) (Hobby)
 and [Netlify resource site](https://truthound-geo-no-1.netlify.app/) (Free Legacy)
-are live, with seven public artifacts verified per host and matching JSON/Markdown
-fact hashes. Vercel uses Git-connected deployment; Netlify currently uses a verified
+are live. The dated receipts distinguish the initial resource release from the
+SEO expansion and record each host’s verified artifact hashes. Vercel uses Git-connected deployment; Netlify currently uses a verified
 static ZIP upload and is not automatically synchronized after a Git push.
-GEO effectiveness remains under evaluation.
+SEO/GEO effectiveness remains under evaluation. The planned seven-week review is
+2026-12-21; see the [comparison protocol](docs/research/besties-seo-2026-11-02.md).
 See the [dated verification record](evaluation/results/2026-11-02-besties-resources/summary.json).
 
 See the [architecture and local commands](docs/besties-development.md) and the
