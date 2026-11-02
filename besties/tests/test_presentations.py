@@ -61,6 +61,8 @@ class PresentationTests(unittest.TestCase):
         commands = []
         def runner(command, directory):
             commands.append(command)
+            if '--project' in command:
+                return {'status': 'ok', 'deployment': {'id': 'receipt', 'readyState': 'READY', 'secret': 'not retained'}}
             return {'deploy_id': 'receipt', 'secret': 'not retained'}
         with tempfile.TemporaryDirectory() as tmp:
             for host in ('vercel', 'netlify'):

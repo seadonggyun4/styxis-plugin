@@ -1,13 +1,57 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "BESTIES_HOST=vercel python3 build.py",
+  "buildCommand": null,
   "outputDirectory": "dist",
-  "installCommand": "echo 'No runtime dependencies'",
+  "installCommand": null,
   "headers": [
-    {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]},
-    {"source": "/facts.json", "headers": [{"key": "Content-Type", "value": "application/json; charset=utf-8"}, {"key": "X-Robots-Tag", "value": "noindex"}]},
-    {"source": "/facts.md", "headers": [{"key": "Content-Type", "value": "text/markdown; charset=utf-8"}, {"key": "X-Robots-Tag", "value": "noindex"}]},
-    {"source": "/release.json", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]}
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/facts.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/facts.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/release.json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
   ]
 }

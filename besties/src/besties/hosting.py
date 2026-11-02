@@ -35,6 +35,11 @@ class StaticPublisher:
             args += (['--site-name', self.project, '--team', self.team] if self.create_if_missing
                      else ['--site', self.project])
         raw = self.runner([*self.cli, *args], directory)
+        if self.provider == 'vercel':
+            require(raw.get('status') == 'ok' and isinstance(raw.get('deployment'), dict),
+                    'Unexpected Vercel receipt; reconcile provider state')
+            raw = raw['deployment']
+            require(raw.get('readyState') == 'READY', 'Vercel deployment not ready')
         # Restrict receipts to identifiers; never persist raw provider responses.
         selected = {key: raw[key] for key in ('id', 'deploy_id', 'url', 'deploy_url', 'site_id')
                     if key in raw and isinstance(raw[key], str)}

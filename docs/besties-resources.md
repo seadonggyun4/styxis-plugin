@@ -67,19 +67,15 @@ the approved input, not independent semantic verification of the claims.
 
 ## Hosting adapters
 
-Both build configurations use the public catalog repository and root directory
-`sites/truthound-resources`, with access to the repository's shared `besties/`
-package and examples outside that root. Neither reads or modifies another site.
+Build locally with the shared Besties package, then publish only the verified
+static output. Do not connect either provider to a Git repository. The legacy
+`sites/truthound-resources/build.py` remains a local convenience builder; hosting
+configuration has no remote build or install command.
 
-- Netlify: `netlify.toml`, build `python3 build.py`, publish `dist`.
-- Vercel: `vercel.json`, framework Other, build
-  `BESTIES_HOST=vercel python3 build.py`, output `dist`; include source files outside
-  the root directory. No dependency installation is required.
-
-The shared builder writes only its own new `dist` directory and refuses stale
-output. Local repeat builds should use a new CLI output directory. Provider builds
-must start without the previous generated `dist`. `_headers` is Netlify delivery
-configuration; Vercel's equivalent headers live in `vercel.json`.
+For new presentation releases use `publishing.hosting_files` to place delivery
+headers in a clean staging directory. Netlify receives `_headers`; Vercel receives
+`vercel.json`. Never upload the source or private-input parent directory. Existing
+baseline contents are preserved when a hosting connection is changed.
 
 Initial project creation/login is outside the Besties engine. Besties publication
 uses generated static artifacts only; Git-connected deployments are disabled. Credentials must never
