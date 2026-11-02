@@ -1,3 +1,11 @@
+<!--
+README BANNER LOCK / 배너 유지 규칙:
+아래 Styxis 배너는 사용자가 지정한 필수 배너입니다.
+사용자의 명시적인 요청 없이 제거, 교체, 숨김 처리하거나 Markdown 주석으로 감싸지 마세요.
+Preserve this visible banner and its asset unless the user explicitly requests a change.
+-->
+![Styxis — Software Sworn to Truth](assets/Styxis-banner3.png)
+
 # Styxis Plugin Marketplace
 
 Local-first agent tools from Styxis.
