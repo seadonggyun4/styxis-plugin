@@ -178,6 +178,11 @@ work. Hosting configuration stays outside the core fact model; no Styxis product
 runtime or hosting SDK is required. See the [resource publishing guide](docs/besties-resources.md)
 for commands, deployment configuration and verification boundaries.
 
+Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) is live
+on Hobby with seven public artifacts verified. Netlify is configured and awaiting
+existing-account login; deployment and Free-plan status are not yet verified.
+See the [dated verification record](evaluation/results/2026-11-02-besties-resources/summary.json).
+
 See the [architecture and local commands](docs/besties-development.md) and the
 [Truthound deployment and search evaluation](docs/research/besties-truthound-2026-11-02.md).
 Besties is not currently a published marketplace plugin; the catalog's installable

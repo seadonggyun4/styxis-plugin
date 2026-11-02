@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "besties_version": "0.2.0",
+  "source_commit": "c417982a47ff3f9cb198d1a1afc95441bedfd9cd",
+  "preservation": {
+    "github_about": "No write operations",
+    "existing_websites": "No source or deployment changes",
+    "readme_banner": "Asset and preservation comment unchanged"
+  },
+  "local_tests": {
+    "besties": 20,
+    "catalog": 10,
+    "isolated_installed_package": "passed",
+    "both_host_bundles": "passed"
+  },
+  "deployments": {
+    "vercel": {
+      "url": "https://truthound-geo-no-1.vercel.app/",
+      "plan_observed": "Hobby",
+      "live_artifacts_passed": 7,
+      "receipt": "vercel-live.json"
+    },
+    "netlify": {
+      "status": "pending-existing-account-login",
+      "configured_url": "https://truthound-geo-no-1.netlify.app/",
+      "plan_verified": false
+    }
+  },
+  "indexing": "unmeasured",
+  "geo_effect": "under-evaluation",
+  "evidence_limits": "Account UI and local operational details are omitted. This summary is not a complete original UI capture; public HTTP receipt is separate.",
+  "browser_checks": {
+    "live_vercel": "Public page inspected",
+    "mobile_width": 390,
+    "mobile_scroll_width": 390,
+    "evidence_urls_http_200": 4
+  }
+}
