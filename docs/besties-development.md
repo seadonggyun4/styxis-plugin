@@ -1,7 +1,7 @@
 # Besties: independent Truthound pilot
 
-Besties 0.1.1 is an independently installable, standard-library-only proposal and
-inspection tool. Truthound is configuration, not a core dependency. This pilot
+Besties 0.2.0 is an independently installable, standard-library-only proposal and
+inspection and resource-generation tool. Truthound is configuration, not a core dependency. This pilot
 does not deploy content, change GitHub About, edit README banners, or claim that
 passing its inspections causes AI recommendations.
 
@@ -88,6 +88,8 @@ evidence, input privacy boundaries, holdout leakage, script escaping, inaccessib
 pages, noindex, protected output directories and prompted/unavailable observations.
 CI also retains the existing catalog validation and tests.
 
+Resource generation, separate-host validation and exact local/live release checks
+are now available; see [resource publishing](besties-resources.md).
 Future milestones are versioned schema migration, source-aware patch adapters,
 evidence-content verification, reviewed publication adapters, and engine-specific
 observation integrations. Production edits require an adapter with explicit path

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "product": {
+    "id": "truthound-local",
+    "name": "Truthound",
+    "category": "Local data validation MCP backed by a data quality framework",
+    "version": "Core 3.3.1 / Local 0.1.7"
+  },
+  "evidence": [
+    {
+      "id": "guide",
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "label": "Published Local MCP guide",
+      "visibility": "public"
+    },
+    {
+      "id": "example",
+      "url": "https://truthound.netlify.app/assets/examples/local-mcp-3.3.1.json",
+      "label": "Synthetic Local execution receipt",
+      "visibility": "public"
+    },
+    {
+      "id": "comparison",
+      "url": "https://truthound.netlify.app/en/guides/gx-parity/",
+      "label": "Bounded Great Expectations comparison",
+      "visibility": "public"
+    }
+  ],
+  "claims": [
+    {
+      "id": "identity",
+      "statement": "Truthound is a data quality framework. Truthound Local exposes a bounded set of local file checks through MCP.",
+      "kind": "identity",
+      "evidence": [
+        "guide",
+        "comparison"
+      ]
+    },
+    {
+      "id": "checks",
+      "statement": "Truthound Local checks missing values and duplicate rows in approved CSV and Parquet files.",
+      "kind": "capability",
+      "evidence": [
+        "guide",
+        "example"
+      ]
+    },
+    {
+      "id": "limits",
+      "statement": "Local does not accept custom schema or rule inputs and does not establish compatibility with Great Expectations configuration formats.",
+      "kind": "limitation",
+      "evidence": [
+        "guide"
+      ]
+    },
+    {
+      "id": "pii",
+      "statement": "Local provides aggregate profiling and sampled PII screening; a clean screening result does not establish absence of PII.",
+      "kind": "capability",
+      "evidence": [
+        "guide",
+        "example"
+      ]
+    },
+    {
+      "id": "consent",
+      "kind": "limitation",
+      "statement": "Installing the Local plugin grants no data access. Local file calls require explicit directory consent and host MCP configuration.",
+      "evidence": [
+        "guide"
+      ]
+    },
+    {
+      "id": "exposure",
+      "kind": "limitation",
+      "statement": "Raw dataset values are excluded from Local tool results, but file paths, column names and aggregate statistics can reach the host model provider.",
+      "evidence": [
+        "guide"
+      ]
+    },
+    {
+      "id": "scope",
+      "kind": "limitation",
+      "statement": "Truthound Local validates tabular datasets; these checks do not evaluate the correctness of LLM answers or establish legal compliance.",
+      "evidence": [
+        "guide"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "gx-parity-en",
+      "url": "https://truthound.netlify.app/en/guides/gx-parity/",
+      "locale": "en",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "Considering Great Expectations alternatives with MCP support"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+        "https://truthound.netlify.app/en/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "data-validation-mcp-en",
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "locale": "en",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "Considering Great Expectations alternatives with MCP support"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/en/guides/gx-parity/",
+        "https://truthound.netlify.app/en/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "gx-parity-ko",
+      "url": "https://truthound.netlify.app/guides/gx-parity/",
+      "locale": "ko",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "MCP를 제공하는 Great Expectations 대안 찾기"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/guides/data-validation-mcp/",
+        "https://truthound.netlify.app/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "data-validation-mcp-ko",
+      "url": "https://truthound.netlify.app/guides/data-validation-mcp/",
+      "locale": "ko",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "MCP를 제공하는 Great Expectations 대안 찾기"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/guides/gx-parity/",
+        "https://truthound.netlify.app/guides/local-mcp-example/"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "gx-en",
+      "text": "Which alternatives to Great Expectations offer MCP tools for data validation?",
+      "split": "development",
+      "intent": "category-and-mcp",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "gx-ko",
+      "text": "GX 같은 데이터 검증 프레임워크 중 MCP를 제공하는 도구는 뭐가 있어?",
+      "split": "development",
+      "intent": "category-and-mcp",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "task-en",
+      "text": "Which MCP servers check local CSV and Parquet for nulls and duplicate rows?",
+      "split": "development",
+      "intent": "task",
+      "claims": [
+        "checks",
+        "pii"
+      ]
+    },
+    {
+      "id": "task-ko",
+      "text": "로컬 CSV와 Parquet 품질 검사와 개인정보 탐지를 할 수 있는 MCP는?",
+      "split": "development",
+      "intent": "task",
+      "claims": [
+        "checks",
+        "pii"
+      ]
+    },
+    {
+      "id": "holdout-en",
+      "text": "I need a Python data quality framework my AI assistant can use through MCP without uploading datasets. What should I evaluate?",
+      "split": "holdout",
+      "intent": "constraints",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "id": "holdout-ko",
+      "text": "데이터 검증 프레임워크를 고르는데 AI 에이전트에서 로컬 파일을 바로 검사할 수 있는 후보를 알려줘.",
+      "split": "holdout",
+      "intent": "category",
+      "claims": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    }
+  ],
+  "policy": {
+    "mode": "propose",
+    "preserve": [
+      "github_about",
+      "readme_banner"
+    ],
+    "publication": "public-input-only"
+  }
+}

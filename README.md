@@ -78,6 +78,111 @@ records answer mentions and citations. The separate CLI tool-selection benchmark
 remains unmeasured after account access rejections; see the dated
 [release evidence](docs/releases/core-3.3.1.md).
 
+## Besties — evidence-backed product publishing
+
+**Besties turns one set of verified product facts into material for different
+questions and consumption formats, then checks that the published material stays
+consistent.** Truthound is the first pilot, not a dependency of the engine.
+
+Besties(베스티)는 **하나의 검증된 제품 정보를 다양한 질문과 소비 형식에 맞춰
+배포하고, 배포된 정보의 일치 여부를 검사하는 엔진**을 지향합니다.
+제품별 기능·버전·제한·실행 예제·공개 근거를 관리하고, 사람이 읽는 문서와
+기계가 소비하는 자료를 같은 원본에서 만들도록 확장합니다. 사이트 수나
+키워드 반복 횟수가 아니라, 실제 질문에 대한 정확한 답변과 검증 가능한
+근거를 늘리는 것이 목적입니다.
+
+### Shared facts, distinct questions and formats
+
+```text
+Operator-approved public product facts and evidence
+  capabilities · versions · limitations · examples · provenance
+                           |
+                        Besties
+                           |
+        +------------------+-------------------+
+        |                  |                   |
+  Human documentation  Question-led guides  Machine-readable resources
+  onboarding/tutorials comparisons/tasks    Markdown/JSON/tool references
+        |                  |                   |
+        +------------------+-------------------+
+                           |
+           Publication and consistency checks
+                           |
+          Separate indexing/discovery observations
+```
+
+For Truthound, distinct questions include evaluating Great Expectations
+alternatives, checking local CSV/Parquet through MCP, granting directory access,
+and understanding sampled PII detection limits. Each guide must contribute a
+useful answer with evidence; rewording the same page across many sites is not
+the intended publishing strategy. Machine-readable resources are delivery formats,
+not independent endorsements or a promise of indexing.
+
+### Separate delivery without disrupting the product website
+
+**Besties의 철칙: 제품·문서 사이트와 GEO 리소스 사이트는 별도로 유지합니다.
+GEO 효과는 검증 중이며, 분리 배포 자체가 검색 노출 향상을 보장하지 않습니다.**
+
+Besties requires a separately hosted public resource site. The Truthound pilot
+targets both Vercel Hobby and Netlify Free, using the naming rule
+`제품_목적_No.1` (`truthound_geo_No.1`); DNS-safe host labels use
+`truthound-geo-no-1`. Both deployments share approved facts and identify the Vercel
+resource landing page as the representative URL. They are not independent sources. Human-facing product and
+documentation sites can retain their navigation, visual design and reading flow;
+raw JSON and Markdown do not need to become primary menu items.
+
+The resource site should have a finished landing page explaining its official
+relationship to the product, supported versions, available formats and source
+documentation. Resources remain accessible to people as well as crawlers. A
+discreet developer/resources link can connect the sites without turning the
+product interface into a file listing. Hosting on another domain is a delivery
+choice, not evidence of greater search authority.
+
+Publishing rules (implemented gates and remaining automation are distinguished below):
+
+- Generate all formats from the same versioned, approved public facts. Bind each
+  claim to evidence and preserve its limitations and scope across formats.
+- Give each resource a stable identity, product/version metadata and links back
+  to its authoritative documentation. Define representative URLs and indexing
+  policy for equivalent representations; do not assume every duplicate should
+  appear independently in search.
+- Publish substantive question-specific guides where useful, with a clear source
+  relationship. Do not present multiple owned sites as independent corroboration.
+- Validate generated artifacts before publication and verify the deployed version,
+  links and cross-format agreement afterward. Handle partial deployment failures
+  explicitly, with rollback support rather than reporting a mixed release as current.
+- Keep credentials and private source details outside public inputs and outputs.
+  Preserve GitHub About and the README banner during every publishing operation.
+- Measure deployment correctness, crawler/indexing observations and unbranded AI
+  discovery separately. Consistent, accessible content does not guarantee retrieval
+  or recommendation by a search engine or AI assistant.
+
+### What works today and what is planned
+
+Besties **0.2.0** is an independently installable Python development tool in
+[`besties/`](besties/), with no runtime dependencies. It currently validates public
+input manifests, creates evidence-linked review drafts, inspects configured HTML
+pages and imports explicit search/AI-answer observations. It also generates a
+separate HTML resource landing page, JSON facts, Markdown, sitemap and hashed
+release manifest from shared facts. Local verification rejects missing, changed,
+extra or symlinked files; live verification checks exact bytes, HTTP status,
+content types and indexing headers. The operator supplies
+approved claims; Besties does not yet independently verify their factual truth.
+
+Separate-host configuration and Vercel/Netlify build adapters are implemented in
+[`sites/truthound-resources/`](sites/truthound-resources/). Provider login and initial
+project creation remain operator actions. Content agreement means deterministic
+rendering from the same approved claims, not independent semantic fact-checking.
+Source patching, automatic rollback, and search-provider integrations remain future
+work. Hosting configuration stays outside the core fact model; no Styxis product
+runtime or hosting SDK is required. See the [resource publishing guide](docs/besties-resources.md)
+for commands, deployment configuration and verification boundaries.
+
+See the [architecture and local commands](docs/besties-development.md) and the
+[Truthound deployment and search evaluation](docs/research/besties-truthound-2026-11-02.md).
+Besties is not currently a published marketplace plugin; the catalog's installable
+plugin remains Truthound.
+
 ## Repository ownership
 
 | Repository | Responsibility |

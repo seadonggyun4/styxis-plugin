@@ -8,18 +8,43 @@ from .planner import plan, render
 from .audit import audit
 from .adapters import HTTPReader
 from .evaluation import evaluate
+from .resources import ResourceSite, build, verify_directory, verify_live
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="besties")
-    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate"))
+    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live"))
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--live", action="store_true", help="Allow GET requests to configured target URLs")
     parser.add_argument("--observations", type=Path)
+    parser.add_argument("--site", type=Path, help="Separate resource-host configuration")
+    parser.add_argument("--directory", type=Path, help="Existing resource bundle to verify")
     args = parser.parse_args(argv)
     try:
         project = Project.parse(json.loads(args.manifest.read_text(encoding="utf-8")))
+        if args.command in ("build-resources", "verify-resources", "verify-resource-live"):
+            if not args.site:
+                parser.error("--site is required")
+            site = ResourceSite.parse(json.loads(args.site.read_text(encoding="utf-8")), project)
+            if args.command == "build-resources":
+                if not args.output:
+                    parser.error("--output is required")
+                result = build(project, site, args.output)
+            elif args.command == "verify-resources":
+                if not args.directory:
+                    parser.error("--directory is required")
+                result = verify_directory(project, site, args.directory)
+            else:
+                if not args.live:
+                    parser.error("verify-resource-live requires --live")
+                if args.output:
+                    args.output.mkdir(parents=True, exist_ok=False)
+                result = verify_live(project, site)
+                if args.output:
+                    (args.output / "result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(json.dumps(result, ensure_ascii=False))
+            return 0 if result['passed'] else 1
         if args.command == "validate":
             print(json.dumps({"valid": True, "product_id": project.data["product"]["id"]}))
             return 0
