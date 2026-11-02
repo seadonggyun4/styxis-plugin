@@ -14,7 +14,9 @@ Server/plugin descriptions supply candidate relevance. Live `tools/list` names,
 descriptions and schemas supply post-install tool selection. Permission enforcement
 comes from the runtime, not metadata hints or a retrieval score.
 
-- GitHub name/description/topics and first paragraphs are independent search surfaces.
+- GitHub About fields are a user-owned editorial surface. Inspecting them can
+  inform an audit, but never change description, homepage or topics for GEO/SEO.
+  Use README, documentation, package metadata and reproducible evidence instead.
 - Claude custom catalogs must be added; do not imply global automatic custom-marketplace search.
 - The Registry publishes metadata for aggregators; client ingestion and rankings vary.
 - `llms.txt`, JSON-LD, canonical and hreflang aid explicit representation/navigation;

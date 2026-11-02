@@ -1,0 +1,11 @@
+{
+  "description": "mcp toolkit ",
+  "topics": [
+    "geo",
+    "mcp-tools"
+  ],
+  "language": "Shell",
+  "homepage": "",
+  "html_url": "https://github.com/seadonggyun4/styxis-plugin",
+  "default_branch": "main"
+}

@@ -1,0 +1,13 @@
+{
+  "description": "\"Sniffs out bad data\"",
+  "topics": [
+    "data-quality",
+    "data-validation",
+    "mcp-server",
+    "polars"
+  ],
+  "language": "Python",
+  "homepage": "https://truthound.netlify.app",
+  "html_url": "https://github.com/seadonggyun4/truthound",
+  "default_branch": "main"
+}

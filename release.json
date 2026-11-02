@@ -21,5 +21,10 @@
     "registry_metadata_published": false,
     "web_deployment_verified": false
   },
-  "note": "Plugin 0.1.6 is reviewable on the feature branch and uses published Core 3.3.0. New tool descriptions are source-only. Default-branch mutation needs explicit approval after auto-review rejection."
+  "note": "Plugin 0.1.6 is reviewable on the feature branch and uses published Core 3.3.0. New tool descriptions are source-only. Default-branch mutation needs explicit approval after auto-review rejection.",
+  "verification": {
+    "remote_e2e": "evaluation/results/2026-11-02-remote-e2e.json",
+    "web_html": "evaluation/results/2026-11-02-web-build.json",
+    "about_policy": "GitHub About is preserved. Initial task changes were restored and verified against before snapshots."
+  }
 }
