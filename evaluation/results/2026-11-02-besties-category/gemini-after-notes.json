@@ -1,0 +1,13 @@
+{
+  "query_id": "gx-en",
+  "actual_prompt": "Which alternatives to Great Expectations offer MCP tools for data validation? Search the web and include official sources.",
+  "temporary_chat_ui_verified": true,
+  "answer_completed": true,
+  "citations_visible": true,
+  "brand_mentioned": false,
+  "brand_supplied": false,
+  "url_scope": "Explicit source URLs printed in the answer, not the complete retrieval/citation set",
+  "public_deployment_verified_before_question": true,
+  "scope": "One fresh temporary conversation on an existing account; no claim of statistical independence, indexing or causal effect. Other-product claims were not independently validated.",
+  "omissions": "Account and UI identifiers omitted. This is an operator observation summary, not a complete raw UI transcript."
+}

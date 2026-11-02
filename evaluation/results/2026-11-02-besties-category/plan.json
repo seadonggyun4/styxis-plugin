@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "input_sha256": "c2f1595af4a827b32949b3eef99e815ae8affda19a190f4f5899695fc9761b92",
+  "product_id": "truthound-local",
+  "mode": "propose",
+  "evidence_status": "references_validated_content_not_independently_verified",
+  "targets": [
+    {
+      "id": "gx-parity-en",
+      "url": "https://truthound.netlify.app/en/guides/gx-parity/",
+      "locale": "en",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "Considering Great Expectations alternatives with MCP support"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+        "https://truthound.netlify.app/en/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "data-validation-mcp-en",
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "locale": "en",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "Considering Great Expectations alternatives with MCP support"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/en/guides/gx-parity/",
+        "https://truthound.netlify.app/en/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "gx-parity-ko",
+      "url": "https://truthound.netlify.app/guides/gx-parity/",
+      "locale": "ko",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "MCP를 제공하는 Great Expectations 대안 찾기"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/guides/data-validation-mcp/",
+        "https://truthound.netlify.app/guides/local-mcp-example/"
+      ]
+    },
+    {
+      "id": "data-validation-mcp-ko",
+      "url": "https://truthound.netlify.app/guides/data-validation-mcp/",
+      "locale": "ko",
+      "required_terms": [
+        "Great Expectations",
+        "Truthound",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "MCP",
+        "MCP를 제공하는 Great Expectations 대안 찾기"
+      ],
+      "required_links": [
+        "https://truthound.netlify.app/guides/gx-parity/",
+        "https://truthound.netlify.app/guides/local-mcp-example/"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "query_id": "gx-en",
+      "question": "Which alternatives to Great Expectations offer MCP tools for data validation?",
+      "claim_ids": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "query_id": "gx-ko",
+      "question": "GX 같은 데이터 검증 프레임워크 중 MCP를 제공하는 도구는 뭐가 있어?",
+      "claim_ids": [
+        "identity",
+        "checks",
+        "limits"
+      ]
+    },
+    {
+      "query_id": "task-en",
+      "question": "Which MCP servers check local CSV and Parquet for nulls and duplicate rows?",
+      "claim_ids": [
+        "checks",
+        "pii"
+      ]
+    },
+    {
+      "query_id": "task-ko",
+      "question": "로컬 CSV와 Parquet 품질 검사와 개인정보 탐지를 할 수 있는 MCP는?",
+      "claim_ids": [
+        "checks",
+        "pii"
+      ]
+    }
+  ],
+  "preserve": [
+    "github_about",
+    "readme_banner"
+  ],
+  "indexing": "unmeasured",
+  "organic_discovery": "unmeasured"
+}

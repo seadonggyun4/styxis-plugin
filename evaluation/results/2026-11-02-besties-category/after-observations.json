@@ -1,0 +1,34 @@
+[
+  {
+    "query_id": "gx-ko",
+    "provider": "Microsoft Copilot / Auto / in-app browser temporary chat",
+    "surface": "ai_answer",
+    "observed_at": "2026-11-02T10:14:16.757439+00:00",
+    "status": "completed",
+    "urls": [
+      "https://docs.soda.io/soda-documentation/soda-ai/soda-mcp",
+      "https://docs.soda.io/soda-ai/soda-mcp/mcp-tools",
+      "https://soda.io/product/mcp",
+      "https://github.com/davidf9999/gx-mcp-server",
+      "https://pypi.org/project/gx-mcp-server/"
+    ],
+    "brand_mentioned": false,
+    "brand_prompted": false,
+    "fresh_session": true
+  },
+  {
+    "query_id": "gx-en",
+    "provider": "Google Gemini / Auto / in-app browser temporary chat",
+    "surface": "ai_answer",
+    "observed_at": "2026-11-02T10:14:16.757439+00:00",
+    "status": "completed",
+    "urls": [
+      "https://docs.reccehq.com/setup-guides/mcp-server/",
+      "https://github.com/angrysky56/data-forge-mcp",
+      "https://github.com/davidf9999/gx-mcp-server"
+    ],
+    "brand_mentioned": false,
+    "brand_prompted": false,
+    "fresh_session": true
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "query_id": "gx-en",
+    "provider": "Google Gemini / Auto / in-app browser temporary chat",
+    "surface": "ai_answer",
+    "observed_at": "2026-11-02T09:53:55.047291+00:00",
+    "status": "completed",
+    "urls": [
+      "https://docs.getdbt.com/",
+      "https://modelcontextprotocol.io/",
+      "https://docs.soda.io/",
+      "https://github.com/sodadata/soda-core",
+      "https://github.com/modelcontextprotocol/servers"
+    ],
+    "brand_mentioned": false,
+    "brand_prompted": false,
+    "fresh_session": true
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "input_sha256": "c2f1595af4a827b32949b3eef99e815ae8affda19a190f4f5899695fc9761b92",
+  "pages": [
+    {
+      "target_id": "gx-parity-en",
+      "url": "https://truthound.netlify.app/en/guides/gx-parity/",
+      "status": "passed",
+      "source": "built_html",
+      "content_region": "article",
+      "http_status": 200,
+      "exclusions": [],
+      "missing_terms": [],
+      "missing_links": [],
+      "html_sha256": "1fbf03440546f1286797dd4b385bdc6b541ea093b05a54158db0ed6fcc177d7b"
+    },
+    {
+      "target_id": "data-validation-mcp-en",
+      "url": "https://truthound.netlify.app/en/guides/data-validation-mcp/",
+      "status": "passed",
+      "source": "built_html",
+      "content_region": "article",
+      "http_status": 200,
+      "exclusions": [],
+      "missing_terms": [],
+      "missing_links": [],
+      "html_sha256": "d6444f62e87fe021a64625e8de1aa18679c4ee18a61771b93d1876622dae0c90"
+    },
+    {
+      "target_id": "gx-parity-ko",
+      "url": "https://truthound.netlify.app/guides/gx-parity/",
+      "status": "passed",
+      "source": "built_html",
+      "content_region": "article",
+      "http_status": 200,
+      "exclusions": [],
+      "missing_terms": [],
+      "missing_links": [],
+      "html_sha256": "bf7ffb35b91170c6ce549b0c56591735bd8846c962eb482a6a43a7f94d24c2ae"
+    },
+    {
+      "target_id": "data-validation-mcp-ko",
+      "url": "https://truthound.netlify.app/guides/data-validation-mcp/",
+      "status": "passed",
+      "source": "built_html",
+      "content_region": "article",
+      "http_status": 200,
+      "exclusions": [],
+      "missing_terms": [],
+      "missing_links": [],
+      "html_sha256": "cde8d4d13919e531a4abe7288b0b3ff5fb42d72ac4bfb799820f1742d4b13278"
+    }
+  ],
+  "passed": true,
+  "scope": "HTML article/main/body text and links (in that preference order), HTTP status and noindex only; not a rendered-browser, robots.txt or factual-accuracy audit",
+  "indexing": "unmeasured",
+  "organic_discovery": "unmeasured"
+}

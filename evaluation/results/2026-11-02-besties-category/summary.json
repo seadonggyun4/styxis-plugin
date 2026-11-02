@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "besties_version": "0.1.1",
+  "besties_code_commit": "682c524514072446026a5c917ce94a6837e495c4",
+  "public_docs_commit": "898e20c9501b5296de068c6382aefadbff928d3d",
+  "tests": {
+    "besties_isolated_installed_package": 13,
+    "existing_catalog": 10,
+    "docs_contracts": 57,
+    "docs_gates": 10
+  },
+  "category_page_requirements": {
+    "before_passed": 0,
+    "after_passed": 4,
+    "total": 4,
+    "before": "before-pages.json",
+    "after": "after-pages.json",
+    "exact_public_deployment_hashes": true,
+    "interpretation": "Explicit content/link requirements; not a search ranking or GEO-effect score"
+  },
+  "consumer_ai_observations": {
+    "before_completed": 2,
+    "before_brand_mentions": 0,
+    "after_completed": 2,
+    "after_brand_mentions": 0,
+    "providers": [
+      "Microsoft Copilot Auto",
+      "Google Gemini Auto"
+    ],
+    "independent_population_trials": false,
+    "indexing_verified": false,
+    "causal_effect_estimated": false,
+    "scope": "One fresh temporary chat per provider per phase, Korean Copilot and English Gemini. Immediate post-deployment smoke check. Four other input questions were not run."
+  },
+  "ci": [
+    {
+      "repo": "seadonggyun4/styxis-plugin",
+      "run": 41422780801,
+      "status": "success"
+    },
+    {
+      "repo": "seadonggyun4/styxis-plugin",
+      "run": 41424732915,
+      "status": "success"
+    },
+    {
+      "repo": "seadonggyun4/truthound",
+      "run": 41426561983,
+      "status": "success"
+    }
+  ],
+  "preservation": {
+    "readme_and_banner_bytes": "unchanged",
+    "github_about_write_operations": 0,
+    "private_source_repositories_accessed_in_this_followup": false
+  },
+  "automation_boundary": "Besties generated a proposal, inspected pages and imported observations. Editorial source edits and publication used existing repository workflows outside Besties.",
+  "omissions": "Account/UI identifiers and full raw browser transcripts omitted. Public records are operator summaries, not complete raw UI evidence."
+}
