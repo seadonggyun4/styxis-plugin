@@ -29,6 +29,7 @@
     "web_html": "evaluation/results/2026-11-02-web-build.json",
     "about_policy": "GitHub About is preserved. Initial task changes were restored and verified against before snapshots.",
     "default_e2e": "evaluation/results/2026-11-02-default-e2e.json",
-    "live_web": "evaluation/results/2026-11-02-live-web.json"
+    "live_web": "evaluation/results/2026-11-02-live-web.json",
+    "integration_cleanup": "evaluation/results/2026-11-02-integration.json"
   }
 }

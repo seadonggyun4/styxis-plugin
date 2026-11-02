@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-02T01:03:22.314264+00:00",
+  "scope": "Only temporary branches created for this task. Both local and remote feature tips were verified as ancestors of pushed main; unrelated branches preserved. Evidence is committed after cleanup.",
+  "repositories": [
+    {
+      "repository": "seadonggyun4/Truthound",
+      "main_at_cleanup": "c36ac00f061738d1fd3aaf21a28c36e53f4526c9",
+      "merged_feature_commit": "c36ac00f061738d1fd3aaf21a28c36e53f4526c9",
+      "temporary_branch": "feature/agent-discovery",
+      "remote_deleted": true,
+      "local_deleted": true
+    },
+    {
+      "repository": "seadonggyun4/styxis-io",
+      "main_at_cleanup": "136a07c8f4106bb8b240b73e67dfb3298102417c",
+      "merged_feature_commit": "136a07c8f4106bb8b240b73e67dfb3298102417c",
+      "temporary_branch": "feature/agent-discovery",
+      "remote_deleted": true,
+      "local_deleted": true
+    },
+    {
+      "repository": "seadonggyun4/styxis-plugin",
+      "main_at_cleanup": "782d09438ffe55d464ad5df11f4537a7e1bccb40",
+      "merged_feature_commit": "2897b3ce704539d52818d1ee24e2e49d3623ad71",
+      "temporary_branch": "feature/agent-discovery",
+      "remote_deleted": true,
+      "local_deleted": true
+    }
+  ],
+  "official_docs": {
+    "urls": [
+      "https://truthound.netlify.app/guides/mcp/",
+      "https://truthound.netlify.app/en/guides/mcp/"
+    ],
+    "http_status": 200,
+    "new_claude_section_present": true,
+    "plugin_0_1_6_present": true
+  }
+}
