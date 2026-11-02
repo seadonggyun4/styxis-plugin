@@ -1,52 +1,44 @@
-# Releasing
+# Release process (internal)
 
-## Truthound update
+1. Review upstream implementation, package version, license, setup and security changes.
+2. Run Truthound MCP/plugin/Registry and full/public/Korean documentation gates.
+3. Commit and push upstream source. Record its full immutable SHA, plugin version,
+   frozen Core dependency and hashes of launcher, lock and actual Claude manifest.
+4. Update the catalog pin and `release.json` together. `ref` describes the source
+   line; SHA identifies content. A SHA need not be a branch tip.
+5. Run `./scripts/validate.sh`; this fetches the exact public object, validates the
+   source-owned manifest and runs offline evaluation contracts without fixture injection.
+6. Run `scripts/e2e.py` in an isolated Claude configuration. Require startup from
+   an unrelated cwd, tools/list, approved CSV/Parquet, denial before consent,
+   unapproved/symlink/traversal denial, revocation and raw-sentinel non-disclosure.
+7. Refresh installed/source candidate snapshots; retain query version/hash and
+   negative cases. Run before/rejected/installed/source variants. Record model
+   selection as pending unless actual observations were imported.
+8. Review EN/KO web definitions and visible structured data. Verify local build;
+   distinguish pushed source from confirmed deployment and search indexing.
+9. Commit logically with Korean conventional messages and push the matching remote.
+   A release/tag or package publish is a separate, explicitly verified event.
 
-1. Complete Truthound tests and security review in its source repository.
-2. Confirm the public commit contains the Claude package under
-   `plugins/truthound`.
-3. Record the immutable commit SHA.
-4. Update `.claude-plugin/marketplace.json` in this repository.
-5. Run `./scripts/validate.sh`.
-6. Test marketplace add, plugin install, MCP startup, denied-path behavior, and
-   one approved-directory tool call in a clean environment.
-7. Commit the manifest change and create a release tag when appropriate.
+## Registry update preparation
 
-The marketplace release and product release are versioned independently. The
-manifest SHA is the authoritative link between them.
+3.3.0 was already active on 2026-11-02. Existing version content is immutable.
+Truthound's `verification/mcp_registry.py` can prepare and validate a distinct
+Registry-only prerelease while retaining the published package pin:
 
-## Release gate
-
-```text
-Truthound source tests
-  -> Claude plugin validation
-  -> source SHA verification
-  -> marketplace validation
-  -> clean install smoke test
-  -> denied path test
-  -> approved path tool-call test
-  -> discovery regression set
-  -> publish
+```bash
+python verification/mcp_registry.py \
+  --prepare-registry-version 3.3.0-discovery.1 --output /tmp/server.json
 ```
 
-Never publish a future product as an empty directory or placeholder marketplace
-entry. Discovery metadata is a public capability claim.
+Review the generated metadata, package identity and exact invocation before
+namespace-authorized publication. Do not overwrite the live 3.3.0 entry. Some
+aggregators may omit prereleases; a future stable Core release should carry the
+source tool descriptions and aligned Registry metadata. Preparation is not
+publication. No login or publish is performed by this repository's validators.
 
-## External marketplace submissions
+## Vendor distribution policy
 
-Anthropic and OpenAI official/community marketplace registration is outside the
-Phase 1 release gate. Do not block a Truthound release on those submissions and
-do not describe the plugin as listed, approved, reviewed, or endorsed by either
-vendor.
-
-Reconsider external submission in distribution Phase 2 when all of the following
-are true:
-
-- the project has sustained usage beyond the maintainers;
-- tool, permission, privacy, and support contracts are stable;
-- install and first-call E2E checks run reliably;
-- release provenance and vulnerability response are repeatable;
-- Styxis can maintain third-party review and update obligations.
-
-At that time, re-check each vendor's current program, eligibility, policies, and
-submission procedure rather than relying on this repository's historical notes.
+Anthropic/OpenAI official/community marketplace submissions are Phase 2 only.
+The prerequisites are sustained external use, stable tool/permission/privacy/
+support contracts, repeatable provenance and vulnerability response, and review
+maintenance capacity. This policy is internal and is not a public README topic.

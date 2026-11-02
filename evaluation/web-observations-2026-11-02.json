@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-02",
+  "client": "connected web search service",
+  "model": null,
+  "query": "Truthound MCP local CSV Parquet data quality",
+  "scope": "Manual qualitative discovery observation; not a stable ranked result list or external Agent selection evaluation. Aggregator pages failed direct fetch, so category/copy claims are limited to returned search snippets.",
+  "observed_sources": [
+    {
+      "url": "https://truthound.netlify.app/guides/mcp/",
+      "observation": "Official Local MCP docs surfaced, but broad Core/Local content can obscure the three-tool summary surface."
+    },
+    {
+      "url": "https://sourceweft.com/mcp/io.github.seadonggyun4%2Ftruthound",
+      "observation": "Search snippet repeated Registry description; classified under Location & Lifestyle in the snippet. Direct-page verification pending."
+    },
+    {
+      "url": "https://mcpbeat.com/mcp-servers/seadonggyun4/truthound/",
+      "observation": "Search snippet repeated Registry description; direct-page verification pending."
+    },
+    {
+      "url": "https://agent-plugins.directory/seadonggyun4/truthound",
+      "observation": "Search result exposed the portable plugin metadata; not evidence of OpenAI endorsement."
+    }
+  ]
+}

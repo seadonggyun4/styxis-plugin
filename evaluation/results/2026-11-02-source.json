@@ -1,0 +1,6769 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02T00:53:50.669761+00:00",
+  "client": "local-bm25-harness",
+  "model": null,
+  "python": "3.14.7",
+  "dataset_version": "1.0.0",
+  "dataset_sha256": "2d41fd7462faab0a8ee06903c32cc8d13a455a787ac04c3c46cda80fee79f7c6",
+  "registry_snapshot": "evaluation/registry-2026-11-02.json",
+  "candidate_set_sha256": "fa18398ddb310ca9fca95c5e83c431cf623cd48e27e508a58e8e674875cb6a12",
+  "candidate_ids": {
+    "registry": [
+      "truthound",
+      "dataset-editor",
+      "cloud-uploader",
+      "schema-migration",
+      "model-trainer",
+      "chart-builder",
+      "privacy-law",
+      "file-search",
+      "code-validator",
+      "great-expectations",
+      "pandera",
+      "soda",
+      "cloud-dlp",
+      "data-catalog",
+      "etl-transform",
+      "rag-evaluator",
+      "pii-redactor"
+    ],
+    "plugin": [
+      "truthound",
+      "dataset-editor",
+      "cloud-uploader",
+      "schema-migration",
+      "model-trainer",
+      "chart-builder",
+      "privacy-law",
+      "file-search",
+      "code-validator",
+      "great-expectations",
+      "pandera",
+      "soda",
+      "cloud-dlp",
+      "data-catalog",
+      "etl-transform",
+      "rag-evaluator",
+      "pii-redactor"
+    ],
+    "tool": [
+      "check_file",
+      "profile_file",
+      "scan_pii",
+      "dataset-editor",
+      "cloud-uploader",
+      "schema-migration",
+      "model-trainer",
+      "chart-builder",
+      "privacy-law",
+      "file-search",
+      "code-validator",
+      "great-expectations",
+      "pandera",
+      "soda",
+      "cloud-dlp",
+      "data-catalog",
+      "etl-transform",
+      "rag-evaluator",
+      "pii-redactor"
+    ]
+  },
+  "candidate_variant": "source",
+  "candidate_scope": "Closed, curated local candidate fixture: 17 server/plugin candidates and 19 tool candidates. Distractors are task sketches, not real Registry entries. Not a live registry/model benchmark.",
+  "retrieval_method": "BM25 k1=1.5 b=0.75; EN words/KO bigrams; no query expansion",
+  "top_k": {
+    "registry": 10,
+    "plugin": 5,
+    "tool": 3
+  },
+  "selection_method": "explicit client observation only",
+  "e2e_receipts": [],
+  "scope_warning": "Local fixture rankings do not measure live Registry, Claude recommendation, or model selection. Source variant contains UNRELEASED metadata.",
+  "metrics": {
+    "registry": {
+      "k": 10,
+      "observed_queries": 70,
+      "total_queries": 70,
+      "recall_at_10": 0.975,
+      "hit_at_10": 0.975,
+      "precision_at_10": 0.0975,
+      "mrr_full_ranking": 0.46622113997114,
+      "ndcg_at_10": 0.5866237282344201,
+      "positive_denominator": 40,
+      "negative_target_exposure_at_k": 0.5333333333333333,
+      "correct_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      },
+      "false_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      }
+    },
+    "plugin": {
+      "k": 5,
+      "observed_queries": 70,
+      "total_queries": 70,
+      "recall_at_5": 0.95,
+      "hit_at_5": 0.95,
+      "precision_at_5": 0.19,
+      "mrr_full_ranking": 0.695029761904762,
+      "ndcg_at_5": 0.754710830316684,
+      "positive_denominator": 40,
+      "negative_target_exposure_at_k": 0.5666666666666667,
+      "correct_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      },
+      "false_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      }
+    },
+    "tool": {
+      "k": 3,
+      "observed_queries": 70,
+      "total_queries": 70,
+      "recall_at_3": 0.9125,
+      "hit_at_3": 0.925,
+      "precision_at_3": 0.3333333333333333,
+      "mrr_full_ranking": 0.8133333333333332,
+      "ndcg_at_3": 0.8177808941014192,
+      "positive_denominator": 40,
+      "negative_target_exposure_at_k": 0.6333333333333333,
+      "correct_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      },
+      "false_selection_rate": {
+        "value": null,
+        "attempted": 0,
+        "passed": 0
+      }
+    }
+  },
+  "execution": {
+    "install_success_rate": {
+      "value": null,
+      "attempted": 0,
+      "passed": 0
+    },
+    "mcp_startup_success_rate": {
+      "value": null,
+      "attempted": 0,
+      "passed": 0
+    },
+    "first_call_success_rate": {
+      "value": null,
+      "attempted": 0,
+      "passed": 0
+    },
+    "permission_denial_correctness": {
+      "value": null,
+      "attempted": 0,
+      "passed": 0
+    }
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "registry": {
+          "count": 20,
+          "recall": 1.0,
+          "ndcg": 0.7514319257885654
+        },
+        "plugin": {
+          "count": 20,
+          "recall": 1.0,
+          "ndcg": 0.8086215664331643
+        },
+        "tool": {
+          "count": 20,
+          "recall": 0.95,
+          "ndcg": 0.9130929753571457
+        }
+      },
+      "ko": {
+        "registry": {
+          "count": 20,
+          "recall": 0.95,
+          "ndcg": 0.4218155306802749
+        },
+        "plugin": {
+          "count": 20,
+          "recall": 0.9,
+          "ndcg": 0.7008000942002037
+        },
+        "tool": {
+          "count": 20,
+          "recall": 0.875,
+          "ndcg": 0.7224688128456924
+        }
+      }
+    },
+    "kind": {
+      "hard-negative": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "negative": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "positive": {
+        "registry": {
+          "count": 40,
+          "recall": 0.975,
+          "ndcg": 0.5866237282344201
+        },
+        "plugin": {
+          "count": 40,
+          "recall": 0.95,
+          "ndcg": 0.754710830316684
+        },
+        "tool": {
+          "count": 40,
+          "recall": 0.9125,
+          "ndcg": 0.8177808941014192
+        }
+      }
+    },
+    "category": {
+      "ambiguous": {
+        "registry": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.7103099178571526
+        },
+        "plugin": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.8333333333333334
+        },
+        "tool": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.8333333333333334
+        }
+      },
+      "branded": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "cloud-dlp": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "cloud-upload": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "csv-quality": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.5
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "data-catalog": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "data-quality": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.4599972899446727
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        }
+      },
+      "database-migration": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "dataset-editing": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "etl-transformation": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "eval-semantics": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "eval-validation": {
+        "registry": {
+          "count": 3,
+          "recall": 0.6666666666666666,
+          "ndcg": 0.5436432511904858
+        },
+        "plugin": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.8333333333333334
+        },
+        "tool": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.8769765845238192
+        }
+      },
+      "generic-file-search": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "great-expectations": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "legal-advice": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "local-inspection": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.5654648767857288
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "model-training": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "multi-intent": {
+        "registry": {
+          "count": 4,
+          "recall": 1.0,
+          "ndcg": 0.5267597369506042
+        },
+        "plugin": {
+          "count": 4,
+          "recall": 1.0,
+          "ndcg": 1.0
+        },
+        "tool": {
+          "count": 4,
+          "recall": 0.875,
+          "ndcg": 0.8832169954784115
+        }
+      },
+      "null-duplicate": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.6666666666666667
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.75
+        },
+        "tool": {
+          "count": 2,
+          "recall": 0.5,
+          "ndcg": 0.31546487678572877
+        }
+      },
+      "offline": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.75
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.5088912804029996
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        }
+      },
+      "pandera": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "parquet-profiling": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.4659798746177194
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.6309297535714575
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        }
+      },
+      "pii": {
+        "registry": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.6872021038816168
+        },
+        "plugin": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.6872021038816168
+        },
+        "tool": {
+          "count": 3,
+          "recall": 0.6666666666666666,
+          "ndcg": 0.6666666666666666
+        }
+      },
+      "pii-redaction": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "private": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.4599972899446727
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 0.5,
+          "ndcg": 0.31546487678572877
+        },
+        "tool": {
+          "count": 2,
+          "recall": 0.5,
+          "ndcg": 0.31546487678572877
+        }
+      },
+      "profiling": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.49356847033973983
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 0.5,
+          "ndcg": 0.31546487678572877
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "rag-answer-evaluation": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "rag-preparation": {
+        "registry": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.43960418548999347
+        },
+        "plugin": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.5641786884054361
+        },
+        "tool": {
+          "count": 3,
+          "recall": 1.0,
+          "ndcg": 0.7539531690476383
+        }
+      },
+      "schema-observation": {
+        "registry": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.46533827903669656
+        },
+        "plugin": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.75
+        },
+        "tool": {
+          "count": 2,
+          "recall": 1.0,
+          "ndcg": 0.8154648767857288
+        }
+      },
+      "schema-validation": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "sensitive-scanning": {
+        "registry": {
+          "count": 4,
+          "recall": 1.0,
+          "ndcg": 0.7326691395183482
+        },
+        "plugin": {
+          "count": 4,
+          "recall": 1.0,
+          "ndcg": 1.0
+        },
+        "tool": {
+          "count": 4,
+          "recall": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "soda": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "source-code-validation": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "unrelated-privacy": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      },
+      "visualization": {
+        "registry": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "plugin": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        },
+        "tool": {
+          "count": 0,
+          "recall": null,
+          "ndcg": null
+        }
+      }
+    },
+    "split": {
+      "development": {
+        "registry": {
+          "count": 28,
+          "recall": 0.9642857142857143,
+          "ndcg": 0.5741347128963283
+        },
+        "plugin": {
+          "count": 28,
+          "recall": 0.9642857142857143,
+          "ndcg": 0.786285781571574
+        },
+        "tool": {
+          "count": 28,
+          "recall": 0.875,
+          "ndcg": 0.7820973469355073
+        }
+      },
+      "holdout": {
+        "registry": {
+          "count": 12,
+          "recall": 1.0,
+          "ndcg": 0.6157647640233013
+        },
+        "plugin": {
+          "count": 12,
+          "recall": 0.9166666666666666,
+          "ndcg": 0.6810359440552739
+        },
+        "tool": {
+          "count": 12,
+          "recall": 1.0,
+          "ndcg": 0.9010425041552134
+        }
+      }
+    }
+  },
+  "failures": [
+    {
+      "query_id": "q008",
+      "language": "ko",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "rag-evaluator",
+        "chart-builder",
+        "code-validator",
+        "etl-transform",
+        "pandera",
+        "data-catalog",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.09090909090909091,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q009",
+      "language": "en",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "chart-builder",
+        "scan_pii",
+        "check_file",
+        "profile_file",
+        "cloud-uploader",
+        "model-trainer",
+        "file-search",
+        "code-validator",
+        "data-catalog",
+        "pii-redactor",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.2,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q012",
+      "language": "ko",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.125,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q016",
+      "language": "ko",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "truthound",
+        "dataset-editor",
+        "rag-evaluator",
+        "schema-migration",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q016",
+      "language": "ko",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "check_file",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor",
+        "rag-evaluator",
+        "scan_pii",
+        "profile_file",
+        "schema-migration",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.25,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q026",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "pii-redactor",
+        "dataset-editor",
+        "privacy-law",
+        "check_file",
+        "soda",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader",
+        "profile_file"
+      ],
+      "relevant": {
+        "check_file": 3,
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 0.5,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q032",
+      "language": "ko",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "rag-evaluator",
+        "scan_pii",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor",
+        "check_file",
+        "profile_file"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.25,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    }
+  ],
+  "rows": [
+    {
+      "query_id": "q001",
+      "language": "en",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "pii-redactor",
+        "truthound",
+        "great-expectations",
+        "soda",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q001",
+      "language": "en",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "pii-redactor",
+        "great-expectations",
+        "soda",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q001",
+      "language": "en",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "pii-redactor",
+        "scan_pii",
+        "great-expectations",
+        "soda",
+        "profile_file",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q002",
+      "language": "ko",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "soda",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q002",
+      "language": "ko",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "soda",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q002",
+      "language": "ko",
+      "kind": "positive",
+      "category": "csv-quality",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "soda",
+        "scan_pii",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "profile_file"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q003",
+      "language": "en",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "rag-evaluator",
+        "truthound",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q003",
+      "language": "en",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "rag-evaluator",
+        "truthound",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q003",
+      "language": "en",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "check_file",
+        "scan_pii",
+        "rag-evaluator",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q004",
+      "language": "ko",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-uploader",
+        "etl-transform",
+        "file-search",
+        "dataset-editor",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "great-expectations",
+        "truthound",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.1111111111111111,
+        "ndcg": 0.3010299956639812
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q004",
+      "language": "ko",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "truthound",
+        "etl-transform",
+        "dataset-editor",
+        "file-search",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "great-expectations",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q004",
+      "language": "ko",
+      "kind": "positive",
+      "category": "parquet-profiling",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "profile_file",
+        "etl-transform",
+        "check_file",
+        "file-search",
+        "dataset-editor",
+        "data-catalog",
+        "scan_pii",
+        "chart-builder",
+        "soda",
+        "great-expectations",
+        "schema-migration"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q005",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "dataset-editor",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q005",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "dataset-editor",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q005",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "file-search",
+        "chart-builder",
+        "profile_file",
+        "pii-redactor",
+        "check_file",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q006",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "rag-evaluator",
+        "cloud-dlp",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q006",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pii-redactor",
+        "truthound",
+        "privacy-law",
+        "rag-evaluator",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q006",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "pii-redactor",
+        "scan_pii",
+        "privacy-law",
+        "check_file",
+        "profile_file",
+        "rag-evaluator",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q007",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "code-validator",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q007",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "code-validator",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q007",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "etl-transform",
+        "profile_file",
+        "scan_pii",
+        "code-validator",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q008",
+      "language": "ko",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "rag-evaluator",
+        "chart-builder",
+        "code-validator",
+        "etl-transform",
+        "pandera",
+        "data-catalog",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.09090909090909091,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q008",
+      "language": "ko",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "rag-evaluator",
+        "code-validator",
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q008",
+      "language": "ko",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "rag-evaluator",
+        "code-validator",
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "profile_file",
+        "data-catalog",
+        "scan_pii",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q009",
+      "language": "en",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "file-search",
+        "code-validator",
+        "data-catalog",
+        "pii-redactor",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q009",
+      "language": "en",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "file-search",
+        "code-validator",
+        "data-catalog",
+        "pii-redactor",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q009",
+      "language": "en",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "chart-builder",
+        "scan_pii",
+        "check_file",
+        "profile_file",
+        "cloud-uploader",
+        "model-trainer",
+        "file-search",
+        "code-validator",
+        "data-catalog",
+        "pii-redactor",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.2,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q010",
+      "language": "ko",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "etl-transform",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "great-expectations",
+        "truthound",
+        "schema-migration",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg": 0.33333333333333337
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q010",
+      "language": "ko",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "etl-transform",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "cloud-uploader",
+        "great-expectations",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q010",
+      "language": "ko",
+      "kind": "positive",
+      "category": "null-duplicate",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "check_file",
+        "etl-transform",
+        "scan_pii",
+        "profile_file",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q011",
+      "language": "en",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg": 0.3562071871080222
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q011",
+      "language": "en",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "chart-builder",
+        "truthound",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q011",
+      "language": "en",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "chart-builder",
+        "check_file",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "cloud-uploader",
+        "scan_pii",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q012",
+      "language": "ko",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pandera",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q012",
+      "language": "ko",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.125,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q012",
+      "language": "ko",
+      "kind": "positive",
+      "category": "profiling",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "check_file",
+        "scan_pii"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q013",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "soda",
+        "cloud-dlp",
+        "chart-builder",
+        "great-expectations",
+        "pii-redactor",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q013",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "soda",
+        "cloud-dlp",
+        "great-expectations",
+        "chart-builder",
+        "pii-redactor",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q013",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "check_file",
+        "chart-builder",
+        "cloud-uploader",
+        "soda",
+        "cloud-dlp",
+        "great-expectations",
+        "pii-redactor",
+        "profile_file",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q014",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-dlp",
+        "soda",
+        "truthound",
+        "pii-redactor",
+        "privacy-law",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q014",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "cloud-dlp",
+        "soda",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "privacy-law",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q014",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "cloud-dlp",
+        "check_file",
+        "soda",
+        "profile_file",
+        "pii-redactor",
+        "privacy-law",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q015",
+      "language": "en",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "soda",
+        "great-expectations",
+        "model-trainer",
+        "rag-evaluator",
+        "data-catalog",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q015",
+      "language": "en",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "soda",
+        "great-expectations",
+        "model-trainer",
+        "rag-evaluator",
+        "data-catalog",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q015",
+      "language": "en",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "file-search",
+        "check_file",
+        "soda",
+        "scan_pii",
+        "great-expectations",
+        "model-trainer",
+        "profile_file",
+        "rag-evaluator",
+        "data-catalog",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q016",
+      "language": "ko",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "soda",
+        "cloud-uploader",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor",
+        "rag-evaluator",
+        "schema-migration",
+        "truthound",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.1,
+        "ndcg": 0.2890648263178878
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q016",
+      "language": "ko",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "truthound",
+        "dataset-editor",
+        "rag-evaluator",
+        "schema-migration",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q016",
+      "language": "ko",
+      "kind": "positive",
+      "category": "private",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "check_file",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor",
+        "rag-evaluator",
+        "scan_pii",
+        "profile_file",
+        "schema-migration",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.25,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q017",
+      "language": "en",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "schema-migration",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q017",
+      "language": "en",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "etl-transform",
+        "schema-migration",
+        "soda",
+        "great-expectations",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q017",
+      "language": "en",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "etl-transform",
+        "scan_pii",
+        "soda",
+        "profile_file",
+        "great-expectations",
+        "schema-migration",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q018",
+      "language": "ko",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "soda",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q018",
+      "language": "ko",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "soda",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q018",
+      "language": "ko",
+      "kind": "positive",
+      "category": "offline",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "check_file",
+        "soda",
+        "scan_pii",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "profile_file"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q019",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "rag-evaluator",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q019",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "rag-evaluator",
+        "truthound",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q019",
+      "language": "en",
+      "kind": "positive",
+      "category": "eval-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "check_file",
+        "rag-evaluator",
+        "profile_file",
+        "scan_pii",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q020",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "rag-evaluator",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q020",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "rag-evaluator",
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q020",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "rag-evaluator",
+        "dataset-editor",
+        "check_file",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "profile_file",
+        "scan_pii"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q021",
+      "language": "en",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "soda",
+        "truthound",
+        "schema-migration",
+        "great-expectations",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q021",
+      "language": "en",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "soda",
+        "truthound",
+        "schema-migration",
+        "great-expectations",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q021",
+      "language": "en",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "scan_pii",
+        "soda",
+        "profile_file",
+        "great-expectations",
+        "schema-migration",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q022",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "soda",
+        "rag-evaluator",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.1111111111111111,
+        "ndcg": 0.3010299956639812
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q022",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "rag-evaluator",
+        "soda",
+        "truthound",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q022",
+      "language": "ko",
+      "kind": "positive",
+      "category": "rag-preparation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "check_file",
+        "soda",
+        "great-expectations",
+        "rag-evaluator",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "profile_file",
+        "schema-migration",
+        "scan_pii",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q023",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "rag-evaluator",
+        "cloud-uploader",
+        "etl-transform",
+        "file-search"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q023",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "dataset-editor",
+        "rag-evaluator",
+        "chart-builder",
+        "cloud-uploader",
+        "etl-transform",
+        "file-search"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q023",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "check_file",
+        "pii-redactor",
+        "profile_file",
+        "chart-builder",
+        "dataset-editor",
+        "cloud-uploader",
+        "rag-evaluator",
+        "etl-transform",
+        "file-search"
+      ],
+      "relevant": {
+        "check_file": 3,
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q024",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "cloud-uploader",
+        "file-search",
+        "soda",
+        "cloud-dlp",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg": 0.33333333333333337
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q024",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "privacy-law",
+        "cloud-uploader",
+        "file-search",
+        "soda",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q024",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "pii-redactor",
+        "scan_pii",
+        "privacy-law",
+        "cloud-uploader",
+        "file-search",
+        "check_file",
+        "soda",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3,
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg": 0.9197207891481876
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q025",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q025",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q025",
+      "language": "en",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "profile_file": 3,
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q026",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "dataset-editor",
+        "privacy-law",
+        "soda",
+        "truthound",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q026",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "dataset-editor",
+        "privacy-law",
+        "soda",
+        "etl-transform",
+        "cloud-uploader",
+        "cloud-dlp"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q026",
+      "language": "ko",
+      "kind": "positive",
+      "category": "multi-intent",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "pii-redactor",
+        "dataset-editor",
+        "privacy-law",
+        "check_file",
+        "soda",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader",
+        "profile_file"
+      ],
+      "relevant": {
+        "check_file": 3,
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 0.5,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q027",
+      "language": "en",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "chart-builder",
+        "file-search",
+        "truthound",
+        "cloud-uploader",
+        "pandera",
+        "schema-migration",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q027",
+      "language": "en",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "file-search",
+        "pandera",
+        "schema-migration",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q027",
+      "language": "en",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "chart-builder",
+        "check_file",
+        "file-search",
+        "cloud-uploader",
+        "scan_pii",
+        "pandera",
+        "schema-migration",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q028",
+      "language": "ko",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pandera",
+        "schema-migration",
+        "great-expectations",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q028",
+      "language": "ko",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "pandera",
+        "schema-migration",
+        "truthound",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q028",
+      "language": "ko",
+      "kind": "positive",
+      "category": "schema-observation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "pandera",
+        "profile_file",
+        "schema-migration",
+        "check_file",
+        "great-expectations",
+        "scan_pii",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q029",
+      "language": "en",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q029",
+      "language": "en",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q029",
+      "language": "en",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "scan_pii",
+        "cloud-uploader",
+        "profile_file",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q030",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q030",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q030",
+      "language": "ko",
+      "kind": "positive",
+      "category": "ambiguous",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "profile_file",
+        "scan_pii",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q031",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q031",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q031",
+      "language": "en",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "profile_file",
+        "check_file",
+        "cloud-uploader",
+        "soda",
+        "great-expectations",
+        "etl-transform",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q032",
+      "language": "ko",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "rag-evaluator",
+        "truthound",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q032",
+      "language": "ko",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "rag-evaluator",
+        "truthound",
+        "etl-transform",
+        "cloud-uploader",
+        "cloud-dlp",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q032",
+      "language": "ko",
+      "kind": "positive",
+      "category": "pii",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "rag-evaluator",
+        "scan_pii",
+        "cloud-dlp",
+        "etl-transform",
+        "cloud-uploader",
+        "dataset-editor",
+        "check_file",
+        "profile_file"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 0.0,
+        "hit": 0,
+        "precision": 0.0,
+        "mrr": 0.25,
+        "ndcg": 0.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q033",
+      "language": "en",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q033",
+      "language": "en",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "cloud-uploader",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q033",
+      "language": "en",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "cloud-uploader",
+        "check_file",
+        "scan_pii",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q034",
+      "language": "ko",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "soda",
+        "etl-transform",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q034",
+      "language": "ko",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "soda",
+        "etl-transform",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q034",
+      "language": "ko",
+      "kind": "positive",
+      "category": "branded",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "profile_file",
+        "scan_pii",
+        "soda",
+        "etl-transform",
+        "cloud-uploader"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q035",
+      "language": "en",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "soda",
+        "truthound",
+        "great-expectations",
+        "rag-evaluator",
+        "data-catalog",
+        "cloud-dlp",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q035",
+      "language": "en",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "soda",
+        "truthound",
+        "great-expectations",
+        "rag-evaluator",
+        "data-catalog",
+        "cloud-dlp",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q035",
+      "language": "en",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "soda",
+        "great-expectations",
+        "profile_file",
+        "rag-evaluator",
+        "scan_pii",
+        "data-catalog",
+        "cloud-dlp",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "schema-migration"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q036",
+      "language": "ko",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "soda",
+        "code-validator",
+        "pandera",
+        "great-expectations",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.1,
+        "ndcg": 0.2890648263178878
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q036",
+      "language": "ko",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "code-validator",
+        "soda",
+        "pandera",
+        "great-expectations",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q036",
+      "language": "ko",
+      "kind": "positive",
+      "category": "data-quality",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "check_file",
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "code-validator",
+        "pandera",
+        "soda",
+        "great-expectations",
+        "profile_file",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "scan_pii"
+      ],
+      "relevant": {
+        "check_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q037",
+      "language": "en",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "etl-transform",
+        "file-search",
+        "truthound",
+        "cloud-uploader",
+        "chart-builder",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q037",
+      "language": "en",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "chart-builder",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q037",
+      "language": "en",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "scan_pii",
+        "check_file",
+        "etl-transform",
+        "file-search",
+        "cloud-uploader",
+        "chart-builder",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q038",
+      "language": "ko",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pandera",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q038",
+      "language": "ko",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pandera",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q038",
+      "language": "ko",
+      "kind": "positive",
+      "category": "local-inspection",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "profile_file",
+        "pandera",
+        "check_file",
+        "scan_pii",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "profile_file": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q039",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "cloud-dlp",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q039",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "cloud-dlp",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q039",
+      "language": "en",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "pii-redactor",
+        "check_file",
+        "profile_file",
+        "cloud-dlp",
+        "soda",
+        "great-expectations",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q040",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "cloud-dlp",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.1,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q040",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "pii-redactor",
+        "privacy-law",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "truthound": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q040",
+      "language": "ko",
+      "kind": "positive",
+      "category": "sensitive-scanning",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "pii-redactor",
+        "privacy-law",
+        "check_file",
+        "cloud-dlp",
+        "profile_file",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {
+        "scan_pii": 3
+      },
+      "metrics": {
+        "recall": 1.0,
+        "hit": 1,
+        "precision": 0.3333333333333333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q041",
+      "language": "en",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q041",
+      "language": "en",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "truthound",
+        "dataset-editor",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q041",
+      "language": "en",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "check_file",
+        "dataset-editor",
+        "profile_file",
+        "scan_pii",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q042",
+      "language": "ko",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "dataset-editor",
+        "pii-redactor",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q042",
+      "language": "ko",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "dataset-editor",
+        "pii-redactor",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q042",
+      "language": "ko",
+      "kind": "negative",
+      "category": "dataset-editing",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "dataset-editor",
+        "pii-redactor",
+        "check_file",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "file-search",
+        "profile_file",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q043",
+      "language": "en",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-uploader",
+        "dataset-editor",
+        "truthound",
+        "etl-transform"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q043",
+      "language": "en",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "dataset-editor",
+        "etl-transform",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q043",
+      "language": "en",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "profile_file",
+        "scan_pii",
+        "dataset-editor",
+        "check_file",
+        "etl-transform"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q044",
+      "language": "ko",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-uploader",
+        "cloud-dlp",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q044",
+      "language": "ko",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q044",
+      "language": "ko",
+      "kind": "negative",
+      "category": "cloud-upload",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "cloud-dlp",
+        "chart-builder",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "check_file",
+        "profile_file",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q045",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "schema-migration",
+        "cloud-uploader",
+        "pandera"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q045",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "schema-migration",
+        "cloud-uploader",
+        "pandera"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q045",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "schema-migration",
+        "cloud-uploader",
+        "profile_file",
+        "pandera",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q046",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "schema-migration",
+        "pandera",
+        "soda"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q046",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "schema-migration",
+        "pandera",
+        "soda"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q046",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "database-migration",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "schema-migration",
+        "pandera",
+        "soda"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q047",
+      "language": "en",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "model-trainer",
+        "file-search",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q047",
+      "language": "en",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "model-trainer",
+        "file-search",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q047",
+      "language": "en",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "model-trainer",
+        "file-search",
+        "scan_pii",
+        "profile_file",
+        "dataset-editor",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q048",
+      "language": "ko",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "model-trainer",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q048",
+      "language": "ko",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "model-trainer",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q048",
+      "language": "ko",
+      "kind": "negative",
+      "category": "model-training",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "model-trainer",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor",
+        "profile_file",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q049",
+      "language": "en",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "great-expectations",
+        "soda",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q049",
+      "language": "en",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "file-search",
+        "truthound",
+        "great-expectations",
+        "soda",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q049",
+      "language": "en",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "scan_pii",
+        "file-search",
+        "profile_file",
+        "great-expectations",
+        "check_file",
+        "soda",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q050",
+      "language": "ko",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "soda",
+        "dataset-editor",
+        "great-expectations",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q050",
+      "language": "ko",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor",
+        "soda",
+        "great-expectations",
+        "schema-migration",
+        "truthound",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q050",
+      "language": "ko",
+      "kind": "negative",
+      "category": "visualization",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "chart-builder",
+        "etl-transform",
+        "data-catalog",
+        "dataset-editor",
+        "soda",
+        "great-expectations",
+        "check_file",
+        "profile_file",
+        "schema-migration",
+        "cloud-uploader",
+        "file-search",
+        "pii-redactor",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q051",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "privacy-law",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q051",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "privacy-law",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q051",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "privacy-law",
+        "scan_pii",
+        "check_file",
+        "dataset-editor",
+        "profile_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q052",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "privacy-law",
+        "pii-redactor",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "cloud-dlp",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q052",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "privacy-law",
+        "pii-redactor",
+        "truthound",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "cloud-dlp",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q052",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "legal-advice",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "privacy-law",
+        "pii-redactor",
+        "scan_pii",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "cloud-dlp",
+        "schema-migration",
+        "dataset-editor",
+        "profile_file",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q053",
+      "language": "en",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "truthound",
+        "privacy-law",
+        "cloud-dlp",
+        "soda",
+        "great-expectations"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q053",
+      "language": "en",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "privacy-law",
+        "cloud-dlp",
+        "soda",
+        "great-expectations",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q053",
+      "language": "en",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "privacy-law",
+        "cloud-dlp",
+        "soda",
+        "great-expectations",
+        "scan_pii",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q054",
+      "language": "ko",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q054",
+      "language": "ko",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "truthound",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q054",
+      "language": "ko",
+      "kind": "negative",
+      "category": "unrelated-privacy",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "pii-redactor",
+        "privacy-law",
+        "scan_pii",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q055",
+      "language": "en",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "file-search",
+        "cloud-uploader",
+        "model-trainer",
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q055",
+      "language": "en",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "file-search",
+        "cloud-uploader",
+        "model-trainer",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q055",
+      "language": "en",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "file-search",
+        "cloud-uploader",
+        "model-trainer",
+        "dataset-editor",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor",
+        "check_file",
+        "profile_file",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q056",
+      "language": "ko",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-uploader",
+        "file-search",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q056",
+      "language": "ko",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-uploader",
+        "file-search",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q056",
+      "language": "ko",
+      "kind": "negative",
+      "category": "generic-file-search",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-uploader",
+        "file-search",
+        "profile_file",
+        "chart-builder",
+        "etl-transform",
+        "pii-redactor",
+        "dataset-editor",
+        "check_file",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q057",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "code-validator",
+        "file-search",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q057",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "code-validator",
+        "schema-migration",
+        "truthound",
+        "file-search"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q057",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "code-validator",
+        "profile_file",
+        "scan_pii",
+        "file-search",
+        "check_file",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q058",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "code-validator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q058",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "code-validator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q058",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "source-code-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "code-validator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q059",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "great-expectations",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "great-expectations",
+        "soda",
+        "file-search",
+        "pii-redactor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q059",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "great-expectations",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "great-expectations",
+        "soda",
+        "pii-redactor",
+        "file-search",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q059",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "great-expectations",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "great-expectations",
+        "soda",
+        "pii-redactor",
+        "scan_pii",
+        "file-search",
+        "profile_file",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q060",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "pandera",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pandera"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q060",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "pandera",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pandera"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q060",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "pandera",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "pandera",
+        "profile_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q061",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "soda",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "soda",
+        "truthound",
+        "schema-migration",
+        "great-expectations"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q061",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "soda",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "soda",
+        "schema-migration",
+        "great-expectations",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q061",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "soda",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "soda",
+        "check_file",
+        "schema-migration",
+        "great-expectations",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q062",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q062",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q062",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q063",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader",
+        "pii-redactor",
+        "privacy-law"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q063",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader",
+        "pii-redactor",
+        "privacy-law",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q063",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "cloud-dlp",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "cloud-dlp",
+        "cloud-uploader",
+        "scan_pii",
+        "pii-redactor",
+        "privacy-law"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q064",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "data-catalog",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "data-catalog",
+        "file-search",
+        "schema-migration",
+        "truthound",
+        "soda",
+        "great-expectations",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q064",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "data-catalog",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "data-catalog",
+        "schema-migration",
+        "file-search",
+        "truthound",
+        "soda",
+        "great-expectations",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q064",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "data-catalog",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "data-catalog",
+        "profile_file",
+        "scan_pii",
+        "file-search",
+        "schema-migration",
+        "check_file",
+        "soda",
+        "great-expectations",
+        "cloud-dlp"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q065",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "etl-transformation",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "pii-redactor",
+        "truthound",
+        "cloud-uploader",
+        "chart-builder",
+        "file-search"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q065",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "etl-transformation",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "pii-redactor",
+        "cloud-uploader",
+        "truthound",
+        "chart-builder",
+        "file-search"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q065",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "etl-transformation",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "etl-transform",
+        "dataset-editor",
+        "pii-redactor",
+        "cloud-uploader",
+        "check_file",
+        "profile_file",
+        "scan_pii",
+        "chart-builder",
+        "file-search"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q066",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "holdout",
+      "stage": "registry",
+      "ranking": [
+        "pandera",
+        "code-validator",
+        "schema-migration",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q066",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "holdout",
+      "stage": "plugin",
+      "ranking": [
+        "pandera",
+        "code-validator",
+        "schema-migration",
+        "truthound",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q066",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "holdout",
+      "stage": "tool",
+      "ranking": [
+        "pandera",
+        "check_file",
+        "profile_file",
+        "code-validator",
+        "schema-migration",
+        "etl-transform",
+        "file-search",
+        "pii-redactor",
+        "dataset-editor",
+        "chart-builder",
+        "cloud-uploader",
+        "scan_pii",
+        "model-trainer",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q067",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pandera",
+        "file-search",
+        "schema-migration",
+        "great-expectations",
+        "code-validator",
+        "truthound",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q067",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "pandera",
+        "file-search",
+        "schema-migration",
+        "great-expectations",
+        "code-validator",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q067",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "schema-validation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "pandera",
+        "file-search",
+        "schema-migration",
+        "great-expectations",
+        "profile_file",
+        "code-validator",
+        "chart-builder",
+        "etl-transform",
+        "cloud-uploader",
+        "pii-redactor",
+        "dataset-editor",
+        "check_file",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q068",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "rag-answer-evaluation",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "rag-evaluator",
+        "cloud-uploader"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q068",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "rag-answer-evaluation",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "rag-evaluator",
+        "cloud-uploader"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q068",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "rag-answer-evaluation",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "rag-evaluator",
+        "profile_file",
+        "check_file",
+        "cloud-uploader",
+        "scan_pii"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q069",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "eval-semantics",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "rag-evaluator",
+        "privacy-law",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q069",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "eval-semantics",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "rag-evaluator",
+        "privacy-law",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor",
+        "truthound"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q069",
+      "language": "ko",
+      "kind": "hard-negative",
+      "category": "eval-semantics",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "rag-evaluator",
+        "privacy-law",
+        "data-catalog",
+        "chart-builder",
+        "soda",
+        "etl-transform",
+        "great-expectations",
+        "schema-migration",
+        "dataset-editor",
+        "profile_file",
+        "check_file"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": false
+    },
+    {
+      "query_id": "q070",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "pii-redaction",
+      "split": "development",
+      "stage": "registry",
+      "ranking": [
+        "pii-redactor",
+        "truthound",
+        "dataset-editor",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q070",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "pii-redaction",
+      "split": "development",
+      "stage": "plugin",
+      "ranking": [
+        "pii-redactor",
+        "dataset-editor",
+        "truthound",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    },
+    {
+      "query_id": "q070",
+      "language": "en",
+      "kind": "hard-negative",
+      "category": "pii-redaction",
+      "split": "development",
+      "stage": "tool",
+      "ranking": [
+        "pii-redactor",
+        "dataset-editor",
+        "scan_pii",
+        "etl-transform",
+        "file-search",
+        "chart-builder",
+        "cloud-uploader",
+        "check_file",
+        "profile_file",
+        "model-trainer",
+        "code-validator",
+        "data-catalog",
+        "great-expectations",
+        "cloud-dlp",
+        "rag-evaluator",
+        "schema-migration"
+      ],
+      "relevant": {},
+      "metrics": null,
+      "negative_target_exposure": true
+    }
+  ],
+  "pending": [
+    "live_registry_ranking",
+    "real_client_plugin_ranking",
+    "external_model_selection",
+    "web_citation_visibility",
+    "earned_vs_owned_source_selection"
+  ],
+  "reproduce": "python3 scripts/evaluate.py --variant source --output evaluation/results/2026-11-02-source.json"
+}

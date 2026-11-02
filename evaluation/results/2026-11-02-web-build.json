@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-02T00:51:12.143113+00:00",
+  "client": "Next.js production HTML inspection",
+  "model": null,
+  "checks": {
+    "static_pages": [
+      "/en/open-source/truthound",
+      "/en/open-source/truthound/use-cases",
+      "/en/open-source/truthound/security",
+      "/en/open-source/truthound/evidence",
+      "/ko/open-source/truthound",
+      "/ko/open-source/truthound/use-cases",
+      "/ko/open-source/truthound/security",
+      "/ko/open-source/truthound/evidence"
+    ],
+    "canonical": true,
+    "hreflang": true,
+    "json_ld": true,
+    "sitemap": true
+  },
+  "deployment_verified": false
+}

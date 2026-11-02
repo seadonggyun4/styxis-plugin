@@ -1,0 +1,18 @@
+{
+  "description": "Local-first data quality and validation for Python and AI agents. Profile CSV/Parquet and scan PII; local MCP with explicit directory consent.",
+  "topics": [
+    "csv",
+    "data-profiling",
+    "data-quality",
+    "data-validation",
+    "local-first",
+    "mcp-server",
+    "parquet",
+    "pii-detection",
+    "polars"
+  ],
+  "language": "Python",
+  "homepage": "https://truthound.netlify.app",
+  "html_url": "https://github.com/seadonggyun4/truthound",
+  "default_branch": "main"
+}

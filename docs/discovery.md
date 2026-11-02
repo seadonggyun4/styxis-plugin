@@ -1,51 +1,27 @@
-# Discovery metadata
+# Discovery contracts
 
-## Canonical identity
+Primary identity: local-first data quality and validation for AI agents. Connect
+CSV/Parquet checks, profiling and sampled PII through actual tasks and explicit
+input/result boundaries. Korean and English use the same product facts.
 
-> Truthound is a local-first data quality and validation tool for AI agents. It
-> validates, profiles, and scans approved local CSV and Parquet datasets without
-> uploading raw values.
+The public Local plugin supports nulls/duplicates, inferred types/aggregates and
+sampled PII. It does not take custom schema/rule inputs or implement Pandera,
+Great Expectations or Soda configuration formats. RAG/eval context means tabular
+input preparation, not semantic answer/label evaluation. These are evaluation
+boundaries, not competitor rankings.
 
-Primary intent:
+Server/plugin descriptions supply candidate relevance. Live `tools/list` names,
+descriptions and schemas supply post-install tool selection. Permission enforcement
+comes from the runtime, not metadata hints or a retrieval score.
 
-- data quality
-- data validation
+- GitHub name/description/topics and first paragraphs are independent search surfaces.
+- Claude custom catalogs must be added; do not imply global automatic custom-marketplace search.
+- The Registry publishes metadata for aggregators; client ingestion and rankings vary.
+- `llms.txt`, JSON-LD, canonical and hreflang aid explicit representation/navigation;
+  ranking or universal consumption is not established.
+- Task chunks should preserve identity, input, selected tool, limitation, version
+  and a reproducible source together.
 
-Related intents:
-
-- CSV and Parquet validation
-- data profiling
-- null and duplicate detection
-- schema consistency
-- PII and sensitive-data detection
-- RAG source quality
-- evaluation dataset validation
-- local, private, and offline data inspection
-
-Negative boundaries:
-
-- not a dataset editor;
-- not a cloud uploader;
-- not a general database migration tool;
-- not a legal compliance determination;
-- not a hosted MCP service.
-
-## Discovery layers
-
-1. Claude Marketplace makes the plugin discoverable to users who add this
-   catalog.
-2. Official MCP Registry metadata supports discovery across MCP clients.
-3. Product pages and technical evidence support web and generative-engine
-   discovery.
-4. MCP tool names, descriptions, and schemas drive post-install tool selection.
-
-No single channel guarantees discovery by every agent. Release evaluation should
-measure Registry Recall@10, Plugin Recall@5, Tool Hit@3, false-selection rate,
-install success, and first-call success using positive and negative queries.
-
-During distribution Phase 1, discovery relies on the Styxis-owned GitHub
-marketplace, the Official MCP Registry, product documentation, GitHub metadata,
-and post-install tool contracts. Anthropic and OpenAI official/community
-marketplace submissions are intentionally deferred to Phase 2, after the project
-has sufficient usage, operational maturity, security response, and maintenance
-capacity. They are not Phase 1 launch blockers or current discovery dependencies.
+See [primary-source research](research/agent-discovery.md),
+[traceable decisions](implementation-plan.md), and [evaluation protocol](../evaluation/README.md).
+Internal distribution phase policy lives in [architecture](architecture.md).

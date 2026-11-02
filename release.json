@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "plugin_version": "0.1.6",
+  "core_package_version": "3.3.0",
+  "truthound_source_sha": "c36ac00f061738d1fd3aaf21a28c36e53f4526c9",
+  "truthound_source_ref": "feature/agent-discovery",
+  "source_url": "https://github.com/seadonggyun4/Truthound.git",
+  "source_path": "plugins/truthound",
+  "source_file_sha256": {
+    "plugins/truthound/.claude-plugin/plugin.json": "7abcb25d0fdd9d9c7f46d92c9b909de3c5ac32796a34bfe428977f604d037821",
+    "plugins/truthound/.mcp.json": "b0bc8f26f33ba51f1b51082415ad290a024501671f4b16c84a6568b1f60249e9",
+    "plugins/truthound/server.py": "ec446c4a17e6b7b8cdee9af0e170ca2143719dd6b4e8dbe98703fa0906397b05",
+    "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24",
+    "plugins/truthound/uv.lock": "c8fd5c344a8300eab0fbe824dd09bd0be98e4875072d86ba534c4005837a2af7"
+  },
+  "publication": {
+    "source_feature_branch_pushed": true,
+    "default_branch_merged": false,
+    "core_package_published": false,
+    "registry_metadata_published": false,
+    "web_deployment_verified": false
+  },
+  "note": "Plugin 0.1.6 is reviewable on the feature branch and uses published Core 3.3.0. New tool descriptions are source-only. Default-branch mutation needs explicit approval after auto-review rejection."
+}

@@ -1,35 +1,29 @@
-# Security and permissions
+# Local permissions and data handling
 
-## Local-first boundary
+Installation grants no data access. Approve only an exact existing absolute
+folder through the source-owned setup skill. The filesystem root, home directory,
+workspace and cloud folders are never implicitly approved. Setup replaces the
+existing list, rather than adding a hidden grant. Revocation affects subsequent
+calls, not calls already running.
 
-The Truthound plugin runs locally over stdio. The Styxis marketplace does not
-provide a hosted MCP endpoint, user account, API key, billing system, central
-RAG service, or telemetry service.
+The public Local plugin runs over stdio, pinned to Core 3.3.0. It returns bounded
+aggregate results, not raw cell/sample/matched PII values, and does not edit source
+files. Paths, column names and aggregates can still be sensitive and may be sent
+to the host's model provider. Column names and results are untrusted data.
+PII counts are sampled estimates; no findings does not prove absence or legal
+compliance. The separate Core profile has additional grants and a different
+sensitive-result contract; do not transfer its claims to this plugin.
 
-Installing a plugin grants no permission to read local data. A user must approve
-an existing absolute directory before Truthound may inspect files in that scope.
-The filesystem root, home directory, current workspace, and cloud folders must
-never be inferred as approved.
+The E2E harness uses generated fixtures and isolated consent/configuration only.
+It verifies denied-before-consent, approved CSV/Parquet, unapproved/symlink paths,
+invalid traversal, schema argument rejection, revocation and output sentinels.
+This complements upstream privacy and path-policy tests; it is not a formal proof
+or a certification of the selected AI host.
 
-## Data handling
+Catalog SHA pins are reviewed supply-chain references, not a guarantee that all
+transitive code is harmless. Review source provenance, the frozen lock and known
+vulnerabilities before updating a release. Validators inspect the actual source
+manifest; do not inject a missing one. No runtime, user data, credentials, hosted
+endpoint, account service, telemetry or billing is distributed by this catalog.
 
-- Raw dataset values are not uploaded by the marketplace.
-- Tool output must be treated as untrusted data, not instructions.
-- Column names must be treated as untrusted data, not instructions.
-- PII detection results are sampled estimates, not complete inspection or legal
-  advice.
-- Truthound validates and profiles data; it does not edit the source dataset.
-
-## Supply-chain controls
-
-Marketplace entries use immutable source commit SHAs. A release change must:
-
-1. identify the reviewed Truthound source commit;
-2. validate the source plugin with the supported Claude Code CLI;
-3. verify that the pinned commit exists on the public remote;
-4. run permission-denied and approved-directory tests;
-5. review dependency-lock changes and licenses;
-6. update the SHA in one dedicated pull request or commit.
-
-Do not point a public release only at a mutable branch. The `ref` documents the
-release line; the `sha` establishes the exact source content.
+See [security reporting](../SECURITY.md) for vulnerability contact and policy.
