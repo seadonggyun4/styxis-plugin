@@ -116,10 +116,14 @@ def verify_directory(project, site, directory):
 
 def verify_live(project, site, fetch=None):
     """Read expected artifacts, not an untrusted remote manifest's URL list."""
+    return verify_files_live(render_bundle(project, site), site.data['resource_url'], fetch)
+
+
+def verify_files_live(expected, resource_url, fetch=None):
+    """Verify a locally generated release, never a remotely supplied file list."""
     from urllib.request import Request, build_opener
     from .adapters import NoRedirect
     from datetime import datetime, timezone
-    expected = render_bundle(project, site)
     types = {'index.html': 'text/html', 'style.css': 'text/css', 'facts.json': 'application/json',
              'facts.md': 'text/markdown', 'release.json': 'application/json',
              'robots.txt': 'text/plain', 'sitemap.xml': 'application/xml'}
@@ -137,7 +141,7 @@ def verify_live(project, site, fetch=None):
         route = '/' + name
         if name.endswith('index.html'):
             route = route[:-10]
-        url = site.data['resource_url'] + route
+        url = resource_url + route
         try:
             status, headers, raw = (fetch or http)(url)
             mime = headers.get('content-type', '').split(';')[0].strip().lower()

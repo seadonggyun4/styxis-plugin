@@ -13,15 +13,22 @@ from .resources import ResourceSite, build, verify_directory, verify_live
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="besties")
-    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live"))
+    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live", "plan-persona", "build-persona", "verify-persona", "verify-persona-live"))
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--live", action="store_true", help="Allow GET requests to configured target URLs")
     parser.add_argument("--observations", type=Path)
     parser.add_argument("--site", type=Path, help="Separate resource-host configuration")
     parser.add_argument("--directory", type=Path, help="Existing resource bundle to verify")
+    parser.add_argument("--persona", type=Path, help="Public presentation definition; research settings stay external")
+    parser.add_argument("--approved-plan-sha256", help="Digest of the exact editorial plan reviewed for publication")
     args = parser.parse_args(argv)
     try:
+        if args.command in ("plan-persona", "build-persona", "verify-persona", "verify-persona-live"):
+            from .persona_cli import run
+            result = run(args, parser)
+            print(json.dumps(result, ensure_ascii=False))
+            return 0 if result.get('passed', True) else 1
         project = Project.parse(json.loads(args.manifest.read_text(encoding="utf-8")))
         if args.command in ("build-resources", "verify-resources", "verify-resource-live"):
             if not args.site:

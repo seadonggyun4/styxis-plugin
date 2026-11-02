@@ -159,7 +159,7 @@ Publishing rules (implemented gates and remaining automation are distinguished b
 
 ### What works today and what is planned
 
-Besties **0.3.0** is an independently installable Python development tool in
+Besties **0.4.0** is an independently installable Python development tool in
 [`besties/`](besties/), with no runtime dependencies. It currently validates public
 input manifests, creates evidence-linked review drafts, inspects configured HTML
 pages and imports explicit search/AI-answer observations. It also generates a
@@ -176,15 +176,21 @@ Separate-host configuration and Vercel/Netlify build adapters are implemented in
 project creation remain operator actions. Content agreement means deterministic
 rendering from the same approved claims, not independent semantic fact-checking.
 Source patching, automatic rollback, and search-provider integrations remain future
-work. Hosting configuration stays outside the core fact model; no Styxis product
+work. Version 0.4 adds independent product facts, versioned presentation definitions,
+a shared content plan and exact-plan review hashes. HTML, Markdown, JSON and the
+release manifest retain the same facts and presentation; all facts and limitations
+are mandatory. Static packaging, append-only deployment receipts and imported
+observation comparisons are separate boundaries. See the
+[presentation architecture](docs/besties-presentations.md). Hosting configuration stays outside the core fact model; no Styxis product
 runtime or hosting SDK is required. See the [resource publishing guide](docs/besties-resources.md)
 for commands, deployment configuration and verification boundaries.
 
 Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) (Hobby)
 and [Netlify resource site](https://truthound-geo-no-1.netlify.app/) (Free Legacy)
 are live. The dated receipts distinguish the initial resource release from the
-SEO expansion and record each host’s verified artifact hashes. Vercel uses Git-connected deployment; Netlify currently uses a verified
-static ZIP upload and is not automatically synchronized after a Git push.
+SEO expansion and record each host’s verified artifact hashes. **Besties deploys only generated static artifacts.**
+The original Vercel Git connection has been disconnected; Netlify also uses static
+publication. A Git push does not deploy either resource site.
 SEO/GEO effectiveness remains under evaluation. The planned seven-week review is
 2026-12-21; see the [comparison protocol](docs/research/besties-seo-2026-11-02.md).
 See the [SEO deployment verification](evaluation/results/2026-11-02-besties-seo/summary.json)

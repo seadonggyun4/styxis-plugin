@@ -81,8 +81,8 @@ output. Local repeat builds should use a new CLI output directory. Provider buil
 must start without the previous generated `dist`. `_headers` is Netlify delivery
 configuration; Vercel's equivalent headers live in `vercel.json`.
 
-Initial project creation/login is outside the Besties engine. Git-based production
-updates use each provider's existing deployment workflow. Credentials must never
+Initial project creation/login is outside the Besties engine. Besties publication
+uses generated static artifacts only; Git-connected deployments are disabled. Credentials must never
 be added to the public manifest or artifacts. If a host cannot serve the expected
 release, record a failed/partial deployment; do not declare both synchronized.
 Providers retain previous deployments for operator-directed rollback. Automated
@@ -107,14 +107,15 @@ Both public resource sites are deployed: Vercel Hobby and Netlify Free Legacy
 seven live artifact checks; JSON and Markdown fact hashes match across hosts.
 See the [public verification receipts](../evaluation/results/2026-11-02-besties-resources/summary.json).
 
-Vercel is connected to Git. Netlify was deployed through Netlify Drop with only
+Historical initial delivery used a Vercel Git connection, disconnected later on
+2026-11-02 at the operator’s request. Both hosts now use static publication only. Netlify was deployed through Netlify Drop with only
 the eight verified generated files at the ZIP root. Its initial upload stalled
 and was canceled; the subsequent upload to the existing project published
 successfully. Netlify Git auto-deploy is not connected: a Git push alone does not
 update both hosts. Rebuild and verify the Netlify bundle, then upload the complete
 ZIP to the existing project's Deploys page and rerun live verification. Do not
-create another project for each release. A future authenticated publishing adapter
-or configured Git integration is needed for unattended synchronization.
+create another project for each release. Authenticated static publishing is the only supported direction for future automation;
+do not reconnect a Git repository. Historical receipts retain their original context.
 
 Netlify's provider badge is visible in a browser; the exact-byte checks describe
 the raw HTTP responses returned to Besties, not every provider-injected browser
