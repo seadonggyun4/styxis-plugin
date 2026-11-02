@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-02T07:46:03.775189+00:00",
+  "scope": "Read-only re-verification of deployed GEO surfaces; no product/navigation, crawl policy, account, About or README changes.",
+  "verdicts": {
+    "inspected_implementation": "passed",
+    "robots_declared_search_bot_access": "allowed",
+    "local_ua_token_http_probes": {
+      "passed": 8,
+      "attempted": 8,
+      "provider_ip_access_verified": false
+    },
+    "owner_console_indexing": "unverified",
+    "connected_search_service": {
+      "completed_queries": 4,
+      "queries_with_target_name_or_url": 0,
+      "consumer_ai_answers": false
+    },
+    "current_consumer_ai_recommendation": "unmeasured"
+  },
+  "external_ai_access": {
+    "browser_control_available": false,
+    "new_cli_attempts": 0,
+    "reason": "Previous existing-login Claude CLI attempt was rejected by organization policy; no access-state change was reported, so the known rejection was not retried.",
+    "historical_receipt": "../2026-11-02-geo-development/agent-availability.json"
+  },
+  "preservation": {
+    "about_write_operations": 0,
+    "readme_or_banner_write_operations": 0,
+    "banner_sha256": "3c36a45eb250bf644ea66e4a3724787617a59a375edcbc34fc6090962ba4b29e",
+    "private_source_details_omitted": true
+  },
+  "limits": [
+    "UA-token requests originate from the local environment, not authenticated provider crawler IPs.",
+    "Search-service URL/text absence is not proof of absence from every engine index or hidden retrieval set.",
+    "Technical eligibility is not actual indexing, citation, endorsement or a causal GEO lift.",
+    "These four authored queries and this operator/account do not estimate a population exposure rate."
+  ]
+}
