@@ -1,6 +1,6 @@
 # Besties: independent Truthound pilot
 
-Besties 0.1 is an independently installable, standard-library-only proposal and
+Besties 0.1.1 is an independently installable, standard-library-only proposal and
 inspection tool. Truthound is configuration, not a core dependency. This pilot
 does not deploy content, change GitHub About, edit README banners, or claim that
 passing its inspections causes AI recommendations.
@@ -34,7 +34,9 @@ before publication. It uses supplied statements verbatim with HTML escaping;
 it does not infer competitor capabilities or independently verify source claims.
 
 `audit` reads only exact configured URLs, refuses redirects, limits response size,
-and checks HTTP status, body text, required links and noindex. It is not a browser
+and checks HTTP status, content text, required links and noindex. Article content
+is preferred, then main, then body; navigation links cannot substitute for article
+links when an article exists. Whitespace is normalized. It is not a browser
 render, robots.txt checker, version-semantic validator, crawler visit detector,
 indexing inspector or search recommendation test. Fetch failures are unmeasured,
 not successful or evidence that a page is unindexed. HTML/CSS can hide text beyond
@@ -91,3 +93,18 @@ evidence-content verification, reviewed publication adapters, and engine-specifi
 observation integrations. Production edits require an adapter with explicit path
 allowlists, preservation checks, concurrency checks and rollback. None is silently
 enabled by this pilot.
+
+## GX alternative / MCP category scenario
+
+`besties/examples/truthound/category-project.json` is a second input for the same
+engine. It binds the existing English and Korean comparison and MCP guides to
+explicit article-content requirements and reciprocal links. Run `plan`, then
+`audit --live` with that manifest using separate output directories before and
+after publication. Navigation alone does not satisfy these checks.
+
+The generated proposal is editorial input. Source changes and deployment use the
+documentation repository's existing reviewed workflow; Besties does not perform
+those writes. Fresh temporary Copilot and Gemini conversations provide separate
+observations, imported through `evaluate`. Record the exact prompt including any
+web-search instruction alongside the observations. An immediate post-deployment
+answer is a smoke test, not evidence that a crawler has ingested the new pages.

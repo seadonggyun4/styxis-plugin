@@ -16,4 +16,5 @@ jobs:
           python3 -m unittest discover -s tests -v
           PYTHONPATH=besties/src python3 -m unittest discover -s besties/tests -v
           PYTHONPATH=besties/src python3 -m besties.cli validate besties/examples/truthound/project.json
+          PYTHONPATH=besties/src python3 -m besties.cli validate besties/examples/truthound/category-project.json
           python3 scripts/evaluate.py --variant installed --output /tmp/discovery.json

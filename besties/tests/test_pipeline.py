@@ -85,6 +85,24 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(audit(self.project, self.snapshots(hidden))["passed"])
         self.assertFalse(audit(self.project, self.snapshots(headers={"X-Robots-Tag": "noindex"}))["passed"])
 
+    def test_navigation_cannot_substitute_for_article_content(self):
+        url = self.data["targets"][0]["required_links"][0]
+        html = f'<body><nav>Truthound check_file profile_file scan_pii<a href="{url}">Example</a></nav><main><article>Framework overview only</article></main></body>'
+        result = audit(self.project, self.snapshots(html))
+        self.assertFalse(result["passed"])
+        self.assertEqual(result["pages"][0]["content_region"], "article")
+        self.assertIn("check_file", result["pages"][0]["missing_terms"])
+        self.assertIn(url, result["pages"][0]["missing_links"])
+        empty = html.replace("Framework overview only", "")
+        self.assertFalse(audit(self.project, self.snapshots(empty))["passed"])
+
+    def test_article_word_wrap_is_normalized(self):
+        for target in self.data["targets"]:
+            target["required_terms"] = ["local data validation"]
+            target["required_links"] = []
+        project = Project.parse(self.data)
+        self.assertTrue(audit(project, self.snapshots('<body><article>local\n data\tvalidation</article></body>'))["passed"])
+
     def test_adapter_failure_is_unmeasured_and_does_not_leak_exception(self):
         class Broken:
             def read(self, url):
