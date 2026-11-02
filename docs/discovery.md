@@ -42,3 +42,10 @@ Negative boundaries:
 No single channel guarantees discovery by every agent. Release evaluation should
 measure Registry Recall@10, Plugin Recall@5, Tool Hit@3, false-selection rate,
 install success, and first-call success using positive and negative queries.
+
+During distribution Phase 1, discovery relies on the Styxis-owned GitHub
+marketplace, the Official MCP Registry, product documentation, GitHub metadata,
+and post-install tool contracts. Anthropic and OpenAI official/community
+marketplace submissions are intentionally deferred to Phase 2, after the project
+has sufficient usage, operational maturity, security response, and maintenance
+capacity. They are not Phase 1 launch blockers or current discovery dependencies.

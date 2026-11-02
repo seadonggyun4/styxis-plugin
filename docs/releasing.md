@@ -31,3 +31,22 @@ Truthound source tests
 
 Never publish a future product as an empty directory or placeholder marketplace
 entry. Discovery metadata is a public capability claim.
+
+## External marketplace submissions
+
+Anthropic and OpenAI official/community marketplace registration is outside the
+Phase 1 release gate. Do not block a Truthound release on those submissions and
+do not describe the plugin as listed, approved, reviewed, or endorsed by either
+vendor.
+
+Reconsider external submission in distribution Phase 2 when all of the following
+are true:
+
+- the project has sustained usage beyond the maintainers;
+- tool, permission, privacy, and support contracts are stable;
+- install and first-call E2E checks run reliably;
+- release provenance and vulnerability response are repeatable;
+- Styxis can maintain third-party review and update obligations.
+
+At that time, re-check each vendor's current program, eligibility, policies, and
+submission procedure rather than relying on this repository's historical notes.

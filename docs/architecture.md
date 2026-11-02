@@ -49,3 +49,25 @@ The public catalog contains only `truthound`.
 - Golem/AWE remains Alpha and is not listed until its public tool and permission
   contracts are stable.
 - TRAP and Mabinogion are not placeholders in the public catalog.
+
+## Distribution phases
+
+### Phase 1: owned distribution
+
+- Operate `seadonggyun4/styxis-plugin` as the supported Claude marketplace.
+- Publish Truthound metadata to the Official MCP Registry for cross-client
+  discovery when its package and E2E checks are ready.
+- Prove install, permission, startup, first-call, support, and release workflows.
+- Build usage and security-response evidence before expanding distribution.
+
+### Phase 2: external marketplace review
+
+Anthropic and OpenAI official/community marketplace registration is deferred to
+Phase 2. Styxis will begin those submission processes only when the project has
+meaningful scale, stable public contracts, repeatable release and vulnerability
+response, and enough maintenance capacity for third-party review obligations.
+
+Phase 2 is a distribution decision, not a claim that either vendor guarantees a
+public listing or maintains a submission channel with identical requirements.
+The applicable program and policies must be re-verified when Styxis is ready to
+apply.
