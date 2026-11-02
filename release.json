@@ -26,11 +26,11 @@
     "web_deployment_verified": true,
     "local_cli_updated": true,
     "local_mcp_installations_updated": true,
-    "current_chat_mcp_cache_reloaded": false,
+    "current_chat_mcp_cache_reloaded": true,
     "source_release_docs_live_verified": true,
     "task_temporary_branches_removed": true
   },
-  "note": "All three repository changes are integrated into main and the three task-created temporary branches are removed locally and remotely. Core 3.3.1 canonical artifacts, Official Registry 3.3.1, public default-catalog installation, live canonical web/docs, local CLI and Local/Core MCP installations are verified. Core artifact source and later plugin-repin source remain distinct. About, the visible README banner and existing grants are preserved. Actual Agent selection remains unmeasured after account access rejection. Current-chat tool-cache refresh requires a new chat or app restart; host policy blocks controlling the Codex app UI.",
+  "note": "All three repository changes are integrated into main and the three task-created temporary branches are removed locally and remotely. Core 3.3.1 canonical artifacts, Official Registry 3.3.1, public default-catalog installation, live canonical web/docs, local CLI and Local/Core MCP installations are verified. Core artifact source and later plugin-repin source remain distinct. About, the visible README banner and existing grants are preserved. Actual Agent selection remains unmeasured after account access rejection. After the user restarted Codex, current-chat Local tool descriptions and Core check_file matched the published installation. This metadata observation does not constitute an Agent selection benchmark.",
   "verification": {
     "remote_e2e": "evaluation/results/release-3.3.1/installed-e2e.json",
     "web_html": "evaluation/results/release-3.3.1/web-build.json",
@@ -47,7 +47,8 @@
     "local_cli": "evaluation/results/release-3.3.1/local-cli-updated.json",
     "local_mcp": "evaluation/results/release-3.3.1/local-mcp-updated.json",
     "preservation": "evaluation/results/release-3.3.1/preservation.json",
-    "source_docs_live": "evaluation/results/release-3.3.1/live-source-docs.json"
+    "source_docs_live": "evaluation/results/release-3.3.1/live-source-docs.json",
+    "current_chat_refresh": "evaluation/results/release-3.3.1/current-chat-refresh.json"
   },
   "core_artifact_source_sha": "80f8092d30918c825154e3ff8e5ed3ca4c328b17"
 }

@@ -72,6 +72,8 @@ The [local MCP receipt](../../evaluation/results/release-3.3.1/local-mcp-updated
 records Local 0.1.7 and Core 0.2.1. Fresh connections using the actual registered
 commands initialize Core 3.3.1 and list 3/176 tools. Existing enabled settings,
 environment and permission files are unchanged; no user-data file calls were made.
-This proves updated installation/startup. The active chat retained its previous
-tool metadata, and host policy blocked controlling the Codex app UI to refresh it.
-Start a new chat or restart the desktop app to load the updated tool cache.
+The user subsequently restarted Codex. The [current-chat observation](../../evaluation/results/release-3.3.1/current-chat-refresh.json)
+confirms that all three Local descriptions and Core `check_file` match the
+published installation. The 44 Core tools exposed to this chat are a host-visible
+subset, separate from the fresh server tools/list count of 176 above. No user-data
+call or Agent selection benchmark was performed for this metadata check.

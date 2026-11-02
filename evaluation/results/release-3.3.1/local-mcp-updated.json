@@ -24,11 +24,12 @@
       "file_calls_performed": false
     }
   },
-  "current_chat_connection_reloaded": false,
+  "current_chat_connection_reloaded": true,
   "current_chat_refresh": {
-    "required_for_current_tool_metadata": true,
-    "blocker": "Computer Use explicitly disallows controlling com.openai.codex for safety reasons. No alternate UI-control method was used.",
-    "action": "Start a new chat or restart the desktop app after this task.",
-    "official_guidance": "https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually"
+    "required_for_current_tool_metadata": false,
+    "status": "verified_after_user_restart",
+    "evidence": "current-chat-refresh.json",
+    "scope": "Host-visible tool metadata matches the published installation. No user-data call or Agent selection benchmark was performed.",
+    "previous_ui_control_blocker": "Codex app UI control was disallowed; the user restarted the app directly."
   }
 }
