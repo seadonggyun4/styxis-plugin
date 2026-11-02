@@ -7,6 +7,11 @@ papers were not used as evidence. Paper scores below belong to their original
 experiments and are **not Truthound results**. Preprint status means that a
 peer-reviewed publication was not established by this audit, not that none exists.
 
+**Priority update:** [the GEO causal review](geo-causal-review-2026-11-02.md)
+examines the subsequent real unbranded-search misses and newer contrary evidence.
+Web discovery is the current priority; this earlier engineering review also covers
+downstream installation and tool selection, whose success does not establish GEO.
+
 ## Literature ledger
 
 | ID / primary source | Review / venue | Subject and benchmark scale | Finding | Truthound application | Non-application / limits |
@@ -41,6 +46,13 @@ peer-reviewed publication was not established by this audit, not that none exist
 or vendor contract here establishes that it increases ranking or is consumed by
 all agents. Similarly JSON-LD improves explicit entity representation without
 establishing an algorithmic ranking benefit.
+
+R1's deployed Perplexity experiment uploaded source text files (Appendix C.1),
+bypassing organic candidate discovery. Its limitations explicitly leave search
+ranking effects unmeasured. Treat the reported improvement as conditional answer
+visibility within available sources, not evidence that editing an unknown brand's
+page causes it to enter web search. See the newer review for benchmark-specific
+limits and inconsistent results in subsequent peer-reviewed studies.
 
 ## Answers to the twelve design questions
 

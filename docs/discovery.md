@@ -1,5 +1,15 @@
 # Discovery contracts
 
+Current priority is **unbranded web discovery before additional packaging work**.
+The [critical GEO review](research/geo-causal-review-2026-11-02.md) distinguishes
+page availability/indexing, engine query rewriting and candidate retrieval,
+answer selection, citation and brand mention. Upstream stages not exposed by a
+provider remain unknown. No mention/citation is not proof of no retrieval.
+Direct-URL reading and supplied-candidate selection are separate diagnostics,
+not organic discovery successes. Formatting, FAQ and schema changes alone have
+no established universal GEO benefit. Packaging remains necessary maintenance
+when installation or use would otherwise fail.
+
 Primary identity: local-first data quality and validation for AI agents. Connect
 CSV/Parquet checks, profiling and sampled PII through actual tasks and explicit
 input/result boundaries. Korean and English use the same product facts.

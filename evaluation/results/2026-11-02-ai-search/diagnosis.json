@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "outcome_evidence": {
+    "baseline_answers": 12,
+    "baseline_target_mentions": 0,
+    "immediate_recheck_answers": 4,
+    "recheck_target_mentions": 0
+  },
+  "upstream_engine_retrieval_observed": false,
+  "indexing_status_verified_in_owner_console": false,
+  "immediate_recheck_timing": [
+    {
+      "provider": "Claude",
+      "query_id": "u03",
+      "seconds_after_first_deployment_verification": 100.734
+    },
+    {
+      "provider": "Gemini",
+      "query_id": "u03",
+      "seconds_after_first_deployment_verification": 110.203
+    },
+    {
+      "provider": "Gemini",
+      "query_id": "u04",
+      "seconds_after_first_deployment_verification": 166.334
+    },
+    {
+      "provider": "Claude",
+      "query_id": "u04",
+      "seconds_after_first_deployment_verification": 166.406
+    }
+  ],
+  "baseline_displayed_link_host_response_counts": {
+    "github.com": 9,
+    "pypi.org": 7,
+    "glama.ai": 3,
+    "lobehub.com": 2,
+    "dev.to": 2,
+    "www.google.com": 2,
+    "docs.getdbt.com": 1,
+    "docs.soda.io": 1,
+    "jonpspri.github.io": 1,
+    "posit-dev.github.io": 1,
+    "antigravity.codes": 1,
+    "hub.docker.com": 1,
+    "mcp.so": 1,
+    "socket.dev": 1
+  },
+  "host_count_scope": "Number of baseline answers containing a displayed link from each host, deduplicated per answer; hosts overlap. These are not engine retrieval logs or independent-review counts.",
+  "distribution_observation": {
+    "url": "https://agent-plugins.directory/seadonggyun4/truthound",
+    "http_status": 200,
+    "source": "Server-rendered visible body text, scripts excluded",
+    "displayed_local_plugin_version": "0.1.5",
+    "displayed_core_version": "3.3.0",
+    "current_release_comparison": {
+      "local_plugin": "0.1.7",
+      "core": "3.3.1"
+    },
+    "scope": "Observed third-party listing lag, not proof that Gemini or Claude read or rejected this listing."
+  },
+  "search_service_observation": {
+    "exact_guide_url_probe_returned_exact_guide": false,
+    "other_legacy_docs_returned": true,
+    "legacy_mcp_result_body_reported_version": "3.2.0",
+    "scope": "Search-service snapshot, not a complete Google/Bing index audit or a Gemini/Claude trace."
+  },
+  "snippet_only_observation": {
+    "url": "https://sourceweft.com/mcp/io.github.seadonggyun4%2Ftruthound",
+    "search_snippet_reported_version": "3.2.0",
+    "search_snippet_category": "Location & Lifestyle",
+    "direct_fetch_status": 403,
+    "live_listing_fields_verified": false
+  },
+  "hypothesis": "Candidate retrieval/ordering and source-distribution gaps are plausible upstream bottlenecks; their exact contribution to the 16 misses is not identified.",
+  "limits": [
+    "No current retrieval trace was recovered from the retained UI tabs; only saved answer observations are available.",
+    "No general engine indexing claim follows from a site-operator miss.",
+    "No causal GEO lift or failure can be inferred from the immediate post-deployment recheck.",
+    "No private source identifiers or account data are included."
+  ]
+}

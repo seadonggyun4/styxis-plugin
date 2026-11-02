@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-11-02",
+  "review_type": "Targeted critical literature review, not a systematic review, meta-analysis or reproduction of paper experiments.",
+  "selection": "Primary proceedings, journals, author/arXiv full texts and academic books; method/result/limitations reading prioritized over promotional summaries. English-language and access-related selection bias remains.",
+  "papers": [
+    {
+      "id": "P01",
+      "title": "GEO: Generative Engine Optimization",
+      "authors": "Aggarwal et al.",
+      "year": 2024,
+      "venue": "KDD 2024",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://arxiv.org/html/2311.09735v3",
+      "doi": "10.1145/3637528.3671900",
+      "design": "GEO-bench 10,000 queries; evaluation on 1,000-query test split; top-5 Google sources supplied; 5 response seeds; Perplexity file-upload subset of 200",
+      "finding_used": "Controlled text changes within already available candidates; attribution-weighted word-count and subjective impression",
+      "limits": "Candidate entry into organic web search and search ranking were not measured. File uploads in the deployed-engine test bypassed organic source discovery. Relative impression gains are not recommendation probabilities.",
+      "inspection": "Full HTML methods, Tables 1/5, limitations and Appendix C.1 inspected"
+    },
+    {
+      "id": "P02",
+      "title": "C-SEO Bench: Does Conversational SEO Work?",
+      "authors": "Puerto et al.",
+      "year": 2025,
+      "venue": "NeurIPS 2025 Datasets and Benchmarks",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://papers.neurips.cc/paper_files/paper/2025/hash/27aa3aeff0f8460a7b43d30fa6c5c032-Abstract-Datasets_and_Benchmarks_Track.html",
+      "doi": null,
+      "design": "2 tasks, 6 domains, about 16.3k documents; 10 rewrite methods; 4 proprietary model configurations; multi-actor adoption",
+      "finding_used": "Citation ordering under fixed candidate contexts; many rewrites gave no gain or reduced ranking; strong position effects",
+      "limits": "The SEO baseline moves documents within an LLM context; it does not establish a particular real-web SEO intervention. English only. Its outcome differs from GEO word attribution.",
+      "inspection": "Proceedings confirmed; full arXiv HTML methods, sections 6.1–6.4 and limitations inspected"
+    },
+    {
+      "id": "P03",
+      "title": "SAGEO Arena: A Realistic Environment for Evaluating Search-Augmented Generative Engine Optimization",
+      "authors": "Kim et al.",
+      "year": 2026,
+      "venue": "KDD 2026 V.2",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://arxiv.org/html/2602.12187v2",
+      "doi": "10.1145/3770855.3818146",
+      "design": "2,700 queries, 9 domains, 171,003 documents; modular retrieval/reranking/generation; BM25 plus dense/hybrid checks",
+      "finding_used": "Stage visibility after rewriting and reindexing; changes useful to generation can lose retrieval/reranking visibility; structural fields matter in this controlled system",
+      "limits": "Targets start in the baseline reranker top-10; not a new-brand indexing experiment. Static indexed corpus and chosen model/field weights do not reproduce commercial search, link signals or user signals.",
+      "inspection": "Full v2 HTML including corpus construction, stage-level metrics, model substitutions and Appendix D inspected"
+    },
+    {
+      "id": "P04",
+      "title": "What Drives AI Citations? Content, Retrieval and Model Knowledge in Generative Engine Optimization (GEO)",
+      "authors": "Chen and Koudas",
+      "year": 2026,
+      "venue": "arXiv:2610.15033v1",
+      "review_status": "arXiv manuscript; peer-reviewed venue not confirmed",
+      "primary_url": "https://arxiv.org/html/2610.15033v1",
+      "doi": null,
+      "design": "Two 90-day English commercial datasets: 158,099 answers and 468,037 citations; engine API replays and controlled answer-stage tests",
+      "finding_used": "Separates within-website page features, engine retrieval and brand prior; replay retrieval explained more variation than the observed page features",
+      "limits": "Associational main design; one-time post-collection page fetch with missing pages; API replay after collection differs from consumer UI; US English, author-operated monitoring platform; no demonstrated effect of editing a model prior.",
+      "inspection": "Full official arXiv HTML fetched; sections 3–8 and experimental/limitation details inspected"
+    },
+    {
+      "id": "P05",
+      "title": "How Generative AI Disrupts Search: An Empirical Study of Google Search, Gemini, and AI Overviews",
+      "authors": "Grossman et al.",
+      "year": 2026,
+      "venue": "SIGIR 2026",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://web.njit.edu/~borcea/papers/acm-sigir26.pdf",
+      "doi": "10.1145/3805712.3809667",
+      "design": "11,500 benchmark queries; 14,212 including additional time-sensitive sets; Google SERP, AIO and Gemini 2.5 Flash",
+      "finding_used": "Source sets and repeatability differ across engines and query variants",
+      "limits": "Descriptive snapshot of Google systems, partly API-collected; not an intervention study or a Claude/current Auto-mode evaluation. Google-Extended associations do not identify a causal crawler policy effect.",
+      "inspection": "University-hosted PDF methods and limitations inspected; PDF page 7 Figure 6/Table 4 visually checked"
+    },
+    {
+      "id": "P06",
+      "title": "The attribution crisis in LLM search results: Estimating ecosystem exploitation",
+      "authors": "Strauss et al.",
+      "year": 2026,
+      "venue": "Data & Policy, Cambridge University Press",
+      "review_status": "peer-reviewed journal",
+      "primary_url": "https://www.cambridge.org/core/journals/data-and-policy/article/attribution-crisis-in-llm-search-results-estimating-ecosystem-exploitation/170DD0B88E5F5AEA8F69F2E9AF1328E3",
+      "doi": "10.1017/dap.2026.10064",
+      "design": "13,929 cleaned answer observations from March–April 2025 Search Arena; 7,000 paired original queries; 11 model variants",
+      "finding_used": "Search-log URLs and answer citations differ; traces themselves can be incomplete",
+      "limits": "Provider-disclosed logs are proxies, not verified reads; filtered traces and older API models limit inference. A citation miss cannot by itself prove a retrieval miss.",
+      "inspection": "Publisher full text, publication date, variable definitions, descriptive tables and trace limitations inspected"
+    },
+    {
+      "id": "P07",
+      "title": "Media Source Matters More Than Content: Unveiling Political Bias in LLM-Generated Citations",
+      "authors": "Dai et al.",
+      "year": 2025,
+      "venue": "EMNLP 2025",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://aclanthology.org/2025.emnlp-main.872/",
+      "doi": "10.18653/v1/2025.emnlp-main.872",
+      "design": "AllSides-2024: 1,340 queries, 2,680 passages, 169 outlets; dual-document content/source comparisons",
+      "finding_used": "Source identity can affect generated citations independently of text stance in this news setting",
+      "limits": "News/political identities and two-document candidate contexts do not establish software-brand authority effects in organic search.",
+      "inspection": "ACL metadata and paper PDF dataset/pipeline/controlled-source methods inspected"
+    },
+    {
+      "id": "P08",
+      "title": "Authority Bias in Conversational Search Engines for Academic Paper Recommendation",
+      "authors": "Jinadu et al.",
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://aclanthology.org/2026.emnlp-main.1069.pdf",
+      "doi": null,
+      "design": "1,250 papers in 25 topics; 8 LLMs; content-identical original/flipped/boosted authority metadata; in-context top-1 choices",
+      "finding_used": "Authority metadata can change choices with the same title/abstract; explanations understate behavioral bias",
+      "limits": "Academic metadata is not software brand evidence. In-context candidates are supplied; no real-web candidate generation.",
+      "inspection": "Official ACL PDF acquired; methods, validity limits and page 4 dataset/authority-weight table visually inspected"
+    },
+    {
+      "id": "P09",
+      "title": "Answer Bubbles: Information Exposure in AI-Mediated Search",
+      "authors": "Huang et al.",
+      "year": 2026,
+      "venue": "Findings of EMNLP 2026",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://aclanthology.org/2026.findings-emnlp.8.pdf",
+      "doi": null,
+      "design": "11,000 NQ-derived queries across 5 systems; content-coverage analysis on a 1,100-query subset",
+      "finding_used": "Cited sources and content actually represented in a synthesis differ; source length associates with measured coverage",
+      "limits": "Predominantly information-seeking English questions, one-time/location snapshot; entailment and max-over-chunk coverage are noisy and length-sensitive; no causal shortest-page rule.",
+      "inspection": "Official ACL PDF acquired; data collection, coverage methods and limitations inspected; page 7 methods/results visually checked"
+    },
+    {
+      "id": "P10",
+      "title": "Source Coverage and Citation Bias in LLM-based vs. Traditional Search Engines",
+      "authors": "Zhang et al.",
+      "year": 2025,
+      "venue": "arXiv:2512.09483v1",
+      "review_status": "arXiv manuscript; peer-reviewed venue not confirmed",
+      "primary_url": "https://arxiv.org/html/2512.09483",
+      "doi": null,
+      "design": "55,936 query corpus; 6 generative search platforms and Google/Bing; 2025 US trends and related questions",
+      "finding_used": "User-facing source mixes differ; generative systems also surface less-popular and unique domains",
+      "limits": "Only user-facing citations, not all retrieved pages; source-feature associations/classifiers are not causal rewrite effects; topical/temporal sampling bias.",
+      "inspection": "Full HTML data collection and HTML-feature/prediction methods and limits inspected"
+    },
+    {
+      "id": "P11",
+      "title": "Generative Engine Optimization: How to Dominate AI Search",
+      "authors": "Chen et al.",
+      "year": 2025,
+      "venue": "arXiv:2509.08919v1",
+      "review_status": "arXiv manuscript; peer-reviewed venue not confirmed",
+      "primary_url": "https://arxiv.org/html/2509.08919v1",
+      "doi": null,
+      "design": "Multiple ranking-style brand queries by region, category, language and paraphrase; source-type classification",
+      "finding_used": "Reports substantial third-party-source use and engine/language differences in its sampled commercial questions",
+      "limits": "Observational, query generation and automatic labels; broad strategic prescriptions exceed causal evidence. Do not generalize a fixed earned-media share to all software queries or later engines.",
+      "inspection": "Full HTML methodological pipeline, software/brand/language results and source classification inspected"
+    },
+    {
+      "id": "P12",
+      "title": "What Gets Cited: Competitive GEO in AI Answer Engines",
+      "authors": "Vishwakarma et al.",
+      "year": 2026,
+      "venue": "arXiv:2605.25517v1",
+      "review_status": "arXiv manuscript; peer-reviewed venue not confirmed",
+      "primary_url": "https://arxiv.org/html/2605.25517",
+      "doi": null,
+      "design": "100 seed product articles; 1,440 synthetic paired scenarios; 18 factors, 6 models and 252,000 repeated trials",
+      "finding_used": "Conditional first-citation preference in two injected, anonymized sources; relevance and order are important",
+      "limits": "Not organic search; synthetic/anonymized product contexts; repeated trials are not independent markets; some very large odds ratios have singular-fit or degenerate-Hessian warnings.",
+      "inspection": "Full HTML factorial methods, Table 2 warnings and limitations inspected"
+    },
+    {
+      "id": "P13",
+      "title": "From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms",
+      "authors": "Zhang, He and Yao",
+      "year": 2026,
+      "venue": "arXiv:2604.25707v2",
+      "review_status": "arXiv manuscript; peer-reviewed venue not confirmed",
+      "primary_url": "https://arxiv.org/html/2604.25707",
+      "doi": null,
+      "design": "602 prompts; 21,143 reported search-layer citations and 23,745 feature records from an existing public project",
+      "finding_used": "Distinguishes citation breadth from answer contribution; FAQ-only association is not a universal benefit",
+      "limits": "Static descriptive report, taxonomy/measurement noise and unexecuted confirmatory specifications; no causal claim that FAQs harm or evidence containers guarantee visibility.",
+      "inspection": "Full HTML measurement/identification and limitations inspected"
+    },
+    {
+      "id": "P14",
+      "title": "Think Before Writing: Feature-Level Multi-Objective Optimization for Generative Citation Visibility",
+      "authors": "Liu and Xu",
+      "year": 2026,
+      "venue": "ACL 2026 Long Papers",
+      "review_status": "peer-reviewed proceedings",
+      "primary_url": "https://aclanthology.org/2026.acl-long.929/",
+      "doi": "10.18653/v1/2026.acl-long.929",
+      "design": "GEO-Bench; fixed five retrieved sources plus an injected advertiser page; 13 features; NSGA-II; GPT-4o-mini, Gemini-2.5-flash and Qwen-plus answer generators",
+      "finding_used": "Feature-level multi-objective optimization improved conditional citation visibility over the unmodified injected page and heuristic rewrites in three controlled answer generators.",
+      "limits": "Upstream admission/ranking excluded explicitly; LLM-based quality scores do not verify facts; generated advertiser content and computational cost limit transfer; no organic consumer-UI visibility measurement.",
+      "inspection": "Official ACL metadata and PDF sections 3–4, Table 2, limitations and Appendix B/C inspected; PDF pages 5–6 visually checked"
+    }
+  ],
+  "academic_books": [
+    {
+      "id": "B01",
+      "title": "Introduction to Information Retrieval",
+      "authors": "Manning, Raghavan and Schütze",
+      "publisher": "Cambridge University Press",
+      "year": 2008,
+      "primary_url": "https://nlp.stanford.edu/IR-book/",
+      "parts_reviewed": [
+        "Chapter 8 precision/recall, ranked evaluation and representative query sets",
+        "Chapter 20 freshness and URL frontier",
+        "Chapter 21 link analysis"
+      ],
+      "application": "Separate corpus availability, retrieval relevance, ordering and end outcomes; classical IR principles are not a vendor GEO algorithm."
+    },
+    {
+      "id": "B02",
+      "title": "Learning to Rank for Information Retrieval",
+      "authors": "Tie-Yan Liu",
+      "publisher": "Foundations and Trends in Information Retrieval / now Publishers",
+      "year": 2009,
+      "doi": "10.1561/1500000016",
+      "primary_url": "https://www.nowpublishers.com/article/DownloadEBook/INR-016",
+      "parts_reviewed": [
+        "Public 36-page publisher preview, including introductory ranking/evaluation material, not the whole 107-page monograph"
+      ],
+      "application": "Learned relevance and query-level evaluation differ from a closed local BM25 fixture; preview access only is disclosed."
+    }
+  ],
+  "official_sources": [
+    {
+      "id": "O01",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "scope": "Google Search AI Overviews/AI Mode eligibility; not a universal Gemini-app contract."
+    },
+    {
+      "id": "O02",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl",
+      "scope": "Google crawl/index timing and owner-authorized URL inspection; not a promised waiting period."
+    }
+  ],
+  "supplement": {
+    "id": "M01",
+    "url": "https://github.com/GEO-optim/GEO/blob/main/src/geo_functions.py",
+    "inspection": "Public code read, not executed; current main snapshot, not independently proven to be the exact 2024 run revision.",
+    "observation": "Some rewrite prompts permit invented citations/quotes/hypothetical statistics; do not copy them as factual business claims."
+  },
+  "counts": {
+    "peer_reviewed_papers": 9,
+    "arxiv_only_reviewed_versions": 5,
+    "academic_books_or_monographs_related_parts": 2
+  },
+  "excluded_as_evidence": [
+    "Marketing summaries and commercial SEO checklists were discovery leads only, not evidence for causal claims.",
+    "Screened papers not reviewed in enough methodological detail were not added to the core count."
+  ],
+  "copyright": "Only bibliography, short paraphrases and original analysis are committed. Downloaded full texts and rendered pages are not committed.",
+  "supplemental_search_check": {
+    "date": "2026-11-02",
+    "purpose": "Additional primary-source discovery check; these are actual supplementary queries, not a complete reconstructed search history.",
+    "queries": [
+      "\"generative engine optimization\" \"retrieval\" benchmark site:arxiv.org",
+      "\"conversational SEO\" site:papers.neurips.cc",
+      "\"generative\" \"citation\" \"source\" site:aclanthology.org 2026 search",
+      "\"information retrieval\" \"evaluation\" \"freshness\" site:nlp.stanford.edu/IR-book"
+    ],
+    "primary_followup_added": "P14",
+    "screened_not_added": [
+      {
+        "url": "https://arxiv.org/abs/2610.38090",
+        "reason": "Abstract-level screening only; controlled supplied-source scorer, not an organic intervention; methods not reviewed enough to count."
+      },
+      {
+        "url": "https://arxiv.org/abs/2608.16824",
+        "reason": "Abstract-level screening only; GEO detection, not evidence for the cause of the observed misses; methods not reviewed enough to count."
+      }
+    ]
+  }
+}

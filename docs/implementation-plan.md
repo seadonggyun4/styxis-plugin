@@ -2,6 +2,27 @@
 
 This is internal engineering documentation. No vendor marketplace submission is authorized here.
 
+## Current priority: GEO
+
+The user's priority is organic unbranded discovery. The earlier sequence below
+records completed engineering work; it is not the order for the next iteration.
+Follow the [critical literature review](research/geo-causal-review-2026-11-02.md):
+verify owner-observable indexing where authorized; observe engine-specific queries
+and candidate/answer evidence; diagnose direct reading and supplied-candidate
+selection separately; correct verified public-source inconsistencies; then assess
+truthful task evidence on repeated, separately held-out questions. Hidden search
+stages and missing observations stay unknown. Keep UI/API conditions distinct.
+
+Immediate post-deployment zero mentions are not an efficacy test: the four answer
+observations were recorded about 101–166 seconds after served-guide verification,
+without verified indexing. Existing baseline misses require further diagnosis.
+Do not make another package release or add format-only GEO changes without a
+measured blocker or a testable hypothesis. About and README banner preservation
+remain mandatory. No new external account, outreach or recurring job is created
+by this plan.
+
+## Recorded engineering decisions
+
 | Decision | Evidence | Concrete implementation | Verification |
 | --- | --- | --- | --- |
 | Separate server retrieval, tool retrieval and execution | MCP Registry ecosystem; MCP tools spec; MCP-Zero | Three evaluation stages plus isolated install/E2E receipts | Rankings and execution denominators reported separately |
