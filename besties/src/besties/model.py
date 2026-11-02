@@ -1,6 +1,6 @@
 """Validate public inputs before generating any artifacts."""
 from dataclasses import dataclass
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, parse_qsl
 import re
 
 
@@ -19,6 +19,18 @@ def public_url(value):
     require(parsed.scheme == "https" and bool(parsed.hostname) and not parsed.username
             and not parsed.password and not parsed.query and not parsed.fragment,
             "Expected a credential-free HTTPS URL without query or fragment")
+    return value
+
+
+def public_reference_url(value):
+    """Allow public document selectors without relaxing deployment-origin URLs."""
+    require(isinstance(value, str) and not any(c.isspace() or ord(c) < 32 for c in value), 'Invalid reference URL')
+    parsed = urlsplit(value)
+    public_url(parsed._replace(query='').geturl())
+    selectors = parse_qsl(parsed.query, keep_blank_values=True, strict_parsing=True)
+    require(all(k in ('id', 'contentsid', 'lang', 'language') and
+                re.fullmatch(r'[A-Za-z0-9_-]{1,120}', v) for k, v in selectors), 'Unsupported public document selector')
+    require(len({k for k, _ in selectors}) == len(selectors), 'Duplicate document selector')
     return value
 
 

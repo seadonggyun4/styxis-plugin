@@ -138,3 +138,35 @@ Environment schema 2 holds only operational paths, accounts and optional credent
 See the explicit migration instructions in the environment guide. The existing
 resource/presentation rendering commands and output contracts remain supported.
 This architecture change does not require republishing unchanged sites.
+
+
+## Korean restaurant visitor guides (0.6.0)
+
+Facts schema v1 keeps the original English software template byte-for-byte.
+Facts schema v2 adds an explicit `entity` object and selects the independent
+`place-1` template. Currently supported entity type: `Restaurant`; editorial
+languages: `ko` and `en`. This is a bounded new domain, not support for every
+business type or automatic translation.
+
+The entity has `type`, `address` (streetAddress, addressLocality, addressRegion,
+addressCountry), `telephone` (international format), and public `evidence` IDs.
+It belongs to the reviewed content plan: changing contact details invalidates
+the approval digest. HTML and Markdown show the contact details; JSON preserves
+the full plan. JSON-LD describes a WebPage about a Restaurant, not software.
+Parity validation rejects modified types or contact fields even if artifact
+hashes are recalculated. Unsupported fields such as invented ratings and hours
+are rejected. Source bindings still require human factual review.
+
+Public document reference URLs can use the bounded selectors `id`, `contentsid`,
+`lang`, and `language`; credentials, fragments and other query parameters are
+rejected. Deployment URLs and canonical origins retain their stricter contract.
+
+The template is a public-source visitor guide and does not claim to be an
+official business website. It includes a map-search link and a telephone link,
+with data-format links inside a disclosure. It uses an original bowl illustration,
+not an image presented as the actual menu. No restaurant-specific inputs,
+private research records or account settings are included in this repository.
+
+Use the existing `plan-persona`, `build-persona`, and `verify-persona` commands
+with v2 facts and a reviewed presentation. Static hosting, exact-plan review,
+layout locks, manifests and post-deployment verification are unchanged.

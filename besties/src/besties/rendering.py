@@ -18,6 +18,10 @@ def render(plan, site, approved_plan_sha256):
     checked = compose(ProductFacts.parse(plan.data['facts']), PersonaDefinition.parse(plan.data['presentation']))
     require(checked.data == plan.data, 'Plan contains unrecognized data')
     require(approved_plan_sha256 == plan_digest(plan), 'Exact plan review required')
+    if plan.data['facts']['schema_version'] == 2:
+        from .places import render_place
+        return render_place(plan, site)
+    require(plan.data['presentation']['language'] == 'en', 'Legacy software template requires English')
     facts, p = plan.data['facts'], plan.data['presentation']
     canonical = site.data['canonical_url'].rstrip('/') + '/'
     claims = {c['id']: c for c in facts['claims']}

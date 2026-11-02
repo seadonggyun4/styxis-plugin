@@ -172,6 +172,7 @@ Besties는 **같은 제품 사실을 서로 다른 설명 방식으로 전달**�
 | 실제 배포 주소 | DeploymentRegistry | 플랫폼별 프로젝트·공개 URL을 기록하고 동일 페르소나의 미러끼리 canonical을 연결합니다. |
 | 사실과 설명 분리 | ProductFacts · PersonaDefinition | 기능·제한·근거를 고정하고 설명 순서와 검토된 표현을 별도로 관리합니다. |
 | 공통 콘텐츠 계획 | ContentPlan | 모든 사실·제한 사항을 포함하며, 조합 전에 사이트와 표현의 연결을 검사합니다. |
+| 한국어·음식점 안내 | Facts v2 · Place template | 한국어·영어 방문 안내와 Restaurant 구조화 데이터를 생성하고 주소·전화번호를 HTML·Markdown·JSON에서 일치시킵니다. 기존 소프트웨어 출력은 유지합니다. |
 | 다중 형식 출력 | Rendering | 같은 계획에서 HTML·Markdown·JSON·manifest를 생성합니다. |
 | 화면 틀 고정 | Layout validation | 승인된 HTML 구조·CSS·출력 파일 구성이 바뀌면 현재 발행 경로에서 차단합니다. |
 | 운영 환경 분리 | OperatorEnvironment | 인증·팀·로컬 파일 위치만 관리합니다. 유형 수·번호 규칙·주소 생성은 환경변수의 책임이 아닙니다. |
@@ -184,7 +185,7 @@ Besties는 **같은 제품 사실을 서로 다른 설명 방식으로 전달**�
 
 ### What works today and what is planned
 
-Besties **0.5.0** is an independently installable Python development tool in
+Besties **0.6.0** is an independently installable Python development tool in
 [`besties/`](besties/), with no runtime dependencies. It currently validates public
 input manifests, creates evidence-linked review drafts, inspects configured HTML
 pages and imports explicit search/AI-answer observations. It also generates a

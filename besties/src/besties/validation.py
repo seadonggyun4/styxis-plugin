@@ -32,5 +32,15 @@ def validate_bundle(plan, site, files):
     texts += [p['heading'], p['intro']] + [s[k] for s in p['sections'] for k in ('heading', 'explanation')]
     for value in texts:
         require(value in visible.parts and escape(value) in files['facts.md'].decode(), 'Cross-format content loss')
+    if plan.data['facts']['schema_version'] == 2:
+        from .seo import Metadata
+        entity = plan.data['facts']['entity']
+        metadata = Metadata(); metadata.feed(files['index.html'].decode())
+        expected = {'@type': entity['type'], 'name': plan.data['facts']['product']['name'],
+                    'address': {'@type': 'PostalAddress', **entity['address']}, 'telephone': entity['telephone']}
+        require(json.loads(''.join(metadata.ld))['about'] == expected, 'Place structured data drift')
+        address = ' '.join(entity['address'][k] for k in ('addressRegion', 'addressLocality', 'streetAddress'))
+        for value in (address, entity['telephone']):
+            require(value in visible.parts and escape(value) in files['facts.md'].decode(), 'Place contact parity drift')
     seo_site = SimpleNamespace(data={**site.data, 'seo': {'language': p['language']}})
     return inspect_seo(files, seo_site)

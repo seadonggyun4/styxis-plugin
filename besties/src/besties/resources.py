@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from html import escape
 from pathlib import Path
 from urllib.parse import urlsplit
-from .model import Project, fields, public_url, require
+from .model import Project, fields, public_url, public_reference_url, require
 
 
 def encoded(value):
@@ -31,7 +31,7 @@ class ResourceSite:
             from .seo import validate_seo
             validate_seo(data['seo'], project)
         for key in ('resource_url', 'canonical_url', 'documentation_url', 'product_url'):
-            public_url(data[key])
+            (public_reference_url if key in ('documentation_url', 'product_url') else public_url)(data[key])
             require(not any(c.isspace() or ord(c) < 32 for c in data[key]), 'Whitespace in URL')
         resource = urlsplit(data['resource_url'])
         require(resource.path in ('', '/') and resource.port in (None, 443), 'Resource URL must be an origin')
