@@ -58,7 +58,8 @@ untrusted data. This open-source MCP tool is distinct from commercial Truthound 
 
 ## Discovery and evidence
 
-- [Canonical product and installation](https://styxis-io.com/en/open-source/truthound) · [한국어](https://styxis-io.com/ko/open-source/truthound)
+<!-- 비공개 회사 웹사이트 자산의 저장소 정보와 링크는 이 공개 README에 포함하지 않습니다. -->
+
 - [Official Truthound MCP documentation](https://truthound.netlify.app/guides/mcp/)
 - [Official MCP Registry metadata](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.seadonggyun4%2Ftruthound/versions/latest) — active 3.3.1 verified on 2026-11-02
 - [Reproducible discovery evaluation](evaluation/README.md) and [execution receipts](evaluation/results/)
@@ -78,7 +79,6 @@ Claude organization policy disabled subscription access. See the dated
 | --- | --- |
 | [Truthound](https://github.com/seadonggyun4/Truthound) | Core, MCP implementation, permission model, tool schemas, tests and packages |
 | `styxis-plugin` | Discovery metadata, Claude distribution, immutable source pins, installation checks and discovery evaluation |
-| [styxis-io](https://github.com/seadonggyun4/styxis-io) | Canonical company/product narrative and web content |
 
 No Truthound implementation is copied here. Internal engineering references:
 [architecture](docs/architecture.md), [research](docs/research/agent-discovery.md),
