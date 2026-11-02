@@ -178,9 +178,12 @@ work. Hosting configuration stays outside the core fact model; no Styxis product
 runtime or hosting SDK is required. See the [resource publishing guide](docs/besties-resources.md)
 for commands, deployment configuration and verification boundaries.
 
-Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) is live
-on Hobby with seven public artifacts verified. Netlify is configured and awaiting
-existing-account login; deployment and Free-plan status are not yet verified.
+Pilot status: [Vercel resource site](https://truthound-geo-no-1.vercel.app/) (Hobby)
+and [Netlify resource site](https://truthound-geo-no-1.netlify.app/) (Free Legacy)
+are live, with seven public artifacts verified per host and matching JSON/Markdown
+fact hashes. Vercel uses Git-connected deployment; Netlify currently uses a verified
+static ZIP upload and is not automatically synchronized after a Git push.
+GEO effectiveness remains under evaluation.
 See the [dated verification record](evaluation/results/2026-11-02-besties-resources/summary.json).
 
 See the [architecture and local commands](docs/besties-development.md) and the

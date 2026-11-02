@@ -18,12 +18,17 @@
       "url": "https://truthound-geo-no-1.vercel.app/",
       "plan_observed": "Hobby",
       "live_artifacts_passed": 7,
-      "receipt": "vercel-live.json"
+      "receipt": "vercel-live.json",
+      "delivery": "Git-connected production deployment"
     },
     "netlify": {
-      "status": "pending-existing-account-login",
-      "configured_url": "https://truthound-geo-no-1.netlify.app/",
-      "plan_verified": false
+      "url": "https://truthound-geo-no-1.netlify.app/",
+      "status": "published-and-verified",
+      "plan_observed": "Free Legacy ($0.00)",
+      "live_artifacts_passed": 7,
+      "receipt": "netlify-live.json",
+      "delivery": "Verified static ZIP via Netlify Drop; Git auto-deploy not connected",
+      "initial_upload": "Canceled while stuck uploading; subsequent existing-project upload published successfully"
     }
   },
   "indexing": "unmeasured",
@@ -33,6 +38,12 @@
     "live_vercel": "Public page inspected",
     "mobile_width": 390,
     "mobile_scroll_width": 390,
-    "evidence_urls_http_200": 4
+    "evidence_urls_http_200": 4,
+    "live_netlify": "Public page inspected; provider badge visible in browser. Raw HTTP hashes are a separate measurement."
+  },
+  "cross_host_facts": {
+    "json_sha256": "b4ff43b55d04902a506d9523012633cc6665954551bda017ff512411e2c0b1fb",
+    "markdown_sha256": "47d925359fe524938540ede4667c80eabfd24f8c716d483a3633636a24499978",
+    "matched": true
   }
 }

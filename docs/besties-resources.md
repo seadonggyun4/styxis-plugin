@@ -67,7 +67,7 @@ the approved input, not independent semantic verification of the claims.
 
 ## Hosting adapters
 
-Both projects use the public catalog repository and root directory
+Both build configurations use the public catalog repository and root directory
 `sites/truthound-resources`, with access to the repository's shared `besties/`
 package and examples outside that root. Neither reads or modifies another site.
 
@@ -99,3 +99,25 @@ future content changes.
 A successful release says nothing about actual search-engine ingestion. Index
 coverage, crawler activity and unbranded fresh-session AI answers require separate
 observations. Do not convert a successful publication into a GEO success score.
+
+## Verified pilot delivery (2026-11-02)
+
+Both public resource sites are deployed: Vercel Hobby and Netlify Free Legacy
+($0.00 plan observed). No paid upgrade or add-on was enabled. Each host passed
+seven live artifact checks; JSON and Markdown fact hashes match across hosts.
+See the [public verification receipts](../evaluation/results/2026-11-02-besties-resources/summary.json).
+
+Vercel is connected to Git. Netlify was deployed through Netlify Drop with only
+the eight verified generated files at the ZIP root. Its initial upload stalled
+and was canceled; the subsequent upload to the existing project published
+successfully. Netlify Git auto-deploy is not connected: a Git push alone does not
+update both hosts. Rebuild and verify the Netlify bundle, then upload the complete
+ZIP to the existing project's Deploys page and rerun live verification. Do not
+create another project for each release. A future authenticated publishing adapter
+or configured Git integration is needed for unattended synchronization.
+
+Netlify's provider badge is visible in a browser; the exact-byte checks describe
+the raw HTTP responses returned to Besties, not every provider-injected browser
+representation. Both pages retain their official documentation links. Existing
+product and documentation sites were not modified. Search ingestion and improved
+AI discovery remain unmeasured for this release.
