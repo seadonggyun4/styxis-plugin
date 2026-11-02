@@ -19,4 +19,5 @@ jobs:
           PYTHONPATH=besties/src python3 -m besties.cli validate besties/examples/truthound/category-project.json
           python3 scripts/evaluate.py --variant installed --output /tmp/discovery.json
           PYTHONPATH=besties/src python3 -m besties.cli validate besties/examples/truthound/resource-project.json
+          PYTHONPATH=besties/src python3 -m besties.cli validate-catalog besties/examples/generic/publication-catalog.json
           python3 sites/truthound-resources/build.py

@@ -1,6 +1,6 @@
 # Besties presentation releases
 
-Besties 0.4 keeps product facts separate from authored ways of explaining them.
+Besties 0.5 keeps product facts separate from authored ways of explaining them.
 It stays inside this repository and has no product-runtime or hosting-SDK dependency.
 Product/documentation websites remain separate from resource companions. SEO/GEO
 effectiveness remains under evaluation. GitHub About and the README banner are preserved.
@@ -10,6 +10,7 @@ effectiveness remains under evaluation. GitHub About and the README banner are p
 | Module | Responsibility |
 | --- | --- |
 | `domain` | Strict ProductFacts, PersonaDefinition and ContentPlan contracts |
+| catalog | Persona system, stable site identities, naming policy and actual deployment registry |
 | `planning` | Bind each fact exactly once into a complete presentation |
 | `rendering` | Deterministic HTML, Markdown, JSON and release manifest |
 | `validation` | Cross-format content retention, hashes and structural SEO |
@@ -104,3 +105,36 @@ The renderer never receives operator configuration.
 The original baseline sites now use `truthound-geo-baseline` on both hosts.
 Historical receipts retain the URLs observed at that time and must not be treated
 as evidence of the current contents of a repurposed URL.
+
+
+## Persona domain and publication catalog (0.5)
+
+PersonaSystem explicitly stores a framework name, version and immutable member
+records: private key, positive number and public presentation ID. The declared
+members define the size; no environment range or product-specific branch determines
+it. Numbers uniquely cover the declared set. Input-list reordering does not change
+identity. check_successor(previous) permits versioned additions while rejecting
+deleted/remapped members; an intentional renumbering needs a separate migration.
+
+SiteIdentity adds a separate, unnumbered baseline. Naming policy schema 1 produces
+{product}-{purpose}-baseline or {product}-{purpose}-no-{number} in code.
+DeploymentRegistry stores actual credential-free HTTPS origins, explicit providers
+and the designated canonical provider. Missing/duplicate bindings, address collisions,
+incorrect project names and cross-persona canonical links fail before publishing.
+Custom domains need no engine change. A registry is an address binding, not evidence
+of a completed deployment.
+
+PublicationCatalog composes these contracts. Operators call check_targets() on
+their full input inventory and check_presentation() before composing each plan.
+A public projection includes only resource/canonical/documentation/product URLs;
+the taxonomy and private member key never enter the renderer. Source catalog hashes
+belong in private observations, not public manifests.
+
+Validate a synthetic, public example:
+
+    besties validate-catalog besties/examples/generic/publication-catalog.json
+
+Environment schema 2 holds only operational paths, accounts and optional credentials.
+See the explicit migration instructions in the environment guide. The existing
+resource/presentation rendering commands and output contracts remain supported.
+This architecture change does not require republishing unchanged sites.

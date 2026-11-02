@@ -1,0 +1,75 @@
+{
+  "deployments": {
+    "bindings": [
+      {
+        "canonical_url": "https://sample-resource-baseline.host-a.example.org",
+        "project": "sample-resource-baseline",
+        "provider": "host-a",
+        "site_key": "baseline",
+        "url": "https://sample-resource-baseline.host-a.example.org"
+      },
+      {
+        "canonical_url": "https://sample-resource-baseline.host-a.example.org",
+        "project": "sample-resource-baseline",
+        "provider": "host-b",
+        "site_key": "baseline",
+        "url": "https://sample-resource-baseline.host-b.example.org"
+      },
+      {
+        "canonical_url": "https://sample-resource-no-1.host-a.example.org",
+        "project": "sample-resource-no-1",
+        "provider": "host-a",
+        "site_key": "persona-1",
+        "url": "https://sample-resource-no-1.host-a.example.org"
+      },
+      {
+        "canonical_url": "https://sample-resource-no-1.host-a.example.org",
+        "project": "sample-resource-no-1",
+        "provider": "host-b",
+        "site_key": "persona-1",
+        "url": "https://sample-resource-no-1.host-b.example.org"
+      },
+      {
+        "canonical_url": "https://sample-resource-no-2.host-a.example.org",
+        "project": "sample-resource-no-2",
+        "provider": "host-a",
+        "site_key": "persona-2",
+        "url": "https://sample-resource-no-2.host-a.example.org"
+      },
+      {
+        "canonical_url": "https://sample-resource-no-2.host-a.example.org",
+        "project": "sample-resource-no-2",
+        "provider": "host-b",
+        "site_key": "persona-2",
+        "url": "https://sample-resource-no-2.host-b.example.org"
+      }
+    ],
+    "canonical_provider": "host-a",
+    "providers": [
+      "host-a",
+      "host-b"
+    ]
+  },
+  "naming": {
+    "product": "sample",
+    "purpose": "resource",
+    "schema_version": 1
+  },
+  "persona_system": {
+    "framework": "Example reading styles",
+    "members": [
+      {
+        "key": "Type1",
+        "number": 1,
+        "presentation_id": "view-1"
+      },
+      {
+        "key": "Type2",
+        "number": 2,
+        "presentation_id": "view-2"
+      }
+    ],
+    "version": "1"
+  },
+  "schema_version": 1
+}

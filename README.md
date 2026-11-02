@@ -157,9 +157,34 @@ Publishing rules (implemented gates and remaining automation are distinguished b
   discovery separately. Consistent, accessible content does not guarantee retrieval
   or recommendation by a search engine or AI assistant.
 
+### Persona features / 페르소나 기능
+
+Besties는 **같은 제품 사실을 서로 다른 설명 방식으로 전달**합니다.
+페르소나 체계의 이름·버전·유형·고정 번호는 외부 도메인 정의에 명시합니다.
+공개 엔진은 특정 체계나 유형 개수를 하드코딩하지 않으며, 비공개 연구 정의는
+저장소 밖에서 읽습니다. 설명은 검토된 입력이며, 성격 라벨만으로 자동 작성하거나
+검색 효과가 입증됐다고 간주하지 않습니다.
+
+| 기능 | 담당 모델·계층 | 보장하는 동작 |
+| --- | --- | --- |
+| 페르소나 체계 | PersonaSystem | 체계명·버전·멤버·고정 번호를 정의하고 중복·누락을 거부합니다. |
+| 사이트 식별과 이름 | SiteIdentity · NamingPolicy | 도메인 정의에서 사이트를 도출하고 baseline을 번호 없는 별도 역할로 관리합니다. |
+| 실제 배포 주소 | DeploymentRegistry | 플랫폼별 프로젝트·공개 URL을 기록하고 동일 페르소나의 미러끼리 canonical을 연결합니다. |
+| 사실과 설명 분리 | ProductFacts · PersonaDefinition | 기능·제한·근거를 고정하고 설명 순서와 검토된 표현을 별도로 관리합니다. |
+| 공통 콘텐츠 계획 | ContentPlan | 모든 사실·제한 사항을 포함하며, 조합 전에 사이트와 표현의 연결을 검사합니다. |
+| 다중 형식 출력 | Rendering | 같은 계획에서 HTML·Markdown·JSON·manifest를 생성합니다. |
+| 화면 틀 고정 | Layout validation | 승인된 HTML 구조·CSS·출력 파일 구성이 바뀌면 현재 발행 경로에서 차단합니다. |
+| 운영 환경 분리 | OperatorEnvironment | 인증·팀·로컬 파일 위치만 관리합니다. 유형 수·번호 규칙·주소 생성은 환경변수의 책임이 아닙니다. |
+| 정적 발행·검증 | Publishing | 검증한 파일만 배포하며 일부 실패와 불확실한 결과를 성공으로 처리하지 않습니다. |
+| 관찰과 비교 | Evaluation | 색인·언급·인용을 구분하고 실패·미측정을 보존합니다. GEO 효과는 검증 중입니다. |
+
+비공개 체계명·유형 매핑·연구 가설은 공개 출력에 포함하지 않습니다.
+기존 유형 번호의 재할당은 일반 설정 변경이 아닌 명시적인 마이그레이션으로 다룹니다.
+제품·문서 사이트와 리소스 사이트의 분리, Git 연결 없는 정적 배포 원칙을 유지합니다.
+
 ### What works today and what is planned
 
-Besties **0.4.1** is an independently installable Python development tool in
+Besties **0.5.0** is an independently installable Python development tool in
 [`besties/`](besties/), with no runtime dependencies. It currently validates public
 input manifests, creates evidence-linked review drafts, inspects configured HTML
 pages and imports explicit search/AI-answer observations. It also generates a

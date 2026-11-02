@@ -17,14 +17,11 @@ class EnvironmentTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
         self.path = self.root / '.env.local'
-        self.content = '\n'.join(['BESTIES_ENV_VERSION=1', f'BESTIES_FACTS_PATH={self.root}/study/facts.json',
+        self.content = '\n'.join(['BESTIES_ENV_VERSION=2', f'BESTIES_FACTS_PATH={self.root}/study/facts.json',
             f'BESTIES_STUDY_DIR={self.root}/study', f'BESTIES_OUTPUT_DIR={self.root}/output',
-            'BESTIES_PROJECT_PREFIX=sample-geo-no', 'BESTIES_VERCEL_SCOPE=sample-team',
+            'BESTIES_VERCEL_SCOPE=sample-team',
             'BESTIES_NETLIFY_TEAM=other-team', f'BESTIES_LAYOUT_LOCK_PATH={self.root}/layout.json',
-            'BESTIES_VERCEL_BASELINE_URL=https://base.example.org', 'BESTIES_NETLIFY_BASELINE_URL=https://base-mirror.example.org',
-            'BESTIES_VERCEL_PERSONA_URL_TEMPLATE=https://site-{number}.example.org',
-            'BESTIES_NETLIFY_PERSONA_URL_TEMPLATE=https://mirror-{number}.example.org',
-            'BESTIES_PERSONA_FIRST=1', 'BESTIES_PERSONA_LAST=16', 'VERCEL_TOKEN=', 'NETLIFY_AUTH_TOKEN='])
+            f'BESTIES_CATALOG_PATH={self.root}/catalog.json', 'VERCEL_TOKEN=', 'NETLIFY_AUTH_TOKEN='])
         self.write(self.content)
 
     def write(self, content):
@@ -32,22 +29,22 @@ class EnvironmentTests(unittest.TestCase):
 
     def test_defaults_precedence_and_no_process_mutation(self):
         before = dict(os.environ)
-        env = OperatorEnvironment.load(self.path, {'BESTIES_PROJECT_PREFIX': 'another-product'})
-        self.assertEqual(env.setting('BESTIES_PROJECT_PREFIX'), 'another-product')
+        env = OperatorEnvironment.load(self.path, {'BESTIES_VERCEL_SCOPE': 'another-team'})
+        self.assertEqual(env.setting('BESTIES_VERCEL_SCOPE'), 'another-team')
         self.assertEqual(env.summary()['authentication']['vercel'], 'cli-login')
         self.assertEqual(dict(os.environ), before)
         with self.assertRaises(ContractError): env.setting('VERCEL_TOKEN')
-        self.assertEqual(env.site_url('vercel', 'persona', 16), 'https://site-16.example.org')
-        self.assertEqual(env.site_url('netlify', 'baseline'), 'https://base-mirror.example.org')
-        with self.assertRaises(ContractError): env.site_url('vercel', 'persona', 17)
 
-    def test_url_collisions_and_template_expansion_fail_closed(self):
-        for replacement in ('https://base.example.org', 'https://{unknown}.example.org', 'https://site-{number}.example.org/path'):
-            self.write(self.content.replace('https://site-{number}.example.org', replacement))
-            with self.assertRaises(ContractError): OperatorEnvironment.load(self.path, {})
+    def test_legacy_domain_settings_rejected_in_file_and_process(self):
+        self.write(self.content + '\nBESTIES_PERSONA_LAST=16')
+        with self.assertRaises(ContractError): OperatorEnvironment.load(self.path, {})
+        self.write(self.content)
+        with self.assertRaises(ContractError): OperatorEnvironment.load(self.path, {'BESTIES_PROJECT_PREFIX': 'old'})
+        self.write(self.content.replace('BESTIES_ENV_VERSION=2', 'BESTIES_ENV_VERSION=1'))
+        with self.assertRaises(ContractError): OperatorEnvironment.load(self.path, {})
 
     def test_unknown_duplicate_shell_expression_and_missing_values_rejected(self):
-        for change in ('\nUNKNOWN=x', '\nBESTIES_ENV_VERSION=1', '\nBAD=$(touch marker)'):
+        for change in ('\nUNKNOWN=x', '\nBESTIES_ENV_VERSION=2', '\nBAD=$(touch marker)'):
             self.write(self.content + change)
             with self.assertRaises(ContractError): OperatorEnvironment.load(self.path, {})
         self.write(self.content.replace('sample-team', '$(touch marker)'))

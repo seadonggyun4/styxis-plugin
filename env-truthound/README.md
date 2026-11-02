@@ -1,50 +1,54 @@
-# Truthound operator environment
+# Truthound operator environment (schema 2)
 
-Only `.env.template` and this README belong in Git. Actual `.env.local` values,
-research inputs, assignments and receipts are private. The static website has no
-runtime environment variables; these settings belong to the local publishing process.
+Only .env.template and this README belong in Git. Actual .env.local values,
+research definitions, assignments and receipts are private. Static websites have
+no runtime environment variables; these settings belong to the local operator.
 
-```sh
-cp env-truthound/.env.template env-truthound/.env.local
-chmod 600 env-truthound/.env.local
-```
+    cp env-truthound/.env.template env-truthound/.env.local
+    chmod 600 env-truthound/.env.local
+    besties validate-environment env-truthound/.env.local
+    besties validate-catalog /absolute/private/publication-catalog.json
 
-Fill absolute paths for the approved facts, private study directory and public-output
-directory; select the two hosting teams and project prefix. Never put the private
-study directory itself in an upload command. Product-specific folders contain
-configuration only: the engine has no dependency on this folder name or product.
+Fill absolute paths for approved facts, private study, public output, the publication
+catalog and approved layout locks, then select hosting teams. Authentication uses
+the official CLI login store by default. Optional provider tokens can be injected
+from a secret store. Tokens are never copied out of CLI storage or put in command
+arguments, static files or public receipts.
 
-Load explicitly with `OperatorEnvironment.load(path)`. Existing process variables
-override file values. Unknown file keys, duplicates, unsupported versions, empty
-required values, shell interpolation and unsafe permissions fail closed. There is
-no automatic `.env` search, shell sourcing or mutation of `os.environ`.
+OperatorEnvironment.load(path) loads only an explicit file. Process variables
+override file values. Unknown/duplicate file keys, unsupported versions, empty
+required settings, shell interpolation and unsafe permissions fail closed. There
+is no automatic dotenv search, shell sourcing or mutation of os.environ.
 
-Use `besties validate-environment env-truthound/.env.local` for a value-free check.
-The check verifies configuration structure, not account access or file existence.
+## Responsibility boundaries
 
-Credentials are optional. Local publication uses the existing official CLI login
-store unless a token is explicitly configured. Tokens are never copied out of CLI
-storage. `environment.runner(provider)` passes only that provider's token to the
-child process; no token appears in command arguments, static files or receipts.
-For CI, inject credentials from the CI secret store rather than committing a file.
-This does not enable Git-connected hosting: deployment still uploads static files.
+- Persona system names, versions, members and permanent numbers belong to the
+  external domain definition, parsed by PersonaSystem.
+- NamingPolicy generates project names from product/purpose and a SiteIdentity.
+  Baseline is a separate role, never a numbered member.
+- DeploymentRegistry records actual URLs and provider bindings. It is not a URL
+  template and does not claim a deployment is live; HTTP receipts establish that.
+- BESTIES_CATALOG_PATH is only an operator path to that definition. The environment
+  does not contain a persona count, number range, project prefix or URL formula.
+- BESTIES_LAYOUT_LOCK_PATH identifies the existing approved UI/output locks.
+  Routine publication must verify these; it must not refresh them.
 
-No environment file, including this template, is accepted in a deployment bundle.
+The public engine accepts different external systems and products. Private system
+names and member mappings must not be copied into this folder or public examples.
+Only DeploymentBinding.public_site() supplies public site configuration to renderers.
 
-## Fixed public addresses and presentation layout
+## Explicit migration from environment schema 1
 
-The environment contains actual baseline origins and a literal `{number}` URL rule
-for each provider. `BESTIES_PERSONA_FIRST=1` and `BESTIES_PERSONA_LAST=16` bound the
-current range. `site_url(provider, role, number)` resolves the exact origin; duplicate
-origins, unknown placeholders and out-of-range numbers are rejected. Changing a
-URL setting does not rename a hosted project: the operator must migrate and verify
-it explicitly. Canonical URLs must be rebuilt from the same configured addresses.
+Back up the existing environment outside Git. Move the system/member mapping into
+the private catalog, record every existing deployed URL in its registry and verify
+coverage before changing the operator. Set schema 2, add BESTIES_CATALOG_PATH,
+and remove project-prefix, baseline-URL, persona-URL-template and FIRST/LAST keys.
+Legacy domain keys are rejected in both files and process overrides: they must not
+silently affect or conflict with the new catalog. Do not regenerate URLs or renumber
+existing members during this migration. Existing renderer inputs, reviewed plan
+hashes and layout locks remain unchanged.
 
-`BESTIES_LAYOUT_LOCK_PATH` points to a private approved release-lock registry.
-Each target lock freezes HTML structure and accessibility hooks, CSS hashes and
-artifact names, while permitting editorial text and URL changes. Publication calls
-`publish(..., layout_lock=approved_lock)` before contacting the provider. The current
-baseline and presentation layouts are frozen separately; changing their design
-requires an explicitly approved new lock. Do not regenerate locks during routine
-publication. A layout lock complements exact release verification; it is not a
-full visual regression or semantic accessibility certification.
+Product-specific environment folder names are conventions, not engine dependencies.
+environment.runner(provider) supplies only the selected provider credential.
+All environment files, including templates, are rejected from upload bundles.
+Hosting remains static-only; Git pushes do not deploy sites.

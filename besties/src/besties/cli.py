@@ -13,7 +13,7 @@ from .resources import ResourceSite, build, verify_directory, verify_live
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="besties")
-    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live", "plan-persona", "build-persona", "verify-persona", "verify-persona-live", "validate-environment"))
+    parser.add_argument("command", choices=("validate", "plan", "audit", "evaluate", "build-resources", "verify-resources", "verify-resource-live", "plan-persona", "build-persona", "verify-persona", "verify-persona-live", "validate-environment", "validate-catalog"))
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--live", action="store_true", help="Allow GET requests to configured target URLs")
@@ -24,6 +24,13 @@ def main(argv=None):
     parser.add_argument("--approved-plan-sha256", help="Digest of the exact editorial plan reviewed for publication")
     args = parser.parse_args(argv)
     try:
+        if args.command == "validate-catalog":
+            from .catalog import PublicationCatalog
+            catalog = PublicationCatalog.parse(json.loads(args.manifest.read_text(encoding="utf-8")))
+            print(json.dumps({"valid": True, "personas": len(catalog.system.members),
+                              "sites": len(catalog.sites), "bindings": len(catalog.deployments),
+                              "private_definition_redacted": True}))
+            return 0
         if args.command == "validate-environment":
             from .environment import OperatorEnvironment
             print(json.dumps(OperatorEnvironment.load(args.manifest).summary()))
