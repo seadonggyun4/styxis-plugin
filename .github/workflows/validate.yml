@@ -14,4 +14,6 @@ jobs:
         run: |
           python3 scripts/validate_metadata.py
           python3 -m unittest discover -s tests -v
+          PYTHONPATH=besties/src python3 -m unittest discover -s besties/tests -v
+          PYTHONPATH=besties/src python3 -m besties.cli validate besties/examples/truthound/project.json
           python3 scripts/evaluate.py --variant installed --output /tmp/discovery.json
