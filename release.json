@@ -5,16 +5,33 @@
       "plugin_version": "0.1.7",
       "source_url": "https://github.com/seadonggyun4/Truthound.git",
       "source_path": "plugins/truthound",
+      "source_sha": "54dae24c027e0a93af669bf7388d5af96a09bc97",
       "source_file_sha256": {
         "plugins/truthound/.claude-plugin/plugin.json": "e1c9279f5df8a18907eb76fc4814ac9ce80e587f1222c6bb7cddbd3d0398a833",
+        "plugins/truthound/.codex-plugin/plugin.json": "f8db818ffe0554650c512047d55d4fd3b8929b1324cc501694f15d732ad1d3b8",
+        "plugins/truthound/plugin.json": "07afaac32ca0102591a1ab84586f6406f0ae6641b39b659f16a6f840b72b65d2",
         "plugins/truthound/.mcp.json": "b0bc8f26f33ba51f1b51082415ad290a024501671f4b16c84a6568b1f60249e9",
         "plugins/truthound/mcp.json": "5925b6a411d5b522f89501ffa321ebf6a54debe4c5b418ff9f62c444fecbd7e4",
         "plugins/truthound/pyproject.toml": "59bbd5943310c8eb438f7d1cb3b1b523b2383e4ca4cbb8d560fe60be2686f00b",
+        "plugins/truthound/uv.lock": "29e62874c955f2a2c8938757c01ba68c967299230b25ff6a0010de1072ac7b62",
         "plugins/truthound/server.py": "2cab7ff676fc9cdac4a5f86c971d592d0c308e5b3586bfbf1d352fd454140ff1",
-        "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24",
-        "plugins/truthound/uv.lock": "29e62874c955f2a2c8938757c01ba68c967299230b25ff6a0010de1072ac7b62"
-      },
-      "source_sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
+        "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24"
+      }
+    },
+    "truthound-core": {
+      "plugin_version": "0.2.2",
+      "source_url": "https://github.com/seadonggyun4/Truthound.git",
+      "source_path": "plugins/truthound-core",
+      "source_sha": "6800e624cd1982065082bd7fb63978355e4f1eda",
+      "source_file_sha256": {
+        "plugins/truthound-core/.claude-plugin/plugin.json": "be694e1e3040333fa1f2a78a25fdc79907c9f2f63418087f825670cdad5f6e74",
+        "plugins/truthound-core/.codex-plugin/plugin.json": "39140de87f489b6a47fb2253c7b94b411ea1b7cb17bcb8cf861e6a8a62d24f37",
+        "plugins/truthound-core/plugin.json": "b9db081ae1a003b3f449c3590bf05134844b0e754cd4319d1b2c8e45b9b51aab",
+        "plugins/truthound-core/.mcp.json": "7d9b24e60b2c04cbf22e7c5b9455e895c1624f54f916f46edc6ba4e8421cd3bd",
+        "plugins/truthound-core/mcp.json": "5069b65fabd4c24bff6574b7d4beff73742c7afde31a648fc50d51aa50d35653",
+        "plugins/truthound-core/pyproject.toml": "a28a26292b0d09f020ea8d2f3132651414ae2caefd55bb79754966298c83c88b",
+        "plugins/truthound-core/uv.lock": "2fda480c8f3a4c736010d1b61bf7ef8c57ad0fc261a954d4fc9333f0d906d716"
+      }
     }
   }
 }

@@ -19,7 +19,7 @@ class CatalogTests(unittest.TestCase):
         entry = copy.deepcopy(self.catalog['plugins'][0]); entry['name'] = 'sample'
         self.catalog['plugins'].append(entry)
         self.releases['plugins']['sample'] = copy.deepcopy(self.releases['plugins']['truthound'])
-        self.assertEqual(len(v.validate(self.catalog, self.releases)), 2)
+        self.assertEqual(len(v.validate(self.catalog, self.releases)), 3)
 
     def test_duplicate_and_unmatched_releases_rejected(self):
         self.catalog['plugins'].append(copy.deepcopy(self.catalog['plugins'][0]))
@@ -52,8 +52,18 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaises(ValueError): v.inspect_source(root, entry, pin)
             path.write_text(json.dumps({'name':entry['name'],'version':entry['version'],'mcpServers':{'sample':{}}}))
             pin['source_file_sha256'][str(path.relative_to(root))] = v.hashlib.sha256(path.read_bytes()).hexdigest()
+            (root/entry['source']['path']/'plugin.json').write_text(path.read_text())
             v.inspect_source(root, entry, pin)
             path.write_text('{}')
             with self.assertRaises(ValueError): v.inspect_source(root, entry, pin)
+
+    def test_codex_catalog_cannot_change_plugin_inventory_or_source_pin(self):
+        catalog = json.loads((ROOT/'.agents/plugins/marketplace.json').read_text())
+        entries = v.validate(self.catalog, self.releases)
+        v.validate_codex(catalog, entries)
+        catalog['plugins'][0]['source']['sha'] = 'f'*40
+        with self.assertRaises(ValueError): v.validate_codex(catalog, entries)
+        catalog['plugins'].pop()
+        with self.assertRaises(ValueError): v.validate_codex(catalog, entries)
 
 if __name__ == '__main__': unittest.main()

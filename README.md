@@ -8,33 +8,50 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 
 # Styxis Plugin Marketplace
 
-스틱시스 자산의 MCP 플러그인을 등록하고 검증된 소스로 설치하는 Claude Code 배포 카탈로그입니다. 각 제품 저장소가 MCP 서버·도구·권한·런타임 테스트를 관리합니다.
+스틱시스 자산의 MCP 플러그인을 등록하고 검증된 소스로 설치하는 Claude Code·Codex 배포 카탈로그입니다. 각 제품 저장소가 MCP 서버·도구·권한·런타임 테스트를 관리합니다.
 
 ## Plugins
 
 | Plugin | 기능 | 설정·문서 |
 | --- | --- | --- |
 | Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://truthound.netlify.app/guides/mcp/) |
+| Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://truthound.netlify.app/guides/mcp/#core-installation) |
 
 ## Install
+
+### Claude Code
 
 Claude Code의 Git 하위 디렉터리 플러그인 지원, Git, `uv`, Python 3.11–3.13이 필요합니다. 제품별 추가 요구사항은 공식 문서를 확인하세요.
 
 ```bash
 claude plugin marketplace add seadonggyun4/styxis-plugin
 claude plugin install truthound@styxis-plugin
+# 또는 Core:
+claude plugin install truthound-core@styxis-plugin
 ```
 
-설치 후 Truthound setup 스킬에서 접근할 디렉터리를 명시적으로 승인합니다. **설치만으로 데이터 접근 권한이 부여되지는 않습니다.** 개인정보 검사는 표본 기반이며 누락 가능성이 있습니다. 자세한 권한·기능·제한은 제품 문서에서 관리합니다.
+### Codex
+
+```bash
+codex plugin marketplace add seadonggyun4/styxis-plugin
+codex plugin add truthound@styxis-plugin
+# 또는 Core:
+codex plugin add truthound-core@styxis-plugin
+```
+
+Codex CLI의 plugin marketplace 명령을 지원하는 버전이 필요합니다. 설치 검증은 Claude Code 2.1.196, Codex CLI 0.141.0에서 수행합니다. 기존 카탈로그는 Claude의 `claude plugin marketplace update styxis-plugin`, Codex의 `codex plugin marketplace upgrade styxis-plugin`으로 갱신합니다.
+
+설치 후 해당 프로파일의 setup 스킬에서 접근할 디렉터리를 명시적으로 승인합니다. **설치만으로 데이터 접근 권한이 부여되지는 않습니다.** 개인정보 검사는 표본 기반이며 누락 가능성이 있습니다. Core의 작업공간·운영자 승인 저장소·민감 결과 접근은 각각 별도 승인 항목이며 변경 뒤 재연결해야 합니다. 자세한 권한·기능·제한은 제품 문서에서 관리합니다.
 
 ## Repository scope
 
-- `.claude-plugin/marketplace.json`: 제품 설명과 설치 소스.
+- `.claude-plugin/marketplace.json`: Claude용 제품 설명과 설치 소스.
+- `.agents/plugins/marketplace.json`: 같은 고정 소스를 사용하는 Codex 카탈로그.
 - `release.json`: 플러그인별 버전, 고정 소스 커밋과 파일 해시.
 - `scripts/`: 카탈로그·릴리스 일치와 원격 플러그인 manifest 검증.
 - `docs/releasing.md`: 플러그인 추가·업데이트 절차.
 
-제품 저장소의 릴리스를 카탈로그에 등록하고 최소 검증을 통과하면 설치할 수 있습니다. 카탈로그는 현재 Truthound 하나를 제공하며 제품 구현을 복제하지 않습니다.
+제품 저장소의 릴리스를 카탈로그에 등록하고 최소 검증을 통과하면 설치할 수 있습니다. 카탈로그는 현재 Truthound Local과 Core를 제공하며 제품 구현을 복제하지 않습니다.
 
 ## Verify
 
@@ -42,7 +59,7 @@ claude plugin install truthound@styxis-plugin
 ./scripts/validate.sh
 ```
 
-모든 등록 항목의 고정 소스를 가져와 manifest 이름·버전·MCP 설정과 기록된 파일 해시를 검사합니다. 제품 서버는 실행하지 않습니다. 오프라인 검사는 `python3 scripts/validate_metadata.py`로 실행할 수 있습니다.
+모든 등록 항목의 고정 소스를 가져와 두 카탈로그의 소스 일치, 클라이언트별 manifest 이름·버전·MCP 설정과 기록된 파일 해시를 검사합니다. 제품 서버는 실행하지 않습니다. 오프라인 검사는 `python3 scripts/validate_metadata.py`로 실행할 수 있습니다.
 
 [플러그인 추가·업데이트](docs/releasing.md) · [보안 제보](SECURITY.md) · [변경 기록](CHANGELOG.md)
 

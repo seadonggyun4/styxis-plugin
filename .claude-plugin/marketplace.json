@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "styxis-plugin",
-  "description": "Install Truthound local data quality and validation tools for AI agents.",
+  "description": "Install Styxis MCP plugins for local data quality workflows.",
   "owner": {
     "name": "Styxis",
     "url": "https://styxis-io.com"
@@ -37,6 +37,37 @@
         "pii-detection",
         "local-first",
         "mcp"
+      ]
+    },
+    {
+      "name": "truthound-core",
+      "displayName": "Truthound Core",
+      "description": "Truthound Core MCP: explicit validation, profiling, sampled PII, drift, masking and schema workflows. Separate data, workspace, operator-control and sensitive-result grants; installation grants no data access. MCP coverage is partial.",
+      "author": {
+        "name": "Styxis",
+        "url": "https://styxis-io.com"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Truthound.git",
+        "path": "plugins/truthound-core",
+        "ref": "main",
+        "sha": "6800e624cd1982065082bd7fb63978355e4f1eda"
+      },
+      "strict": true,
+      "homepage": "https://truthound.netlify.app/guides/mcp/",
+      "version": "0.2.2",
+      "repository": "https://github.com/seadonggyun4/Truthound",
+      "license": "Apache-2.0",
+      "category": "data-quality",
+      "keywords": [
+        "data-quality",
+        "data-validation",
+        "mcp",
+        "schema",
+        "drift",
+        "privacy",
+        "local-first"
       ]
     }
   ]

@@ -56,6 +56,19 @@ def validate(manifest, releases):
     return entries
 
 
+def validate_codex(catalog, entries):
+    require(catalog.get('name') == 'styxis-plugin', 'Unexpected Codex catalog name')
+    rows = catalog.get('plugins', [])
+    require(len(rows) == len(entries) and {r['name'] for r in rows} == {r['name'] for r in entries}, 'Client catalog inventory mismatch')
+    for row in rows:
+        entry = next(e for e in entries if e['name'] == row['name'])
+        source = dict(row['source'])
+        source['path'] = source['path'].removeprefix('./')
+        require(source == entry['source'], 'Client source pin mismatch')
+        require(row.get('policy') == {'installation': 'AVAILABLE', 'authentication': 'ON_INSTALL'}, 'Explicit install policy required')
+        require(bool(row.get('category')), 'Codex category required')
+
+
 def inspect_source(root, entry, pin):
     root = Path(root).resolve()
     for name, expected in pin['source_file_sha256'].items():
@@ -65,6 +78,8 @@ def inspect_source(root, entry, pin):
     plugin = root/entry['source']['path']
     data = json.loads((plugin/'.claude-plugin/plugin.json').read_text())
     require(data.get('name') == entry['name'] and data.get('version') == entry['version'], 'Upstream manifest identity mismatch')
+    portable = json.loads((plugin/'plugin.json').read_text())
+    require(portable.get('name') == entry['name'] and portable.get('version') == entry['version'], 'Portable manifest identity mismatch')
     config = plugin/'.mcp.json'
     if config.exists():
         require(config.is_file() and not config.is_symlink() and config.resolve().is_relative_to(plugin.resolve()), 'Unsafe MCP configuration')
@@ -83,6 +98,7 @@ def remote(entries, releases):
             git('init', '--quiet'); git('remote', 'add', 'origin', source['url'])
             git('fetch', '--quiet', '--depth=1', 'origin', source['sha'])
             require(git('rev-parse', 'FETCH_HEAD').decode().strip() == source['sha'], 'Fetched source mismatch')
+            git('sparse-checkout', 'set', '--cone', '--', source['path'])
             git('checkout', '--quiet', '--detach', 'FETCH_HEAD')
             inspect_source(folder, entry, releases['plugins'][entry['name']])
         print('Pinned plugin verified: '+entry['name'])
@@ -93,6 +109,7 @@ def main():
     manifest = json.loads((ROOT/'.claude-plugin/marketplace.json').read_text())
     releases = json.loads((ROOT/'release.json').read_text())
     entries = validate(manifest, releases)
+    validate_codex(json.loads((ROOT/'.agents/plugins/marketplace.json').read_text()), entries)
     if args.remote: remote(entries, releases)
     print('Catalog and release pins valid: '+str(len(entries)))
 

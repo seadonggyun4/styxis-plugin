@@ -1,0 +1,38 @@
+{
+  "name": "styxis-plugin",
+  "interface": {
+    "displayName": "Styxis Plugins"
+  },
+  "plugins": [
+    {
+      "name": "truthound",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Truthound.git",
+        "path": "./plugins/truthound",
+        "ref": "main",
+        "sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "truthound-core",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Truthound.git",
+        "path": "./plugins/truthound-core",
+        "ref": "main",
+        "sha": "6800e624cd1982065082bd7fb63978355e4f1eda"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
