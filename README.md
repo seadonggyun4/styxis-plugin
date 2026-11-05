@@ -14,8 +14,8 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 
 | Plugin | 기능 | 설정·문서 |
 | --- | --- | --- |
-| Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://truthound-docs.vercel.app/guides/mcp/) |
-| Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://truthound-docs.vercel.app/guides/mcp/#core-installation) |
+| Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://www.truthound-docs.tech/guides/mcp/) |
+| Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://www.truthound-docs.tech/guides/mcp/#core-installation) |
 
 <!-- MCP release maintenance: Always update the Styxis Local/Core plugin pins and locks, synchronize English/Korean installation docs, pass required CI, publish, and verify actual client updates. Styxis is the sole user-facing installation entry point, including Claude Desktop bundle links. MCP 변경 후 플러그인 반영·한영 문서 정리·검증·배포·실제 업데이트 설치를 모두 완료한다. -->
 

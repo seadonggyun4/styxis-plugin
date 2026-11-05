@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-05 — Canonical documentation domain
+
+- Truthound Local 0.1.10 and Core 0.2.5 use `https://www.truthound-docs.tech` for documentation. Core runtime remains pinned to 3.3.3.
+- 공식 문서 주소를 새 도메인으로 통일했습니다. 기존 설치 권한과 실행 기능은 유지됩니다.
+
 ## Truthound 3.3.3
 
 - Local 0.1.9 · Core 0.2.4: 공개 PyPI 3.3.3과 고정 해시를 사용하며 한영 문서 링크를 Vercel로 변경했습니다.
