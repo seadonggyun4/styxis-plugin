@@ -11,7 +11,7 @@
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "./plugins/truthound",
         "ref": "main",
-        "sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
+        "sha": "86d6d0ae891910957e01dd543849bda35e9b0b14"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -26,7 +26,7 @@
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "./plugins/truthound-core",
         "ref": "main",
-        "sha": "6800e624cd1982065082bd7fb63978355e4f1eda"
+        "sha": "86d6d0ae891910957e01dd543849bda35e9b0b14"
       },
       "policy": {
         "installation": "AVAILABLE",

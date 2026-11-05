@@ -20,11 +20,11 @@
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "plugins/truthound",
         "ref": "main",
-        "sha": "54dae24c027e0a93af669bf7388d5af96a09bc97"
+        "sha": "86d6d0ae891910957e01dd543849bda35e9b0b14"
       },
       "strict": true,
       "homepage": "https://truthound.netlify.app/guides/mcp/",
-      "version": "0.1.7",
+      "version": "0.1.8",
       "repository": "https://github.com/seadonggyun4/Truthound",
       "license": "Apache-2.0",
       "category": "data-quality",
@@ -52,11 +52,11 @@
         "url": "https://github.com/seadonggyun4/Truthound.git",
         "path": "plugins/truthound-core",
         "ref": "main",
-        "sha": "6800e624cd1982065082bd7fb63978355e4f1eda"
+        "sha": "86d6d0ae891910957e01dd543849bda35e9b0b14"
       },
       "strict": true,
       "homepage": "https://truthound.netlify.app/guides/mcp/",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "repository": "https://github.com/seadonggyun4/Truthound",
       "license": "Apache-2.0",
       "category": "data-quality",

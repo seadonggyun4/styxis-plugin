@@ -1,3 +1,5 @@
+<!-- MCP release maintenance: Always update the Styxis Local/Core plugin pins and locks, synchronize English/Korean installation docs, pass required CI, publish, and verify actual client updates. Styxis is the sole user-facing installation entry point, including Claude Desktop bundle links. MCP 변경 후 플러그인 반영·한영 문서 정리·검증·배포·실제 업데이트 설치를 모두 완료한다. -->
+
 # 플러그인 추가·업데이트
 
 1. 제품 저장소에서 MCP 플러그인을 릴리스하고 제품의 기능·권한·보안 테스트를 완료합니다.
@@ -11,3 +13,5 @@ MCP 런타임, 권한 정책, 패키지 배포와 Registry 관리는 각 제품 
 GitHub About과 README 배너는 사용자의 명시적인 요청 없이 수정하지 않습니다. 비공개 저장소 정보와 자격 증명을 공개 파일에 넣지 않습니다.
 
 일반 사용자용 카탈로그와 설치 안내는 이 저장소에서만 제공합니다. 제품 저장소는 플러그인 패키지와 테스트를 소유하며, 클라이언트 설치 테스트에는 임시 개발 카탈로그를 생성합니다. 기존 등록 사용자에게 필요한 빈 호환 표식은 유지할 수 있지만 새 플러그인 배포 항목을 추가하지 않습니다.
+
+MCP 수정은 제품 패키지만 게시하고 끝내지 않습니다. PyPI 게시 후 Local·Core 플러그인의 버전·고정 의존성·lock·해시를 갱신하고 두 카탈로그의 고정 SHA를 일치시킵니다. 한·영 설치 안내를 정리하고 CI 통과, 공개 게시, 실제 Codex·Claude Code 업데이트 설치와 필요한 Desktop 확장 검증까지 완료합니다. 사용자 설치 진입점은 항상 이 카탈로그의 README Install 섹션입니다.

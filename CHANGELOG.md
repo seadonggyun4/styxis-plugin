@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-05
+
+- Truthound Local 0.1.8 · Core 0.2.3을 공개 PyPI 3.3.2 기반의 고정 소스와 해시로 등록했습니다.
+- Claude Desktop의 아이콘·도구 스키마 수정 배포와 한·영 설치 안내를 연결했습니다. 모든 MCP 업데이트는 Styxis 플러그인 반영, 문서 정리, 검증과 배포를 함께 진행합니다.
+- Registered Local 0.1.8 and Core 0.2.3 with pinned sources and hashes for published PyPI 3.3.2. Linked the separate Desktop repair and bilingual installation guides; all MCP updates must flow through Styxis with documentation, verification and release.
+
 ## 2026-11-03
 
 - 일반 사용자 설치를 이 카탈로그로 통일하고 제품 카탈로그와 개발 설치 테스트의 책임을 분리했습니다.

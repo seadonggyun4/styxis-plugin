@@ -17,7 +17,11 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 | Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://truthound.netlify.app/guides/mcp/) |
 | Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://truthound.netlify.app/guides/mcp/#core-installation) |
 
+<!-- MCP release maintenance: Always update the Styxis Local/Core plugin pins and locks, synchronize English/Korean installation docs, pass required CI, publish, and verify actual client updates. Styxis is the sole user-facing installation entry point, including Claude Desktop bundle links. MCP 변경 후 플러그인 반영·한영 문서 정리·검증·배포·실제 업데이트 설치를 모두 완료한다. -->
+
 ## Install
+
+[English installation guide](docs/install.en.md)
 
 ### Claude Code
 
@@ -42,6 +46,10 @@ codex plugin add truthound-core@styxis-plugin
 Codex CLI의 plugin marketplace 명령을 지원하는 버전이 필요합니다. 설치 검증은 Claude Code 2.1.196, Codex CLI 0.141.0에서 수행합니다. 기존 카탈로그는 Claude의 `claude plugin marketplace update styxis-plugin`, Codex의 `codex plugin marketplace upgrade styxis-plugin`으로 갱신합니다.
 
 설치 후 해당 프로파일의 setup 스킬에서 접근할 디렉터리를 명시적으로 승인합니다. **설치만으로 데이터 접근 권한이 부여되지는 않습니다.** 개인정보 검사는 표본 기반이며 누락 가능성이 있습니다. Core의 작업공간·운영자 승인 저장소·민감 결과 접근은 각각 별도 승인 항목이며 변경 뒤 재연결해야 합니다. 자세한 권한·기능·제한은 제품 문서에서 관리합니다.
+
+### Claude Desktop 일반 채팅
+
+Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.2 릴리스](https://github.com/seadonggyun4/Truthound/releases/tag/v3.3.2)에서 Local은 `truthound-3.3.2.mcpb`, Core는 `truthound-3.3.2-core.mcpb`를 받아 Desktop으로 열고, 계속 유지할 데이터 폴더만 승인하세요. 두 확장은 서로 다른 ID와 아이콘을 사용해 함께 설치할 수 있습니다. 업데이트 뒤 Desktop을 재시작하고 도구 목록과 승인한 합성 파일 호출을 확인하세요. 기존 Codex·Claude Code 설치를 제거하지 않습니다.
 
 ## Repository scope
 
