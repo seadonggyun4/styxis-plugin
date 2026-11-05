@@ -1,5 +1,10 @@
 # Changelog
 
+## Truthound 3.3.4
+
+- Local 0.1.11 · Core 0.2.6: 공개 PyPI 3.3.4와 검증 해시를 고정하고 대표 문서 주소를 직접 제공합니다. 기존 데이터 권한은 유지합니다.
+- Local 0.1.11 and Core 0.2.6 pin published PyPI 3.3.4 and verified hashes, with direct canonical documentation links. Existing data grants are retained.
+
 ## 2026-11-05 — Canonical documentation domain
 
 - Truthound Local 0.1.10 and Core 0.2.5 use `https://www.truthound-docs.tech` for documentation. Core runtime remains pinned to 3.3.3.

@@ -51,7 +51,7 @@ Codex CLI의 plugin marketplace 명령을 지원하는 버전이 필요합니다
 
 ### Claude Desktop 일반 채팅
 
-Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.3 릴리스](https://github.com/seadonggyun4/Truthound/releases/tag/v3.3.3)에서 Local은 `truthound-3.3.3.mcpb`, Core는 `truthound-3.3.3-core.mcpb`를 받아 Desktop으로 열고, 계속 유지할 데이터 폴더만 승인하세요. 두 확장은 서로 다른 ID와 아이콘을 사용해 함께 설치할 수 있습니다. 업데이트 뒤 Desktop을 재시작하고 도구 목록과 승인한 합성 파일 호출을 확인하세요. 기존 Codex·Claude Code 설치를 제거하지 않습니다.
+Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](https://github.com/seadonggyun4/Truthound/releases/tag/v3.3.4)에서 Local은 `truthound-3.3.4.mcpb`, Core는 `truthound-3.3.4-core.mcpb`를 받아 Desktop으로 열고, 계속 유지할 데이터 폴더만 승인하세요. 두 확장은 서로 다른 ID와 아이콘을 사용해 함께 설치할 수 있습니다. 업데이트 뒤 Desktop을 재시작하고 도구 목록과 승인한 합성 파일 호출을 확인하세요. 기존 Codex·Claude Code 설치를 제거하지 않습니다.
 
 ## Repository scope
 
