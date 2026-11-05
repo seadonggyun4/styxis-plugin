@@ -2,35 +2,35 @@
   "schema_version": 2,
   "plugins": {
     "truthound": {
-      "plugin_version": "0.1.8",
+      "plugin_version": "0.1.9",
       "source_url": "https://github.com/seadonggyun4/Truthound.git",
       "source_path": "plugins/truthound",
-      "source_sha": "86d6d0ae891910957e01dd543849bda35e9b0b14",
+      "source_sha": "d43c5e2b31d9a06d280e733967948d00042f8066",
       "source_file_sha256": {
-        "plugins/truthound/.claude-plugin/plugin.json": "c668c7721bf28e9af26b50dbb00fbf8e24b08e7cd1fb56722f0f2b567dbf8ea3",
-        "plugins/truthound/.codex-plugin/plugin.json": "c81a15e5457952be1c3f6ac63c439f4ca878bb949eb1b3ec03e532cc3a5e921f",
-        "plugins/truthound/plugin.json": "a8e9479ba3f50db9566d9f2d18dd3c38fb488330b94b28780111574833d76ddd",
+        "plugins/truthound/.claude-plugin/plugin.json": "44a47704ff534fc02a18d02abaac3614aaca567e152790ed320d2b21f3f48b49",
+        "plugins/truthound/.codex-plugin/plugin.json": "da348540032b927af1879d434c0d1cd1c513d11b32b328d7ae18fce556c2e919",
+        "plugins/truthound/plugin.json": "0ea3a2f3044328f9f32c91b2b73895fc81ab8901aaf647d9cb376bf1299159db",
         "plugins/truthound/.mcp.json": "b0bc8f26f33ba51f1b51082415ad290a024501671f4b16c84a6568b1f60249e9",
         "plugins/truthound/mcp.json": "5925b6a411d5b522f89501ffa321ebf6a54debe4c5b418ff9f62c444fecbd7e4",
-        "plugins/truthound/pyproject.toml": "d283fa913644d8d2d2e6eb3238dadf18992514dd8cbfab20e730fced4b46341b",
-        "plugins/truthound/uv.lock": "c8a67be14f43e3a4e369f0d50e90abc53a29c0d5df46a0ca7e80763c579c2255",
+        "plugins/truthound/pyproject.toml": "b1b903a8dd14f8ca6411fbf6421e4858ea8dfd6972bd801fc78b8703c1421276",
+        "plugins/truthound/uv.lock": "5b214185571f30b04d9d7a93885b8525394447b45b71938de416d101ec8631e4",
         "plugins/truthound/server.py": "2cab7ff676fc9cdac4a5f86c971d592d0c308e5b3586bfbf1d352fd454140ff1",
         "plugins/truthound/permissions.py": "7f5e4201ab087466e2c7afbebed3b2d727f1053969dc3e17ce5d460a33d16b24"
       }
     },
     "truthound-core": {
-      "plugin_version": "0.2.3",
+      "plugin_version": "0.2.4",
       "source_url": "https://github.com/seadonggyun4/Truthound.git",
       "source_path": "plugins/truthound-core",
-      "source_sha": "86d6d0ae891910957e01dd543849bda35e9b0b14",
+      "source_sha": "d43c5e2b31d9a06d280e733967948d00042f8066",
       "source_file_sha256": {
-        "plugins/truthound-core/.claude-plugin/plugin.json": "72ce53c5602b45ac525b5b50e4f4806d5b74883ff00142a18a9c0a0c8b431633",
-        "plugins/truthound-core/.codex-plugin/plugin.json": "8cae27ce11bd2e00a4fc5c197bf91981449b9e0ce0439c578b38e4f3cec792f7",
-        "plugins/truthound-core/plugin.json": "590cb1650a89a46d46ae416bfd25144da411ef07ac00845da3daab49037e9a37",
+        "plugins/truthound-core/.claude-plugin/plugin.json": "fe831877bc90f7572f198db91e88b6427522c33e97b8fbaef5b9c79ec191dade",
+        "plugins/truthound-core/.codex-plugin/plugin.json": "965a48e5b38c551228421f781fdb1be9bc3b20de27f4fc2af49e2d3a1e4b12e9",
+        "plugins/truthound-core/plugin.json": "8cd74fa7d56c805aeb2f0438e837a113d3a5506205307044f11fe9ba7080a1e6",
         "plugins/truthound-core/.mcp.json": "7d9b24e60b2c04cbf22e7c5b9455e895c1624f54f916f46edc6ba4e8421cd3bd",
         "plugins/truthound-core/mcp.json": "5069b65fabd4c24bff6574b7d4beff73742c7afde31a648fc50d51aa50d35653",
-        "plugins/truthound-core/pyproject.toml": "79c9f27fafbef7e2d9f68f43c8aaee1beea3d7f7f96c6f36dc82f22bed5d099b",
-        "plugins/truthound-core/uv.lock": "65209750c9dd117631c8c71fde152fdc7ee722d39563ad750baa860e8e910013"
+        "plugins/truthound-core/pyproject.toml": "b945cda1dd08495aac183c2fd31938621d75c4a62e642b09460654bb6364b5b4",
+        "plugins/truthound-core/uv.lock": "178e785f6028ce613977b2654acae6de482e6c2b64ab5c6393f50113b986d15f"
       }
     }
   }

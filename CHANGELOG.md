@@ -1,5 +1,10 @@
 # Changelog
 
+## Truthound 3.3.3
+
+- Local 0.1.9 · Core 0.2.4: 공개 PyPI 3.3.3과 고정 해시를 사용하며 한영 문서 링크를 Vercel로 변경했습니다.
+- Local 0.1.9 and Core 0.2.4 pin published PyPI 3.3.3 and its hashes; Korean and English installation links now use Vercel.
+
 ## 2026-11-05
 
 - Truthound Local 0.1.8 · Core 0.2.3을 공개 PyPI 3.3.2 기반의 고정 소스와 해시로 등록했습니다.
