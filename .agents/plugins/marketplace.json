@@ -33,6 +33,21 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "golem",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Golem.git",
+        "path": "./plugins/golem",
+        "ref": "main",
+        "sha": "02e149fdcd1a31b5afafd85d830ac84673eb8c1c"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

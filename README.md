@@ -16,6 +16,7 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 | --- | --- | --- |
 | Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://www.truthound-docs.tech/guides/mcp/) |
 | Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://www.truthound-docs.tech/guides/mcp/#core-installation) |
+| Golem 0.2.8 | 승인된 개발 작업·Work Pack·QC·증거 연결. 기존 native·정책 검사 유지 | [Golem 설치 상태](#golem) |
 
 <!-- MCP release maintenance: Always update the Styxis Local/Core plugin pins and locks, synchronize English/Korean installation docs, pass required CI, publish, and verify actual client updates. Styxis is the sole user-facing installation entry point, including Claude Desktop bundle links. MCP 변경 후 플러그인 반영·한영 문서 정리·검증·배포·실제 업데이트 설치를 모두 완료한다. -->
 
@@ -25,7 +26,7 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 
 ### Claude Code
 
-Claude Code의 Git 하위 디렉터리 플러그인 지원, Git, `uv`, Python 3.11–3.13이 필요합니다. 제품별 추가 요구사항은 공식 문서를 확인하세요.
+Git 하위 디렉터리 플러그인을 지원하는 Claude Code와 Git이 필요합니다. Truthound는 `uv`와 Python 3.11–3.13을, Golem launcher는 Python 3.11 이상을 사용합니다. 제품별 실행 환경은 별도로 준비합니다.
 
 ```bash
 claude plugin marketplace add seadonggyun4/styxis-plugin
@@ -53,6 +54,24 @@ Codex CLI의 plugin marketplace 명령을 지원하는 버전이 필요합니다
 
 Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](https://github.com/seadonggyun4/Truthound/releases/tag/v3.3.4)에서 Local은 `truthound-3.3.4.mcpb`, Core는 `truthound-3.3.4-core.mcpb`를 받아 Desktop으로 열고, 계속 유지할 데이터 폴더만 승인하세요. 두 확장은 서로 다른 ID와 아이콘을 사용해 함께 설치할 수 있습니다. 업데이트 뒤 Desktop을 재시작하고 도구 목록과 승인한 합성 파일 호출을 확인하세요. 기존 Codex·Claude Code 설치를 제거하지 않습니다.
 
+### Golem
+
+Golem 0.2.8은 공개 소스 commit `02e149fdcd1a31b5afafd85d830ac84673eb8c1c`과 전체 plugin 파일 해시로 고정되어 있습니다.
+
+```bash
+# 위의 marketplace 등록 후, 사용할 client에서 하나를 선택합니다.
+codex plugin add golem@styxis-plugin
+claude plugin install golem@styxis-plugin
+```
+
+설치 후 Golem Setup에서 **해당 client용으로 검토한 로컬 launcher**를 연결합니다. native·MCP runtime은 별도로 준비하며, 설치가 프로젝트·실행 권한을 추가하거나 다른 client의 승인을 복사하지 않습니다. 기존 연결은 검토한 전환 절차로 교체하고 client별 Golem 하나만 유지합니다.
+
+Claude Desktop은 [Golem 0.2.8 MCPB](https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.8/golem-launcher-0.2.8.mcpb)를 받아 별도로 설치합니다. `release.json`의 `desktop_asset.sha256`과 대조한 뒤, 명시적으로 준비한 **Claude Desktop 전용 private launcher state 디렉터리**를 선택하세요. 이 파일은 launcher만 포함하며 시작 시 자동 설정·승인·Owner 창 열기를 하지 않습니다. 기존 확장 ID `golem-prepare`는 업데이트 호환용 이름이며 prepare 권한을 뜻하지 않습니다.
+
+[Codex·Claude Code 설정](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-codex-plugin.md) · [Desktop 설정](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-mcpb.md) · [후보 게시 절차](docs/releasing.md#golem-candidate)
+
+카탈로그·패키지 검증은 각 client의 설치·도구 노출·Work 실행 검증과 별개입니다. 기존 Work 실행 HOLD는 설치로 해제되지 않습니다.
+
 ## Repository scope
 
 - `.claude-plugin/marketplace.json`: Claude용 제품 설명과 설치 소스.
@@ -61,7 +80,7 @@ Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](
 - `scripts/`: 카탈로그·릴리스 일치와 원격 플러그인 manifest 검증.
 - `docs/releasing.md`: 플러그인 추가·업데이트 절차.
 
-제품 저장소의 릴리스를 카탈로그에 등록하고 최소 검증을 통과하면 설치할 수 있습니다. 카탈로그는 현재 Truthound Local과 Core를 제공하며 제품 구현을 복제하지 않습니다. 일반 사용자 설치 창구는 이 저장소로 통일하고, 제품 저장소의 카탈로그는 배포 항목 없는 이전 호환 표식으로 유지합니다. 제품 CI는 별도 임시 개발 카탈로그를 사용합니다.
+제품 저장소의 릴리스를 카탈로그에 등록하고 최소 검증을 통과하면 설치할 수 있습니다. 활성 카탈로그는 Truthound Local·Core와 Golem을 제공합니다. 제품 구현을 복제하지 않습니다. 일반 사용자 설치 창구는 이 저장소로 통일하고, 제품 저장소의 카탈로그는 배포 항목 없는 이전 호환 표식으로 유지합니다. 제품 CI는 별도 임시 개발 카탈로그를 사용합니다.
 
 ## Verify
 
@@ -69,7 +88,7 @@ Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](
 ./scripts/validate.sh
 ```
 
-모든 등록 항목의 고정 소스를 가져와 두 카탈로그의 소스 일치, 클라이언트별 manifest 이름·버전·MCP 설정과 기록된 파일 해시를 검사합니다. 제품 서버는 실행하지 않습니다. 오프라인 검사는 `python3 scripts/validate_metadata.py`로 실행할 수 있습니다.
+모든 등록 항목의 고정 소스를 가져와 두 카탈로그의 소스 일치, 클라이언트별 manifest 이름·버전·MCP 설정과 기록된 파일 해시를 검사합니다. `desktop_asset`이 있는 항목은 공개 MCPB의 해시·제한된 파일 목록·소스 일치도 검사합니다. 제품 서버는 실행하지 않습니다. 오프라인 검사는 `python3 scripts/validate_metadata.py`로 실행할 수 있습니다.
 
 [플러그인 추가·업데이트](docs/releasing.md) · [보안 제보](SECURITY.md) · [변경 기록](CHANGELOG.md)
 

@@ -69,6 +69,36 @@
         "privacy",
         "local-first"
       ]
+    },
+    {
+      "name": "golem",
+      "displayName": "Golem",
+      "description": "Owner-scoped development workflows, Work Packs, QC and evidence using an explicitly reviewed local launcher. Installation grants no project or execution access.",
+      "author": {
+        "name": "Donggyun Seo",
+        "url": "https://github.com/seadonggyun4/Golem"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/seadonggyun4/Golem.git",
+        "path": "plugins/golem",
+        "ref": "main",
+        "sha": "02e149fdcd1a31b5afafd85d830ac84673eb8c1c"
+      },
+      "strict": true,
+      "homepage": "https://github.com/seadonggyun4/Golem",
+      "version": "0.2.8",
+      "repository": "https://github.com/seadonggyun4/Golem",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "category": "development",
+      "keywords": [
+        "mcp",
+        "development",
+        "workflow",
+        "work-pack",
+        "evidence",
+        "local-first"
+      ]
     }
   ]
 }

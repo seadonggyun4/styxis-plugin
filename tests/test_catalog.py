@@ -15,11 +15,12 @@ class CatalogTests(unittest.TestCase):
         self.catalog = json.loads((ROOT/'.claude-plugin/marketplace.json').read_text())
         self.releases = json.loads((ROOT/'release.json').read_text())
 
-    def test_second_plugin_needs_only_catalog_and_release_entry(self):
+    def test_additional_plugin_needs_only_catalog_and_release_entry(self):
+        original_count = len(self.catalog['plugins'])
         entry = copy.deepcopy(self.catalog['plugins'][0]); entry['name'] = 'sample'
         self.catalog['plugins'].append(entry)
         self.releases['plugins']['sample'] = copy.deepcopy(self.releases['plugins']['truthound'])
-        self.assertEqual(len(v.validate(self.catalog, self.releases)), 3)
+        self.assertEqual(len(v.validate(self.catalog, self.releases)), original_count + 1)
 
     def test_duplicate_and_unmatched_releases_rejected(self):
         self.catalog['plugins'].append(copy.deepcopy(self.catalog['plugins'][0]))

@@ -2,14 +2,20 @@
 """Validate catalog pins; optionally inspect upstream files without running them."""
 import argparse
 import hashlib
+import io
 import json
 from pathlib import Path, PurePosixPath
 import re
+import stat
 import subprocess
 import tempfile
 from urllib.parse import urlsplit
+from urllib.request import HTTPRedirectHandler, build_opener
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+ASSET_LIMIT = 2 * 1024 * 1024
+DESKTOP_FILES = {'LICENSE', 'assets/icon.png', 'scripts/launcher.py', 'manifest.json'}
 
 
 def require(condition, message):
@@ -21,6 +27,69 @@ def relative(value):
     require(isinstance(value, str) and value and not value.startswith('/'), 'Relative source path required')
     require('\\' not in value and all(p not in ('', '.', '..') for p in value.split('/')), 'Unsafe source path')
     return PurePosixPath(value)
+
+
+def desktop_asset(entry, pin):
+    asset = pin.get('desktop_asset')
+    if asset is None:
+        return None
+    require(isinstance(asset, dict) and set(asset) == {'url', 'sha256', 'version', 'manifest_name'}, 'Invalid Desktop asset fields')
+    source = re.fullmatch(r'https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+?)(?:\.git)?', entry['source']['url'])
+    require(source is not None, 'Desktop asset requires public GitHub source')
+    prefix = 'https://github.com/' + source[1] + '/' + source[2] + '/releases/download/'
+    require(isinstance(asset['url'], str) and re.fullmatch(re.escape(prefix) + r'[A-Za-z0-9][A-Za-z0-9._-]*/[A-Za-z0-9][A-Za-z0-9._-]*\.mcpb', asset['url']), 'Desktop asset must use the exact source GitHub release')
+    require(isinstance(asset['sha256'], str) and re.fullmatch(r'[a-f0-9]{64}', asset['sha256']), 'Invalid Desktop asset hash')
+    require(asset['version'] == entry['version'], 'Desktop asset version mismatch')
+    require(isinstance(asset['manifest_name'], str) and re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', asset['manifest_name']), 'Invalid Desktop manifest name')
+    return asset
+
+
+def asset_destination(url):
+    parsed = urlsplit(url)
+    require(parsed.scheme == 'https' and parsed.netloc in {'github.com', 'release-assets.githubusercontent.com', 'objects.githubusercontent.com'} and not parsed.username and not parsed.password and not parsed.fragment, 'Unsafe Desktop asset download destination')
+
+
+class AssetRedirect(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        asset_destination(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def download_asset(url):
+    asset_destination(url)
+    with build_opener(AssetRedirect()).open(url, timeout=30) as response:
+        asset_destination(response.geturl())
+        length = response.headers.get('Content-Length')
+        require(length is None or 0 <= int(length) <= ASSET_LIMIT, 'Desktop asset exceeds size limit')
+        data = response.read(ASSET_LIMIT + 1)
+    require(len(data) <= ASSET_LIMIT, 'Desktop asset exceeds size limit')
+    return data
+
+
+def inspect_desktop(data, root, entry, pin):
+    asset = desktop_asset(entry, pin)
+    require(asset is not None, 'Desktop asset pin required')
+    require(len(data) <= ASSET_LIMIT and hashlib.sha256(data).hexdigest() == asset['sha256'], 'Desktop artifact hash/size mismatch')
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        entries = archive.infolist()
+        require(len(entries) == 4 and {i.filename for i in entries} == DESKTOP_FILES, 'Unexpected Desktop archive inventory')
+        require(sum(i.file_size for i in entries) <= ASSET_LIMIT, 'Desktop expanded size limit')
+        for item in entries:
+            require(stat.S_ISREG(item.external_attr >> 16) and not item.flag_bits & 1 and item.compress_type in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED), 'Unsafe Desktop archive entry')
+        plugin = Path(root)/entry['source']['path']
+        for name in DESKTOP_FILES - {'manifest.json'}:
+            path = plugin/name
+            source_pin = pin['source_file_sha256'].get(entry['source']['path']+'/'+name)
+            require(path.is_file() and not path.is_symlink() and path.resolve().is_relative_to(plugin.resolve()), 'Invalid Desktop source file')
+            source_data = path.read_bytes()
+            require(hashlib.sha256(source_data).hexdigest() == source_pin and archive.read(name) == source_data, 'Desktop/source file mismatch: '+name)
+        manifest = json.loads(archive.read('manifest.json'))
+    source_manifest = json.loads((plugin/'plugin.json').read_text())
+    require(manifest.get('manifest_version') == '0.4' and manifest.get('name') == asset['manifest_name'] and manifest.get('version') == asset['version'], 'Desktop manifest identity mismatch')
+    require(source_manifest.get('license') and manifest.get('license') == source_manifest['license'], 'Desktop license mismatch')
+    require(manifest.get('server') == {'type': 'python', 'entry_point': 'scripts/launcher.py', 'mcp_config': {'command': 'python3', 'args': ['-I', '-B', '${__dirname}/scripts/launcher.py', 'serve', '--client', 'claude-desktop', '--state', '${user_config.state}']}}, 'Unexpected Desktop launcher declaration')
+    config = manifest.get('user_config', {})
+    require(set(config) == {'state'} and config['state'].get('type') == 'directory' and config['state'].get('required') is True and 'default' not in config['state'] and not config['state'].get('multiple'), 'Explicit Desktop state required')
 
 
 def validate(manifest, releases):
@@ -53,6 +122,7 @@ def validate(manifest, releases):
             relative(path)
             require(path.startswith(source['path']+'/'), 'Hash outside plugin directory')
             require(isinstance(digest, str) and re.fullmatch(r'[a-f0-9]{64}', digest), 'Invalid file hash')
+        desktop_asset(entry, pin)
     return entries
 
 
@@ -100,7 +170,11 @@ def remote(entries, releases):
             require(git('rev-parse', 'FETCH_HEAD').decode().strip() == source['sha'], 'Fetched source mismatch')
             git('sparse-checkout', 'set', '--cone', '--', source['path'])
             git('checkout', '--quiet', '--detach', 'FETCH_HEAD')
-            inspect_source(folder, entry, releases['plugins'][entry['name']])
+            pin = releases['plugins'][entry['name']]
+            inspect_source(folder, entry, pin)
+            asset = desktop_asset(entry, pin)
+            if asset is not None:
+                inspect_desktop(download_asset(asset['url']), folder, entry, pin)
         print('Pinned plugin verified: '+entry['name'])
 
 

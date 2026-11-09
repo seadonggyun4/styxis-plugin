@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Golem 0.2.8 entry point
+
+- Registered Golem in both catalogs at public source `02e149fdcd1a31b5afafd85d830ac84673eb8c1c`, with the complete plugin file inventory. Existing Truthound pins are unchanged.
+- Pinned the separate launcher-only Claude Desktop MCPB. Remote validation checks its bounded download, archive hash, exact file inventory and agreement with the pinned product source.
+- Added reusable candidate registration with exact source verification and preserved partial-publication records. Completed candidate material is kept privately, outside the public catalog.
+- Golem의 Codex·Claude Code·Desktop 설치 진입점을 Styxis로 통일했습니다. client별 승인 state는 분리하며 설치·실행 권한을 자동 이전하지 않습니다. 이번 카탈로그 기록은 실제 client 설치·E2E 성공을 뜻하지 않습니다.
+
 ## Truthound 3.3.4
 
 - Local 0.1.11 · Core 0.2.6: 공개 PyPI 3.3.4와 검증 해시를 고정하고 대표 문서 주소를 직접 제공합니다. 기존 데이터 권한은 유지합니다.
