@@ -83,11 +83,11 @@
         "url": "https://github.com/seadonggyun4/Golem.git",
         "path": "plugins/golem",
         "ref": "main",
-        "sha": "a3f86774fc257c9e70191b692b7dc46db972390c"
+        "sha": "862579eccbe0c62663c9c0e9465340c4c3796237"
       },
       "strict": true,
       "homepage": "https://github.com/seadonggyun4/Golem",
-      "version": "0.2.9",
+      "version": "0.2.10",
       "repository": "https://github.com/seadonggyun4/Golem",
       "license": "PolyForm-Noncommercial-1.0.0",
       "category": "development",

@@ -1,5 +1,11 @@
 # Changelog
 
+## Golem 0.2.10 — 2026-11-11
+
+- Pin the public Golem source and matching Desktop launcher artifact.
+- Observe generation-bound host catalog requests/responses separately from model delivery; add exact-connection read-only diagnostics.
+- Document supported host refresh and next-turn acceptance. Existing grants, held Work and client-specific approvals remain separate from installation.
+
 ## 2026-11-11 — Golem 0.2.9 connection refresh
 
 - Golem 공개 source `a3f86774fc257c9e70191b692b7dc46db972390c`와 relay를 포함한 전체 14파일 inventory, Desktop launcher artifact를 두 카탈로그에 고정합니다.
