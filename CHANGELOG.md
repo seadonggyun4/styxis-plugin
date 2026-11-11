@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-11 — Golem 0.2.9 connection refresh
+
+- Golem 공개 source `a3f86774fc257c9e70191b692b7dc46db972390c`와 relay를 포함한 전체 14파일 inventory, Desktop launcher artifact를 두 카탈로그에 고정합니다.
+- Codex의 검토된 연결 갱신과 Owner 연결 상태 안내를 추가합니다. 기존 native·정책·승인·실행 HOLD는 자동 변경하지 않습니다.
+- 기존 Truthound Local·Core pin과 과거 기록을 보존합니다. 공개 패키지 검증과 각 client 설치·모델 도구 전달 검증은 별도로 기록합니다.
+
 ## 2026-11-11 — Golem source alignment
 
 - Golem 카탈로그의 source pin을 최신 제품 문서·runtime 변경과 정렬했습니다. 공개 launcher 패키지 13개 파일은 이전 pin과 동일하므로 0.2.8, 파일 해시와 Desktop artifact는 유지합니다.

@@ -16,7 +16,7 @@ Preserve this visible banner and its asset unless the user explicitly requests a
 | --- | --- | --- |
 | Truthound Local | 승인된 로컬 CSV·Parquet의 결측·중복 검사, 프로파일링, 개인정보 표본 탐지 | [공식 MCP 안내](https://www.truthound-docs.tech/guides/mcp/) |
 | Truthound Core | 명시적 검증·프로파일링·PII 및 드리프트·마스킹·스키마 작업. MCP 지원 범위는 부분적입니다 | [Core 설치·권한](https://www.truthound-docs.tech/guides/mcp/#core-installation) |
-| Golem 0.2.8 | 승인된 개발 작업·Work Pack·QC·증거 연결. 기존 native·정책 검사 유지 | [Golem 설치 상태](#golem) |
+| Golem 0.2.9 | 승인된 개발 작업·Work Pack·QC·증거 연결. 기존 native·정책 검사 유지 | [Golem 설치 상태](#golem) |
 
 <!-- MCP release maintenance: Always update the Styxis Local/Core plugin pins and locks, synchronize English/Korean installation docs, pass required CI, publish, and verify actual client updates. Styxis is the sole user-facing installation entry point, including Claude Desktop bundle links. MCP 변경 후 플러그인 반영·한영 문서 정리·검증·배포·실제 업데이트 설치를 모두 완료한다. -->
 
@@ -56,7 +56,7 @@ Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](
 
 ### Golem
 
-Golem 0.2.8은 공개 소스 commit `82ca8093d6c2f71602e0df68f0d8688a188170d9`과 전체 plugin 파일 해시로 고정되어 있습니다.
+Golem 0.2.9는 공개 소스 commit `a3f86774fc257c9e70191b692b7dc46db972390c`과 전체 plugin 파일 해시로 고정되어 있습니다.
 
 ```bash
 # 위의 marketplace 등록 후, 사용할 client에서 하나를 선택합니다.
@@ -66,7 +66,9 @@ claude plugin install golem@styxis-plugin
 
 설치 후 Golem Setup에서 **해당 client용으로 검토한 로컬 launcher**를 연결합니다. native·MCP runtime은 별도로 준비하며, 설치가 프로젝트·실행 권한을 추가하거나 다른 client의 승인을 복사하지 않습니다. 기존 연결은 검토한 전환 절차로 교체하고 client별 Golem 하나만 유지합니다.
 
-Claude Desktop은 [Golem 0.2.8 MCPB](https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.8/golem-launcher-0.2.8.mcpb)를 받아 별도로 설치합니다. `release.json`의 `desktop_asset.sha256`과 대조한 뒤, 명시적으로 준비한 **Claude Desktop 전용 private launcher state 디렉터리**를 선택하세요. 이 파일은 launcher만 포함하며 시작 시 자동 설정·승인·Owner 창 열기를 하지 않습니다. 기존 확장 ID `golem-prepare`는 업데이트 호환용 이름이며 prepare 권한을 뜻하지 않습니다.
+Claude Desktop은 [Golem 0.2.9 MCPB](https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.9/golem-launcher-0.2.9.mcpb)를 받아 별도로 설치합니다. `release.json`의 `desktop_asset.sha256`과 대조한 뒤, 명시적으로 준비한 **Claude Desktop 전용 private launcher state 디렉터리**를 선택하세요. 이 파일은 launcher만 포함하며 시작 시 자동 설정·승인·Owner 창 열기를 하지 않습니다. 기존 확장 ID `golem-prepare`는 업데이트 호환용 이름이며 prepare 권한을 뜻하지 않습니다.
+
+Golem 0.2.9의 Codex 플러그인은 Python 3.11 이상에서 선택한 Golem 연결의 정상 종료·갱신을 지원합니다. Owner 앱과 로컬 runtime은 별도 검토본을 선택하며, 앱의 연결 표시를 모델 도구 전달이나 실행 승인으로 해석하지 않습니다.
 
 [Codex·Claude Code 설정](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-codex-plugin.md) · [Desktop 설정](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-mcpb.md) · [후보 게시 절차](docs/releasing.md#golem-candidate)
 
