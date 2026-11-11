@@ -56,7 +56,7 @@ Claude Code 플러그인과 별도 설치입니다. [Truthound 3.3.4 릴리스](
 
 ### Golem
 
-Golem 0.2.8은 공개 소스 commit `02e149fdcd1a31b5afafd85d830ac84673eb8c1c`과 전체 plugin 파일 해시로 고정되어 있습니다.
+Golem 0.2.8은 공개 소스 commit `82ca8093d6c2f71602e0df68f0d8688a188170d9`과 전체 plugin 파일 해시로 고정되어 있습니다.
 
 ```bash
 # 위의 marketplace 등록 후, 사용할 client에서 하나를 선택합니다.

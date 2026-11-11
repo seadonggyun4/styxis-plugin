@@ -37,7 +37,7 @@
       "plugin_version": "0.2.8",
       "source_url": "https://github.com/seadonggyun4/Golem.git",
       "source_path": "plugins/golem",
-      "source_sha": "02e149fdcd1a31b5afafd85d830ac84673eb8c1c",
+      "source_sha": "82ca8093d6c2f71602e0df68f0d8688a188170d9",
       "source_file_sha256": {
         "plugins/golem/.claude-plugin/plugin.json": "d32a80be9984955f9c51e48dbc4736bde01537a0b56e02e08a906d9daeb9ec6c",
         "plugins/golem/.codex-plugin/plugin.json": "ed1433ed92326d864a00fb2449c22e8032dc16f9f54790a3472f12504c9db83a",

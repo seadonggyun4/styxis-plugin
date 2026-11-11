@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-11 — Golem source alignment
+
+- Golem 카탈로그의 source pin을 최신 제품 문서·runtime 변경과 정렬했습니다. 공개 launcher 패키지 13개 파일은 이전 pin과 동일하므로 0.2.8, 파일 해시와 Desktop artifact는 유지합니다.
+- This source alignment does not install or update the separately selected runtime, migrate client approvals, or establish client E2E success. Truthound entries are unchanged.
+
 ## 2026-11-09 — Golem 0.2.8 entry point
 
 - Registered Golem in both catalogs at public source `02e149fdcd1a31b5afafd85d830ac84673eb8c1c`, with the complete plugin file inventory. Existing Truthound pins are unchanged.
