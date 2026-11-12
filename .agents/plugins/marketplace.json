@@ -41,7 +41,7 @@
         "url": "https://github.com/seadonggyun4/Golem.git",
         "path": "./plugins/golem",
         "ref": "main",
-        "sha": "862579eccbe0c62663c9c0e9465340c4c3796237"
+        "sha": "26c5f1e12f0a16b74b8e58ddc2ff6386dc4f5dac"
       },
       "policy": {
         "installation": "AVAILABLE",

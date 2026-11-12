@@ -34,30 +34,30 @@
       }
     },
     "golem": {
-      "plugin_version": "0.2.10",
+      "plugin_version": "0.2.11",
       "source_url": "https://github.com/seadonggyun4/Golem.git",
       "source_path": "plugins/golem",
-      "source_sha": "862579eccbe0c62663c9c0e9465340c4c3796237",
+      "source_sha": "26c5f1e12f0a16b74b8e58ddc2ff6386dc4f5dac",
       "source_file_sha256": {
-        "plugins/golem/.claude-plugin/plugin.json": "0e5ad31c71d839af9c19e3c4aadba75bab6b3174c0947ce36110ac53ea994042",
-        "plugins/golem/.codex-plugin/plugin.json": "52f1ee68d39ea37a214e7c8a8134f46322f7d89162f9f415ddaf89f7e09fde09",
+        "plugins/golem/.claude-plugin/plugin.json": "da464b7308d01bee878388e36e83218b1530bfafa2b98d847846dfcbfa1b5bbf",
+        "plugins/golem/.codex-plugin/plugin.json": "5eff46b827ca249d2d0f4cf8c6dfc8d0de40719cd685b773efeed0b78b79c7d0",
         "plugins/golem/.mcp.json": "24d8e98653ac1fddeb7456b8d88e9789395d93ae28ea420496795a39a6be9d76",
         "plugins/golem/LICENSE": "c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5",
         "plugins/golem/assets/icon.png": "ffae18e4515e38d1b72c3bcfaea5adec1a93fb1edcfe633e7dfea2a1d2091b2a",
         "plugins/golem/mcp.json": "3ee1ee6b6a6570330b534c23f592cca632bde4a1790ca2e04e4f9d6a95b05505",
-        "plugins/golem/plugin.json": "20915f6348b3cbf02975c8e5d73fb10e636d43a33a29e05a05d577808e63ef4a",
-        "plugins/golem/scripts/connection_relay.py": "3e31ef5b35505922c7f5bc76b434fb9be241965314a58d290141661faf1e34e0",
-        "plugins/golem/scripts/launcher.py": "d8fdd348222720046a2df1d9e74c9381f4d8ac3f336ac77ebc0fa0cee4b0f5e3",
-        "plugins/golem/skills/golem-setup/SKILL.md": "ef61e5f48aff32ed5bec8363da7506a161e0272acbfef92a65a7eae3825375a6",
+        "plugins/golem/plugin.json": "4d3995423d439d4c8b09664df40b9de49f3696f293e47d3b5bb5f49a3ab7dca7",
+        "plugins/golem/scripts/connection_relay.py": "5ba19ce2d448ac2af55a4a162f2ed59ace3b4d248faa0a8bd5947366053f2f1e",
+        "plugins/golem/scripts/launcher.py": "dd861a0c11bb30a85a718e073cc04e71e4eeb59073f6f9959393c400bfc857fc",
+        "plugins/golem/skills/golem-setup/SKILL.md": "705ea1200573704c8ab4f4c01175abeda29373a7bd95ea147771e532387bab4a",
         "plugins/golem/skills/golem-setup/agents/openai.yaml": "bd94d24a464210f58ab37aaf2fbc794db6398a437756d2b67ef3882866dbff82",
-        "plugins/golem/skills/golem-work/SKILL.md": "a0a9bb1e912ff70900184105e604fce4c6ba4f8ffd239a9ce2741efffa2f5d54",
+        "plugins/golem/skills/golem-work/SKILL.md": "ba5651a86f5c3ae7f623fb3733638e619d130d3666b56648af00283850f6b5d9",
         "plugins/golem/skills/golem-work/agents/openai.yaml": "17259cb60a6f3cbed6dcee6b2a6e3da146d5ad1a6cf095b15bdebf6898489079",
         "plugins/golem/skills/golem-work/references/profiles.md": "604d30b56a94785f4dcb2d8cc819d1f4126004b839835c6bcbf3db02a8db8ab9"
       },
       "desktop_asset": {
-        "url": "https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.10/golem-launcher-0.2.10.mcpb",
-        "sha256": "1f3c4a8fd58beaaef2921a6374502f19b31992499a18c983735fa9e48d8eb593",
-        "version": "0.2.10",
+        "url": "https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.11/golem-launcher-0.2.11.mcpb",
+        "sha256": "3148931ce2a1874d29f4cef7edb0f7f5406d1ea5af99b832bf3f07184d1fa17e",
+        "version": "0.2.11",
         "manifest_name": "golem-prepare"
       }
     }

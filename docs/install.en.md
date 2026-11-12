@@ -1,6 +1,6 @@
 # Install MCP plugins through Styxis
 
-Start at the [Styxis installation entry](../README.md#install). Golem 0.2.10 is registered with a pinned public source commit and complete plugin inventory. For Truthound, choose Local for nulls, duplicates, aggregate profiling and sampled PII, or Core for additional validation, schema, drift and masking workflows.
+Start at the [Styxis installation entry](../README.md#install). Golem 0.2.11 is registered with a pinned public source commit and complete plugin inventory. For Truthound, choose Local for nulls, duplicates, aggregate profiling and sampled PII, or Core for additional validation, schema, drift and masking workflows.
 
 ## Codex
 
@@ -30,7 +30,7 @@ Installation alone grants no data access. Existing permissions must not be expan
 
 ## Golem
 
-The Golem catalog pins public source commit `862579eccbe0c62663c9c0e9465340c4c3796237`. After registering the marketplace, install in the client you use:
+The Golem catalog pins public source commit `26c5f1e12f0a16b74b8e58ddc2ff6386dc4f5dac`. After registering the marketplace, install in the client you use:
 
 ```bash
 codex plugin add golem@styxis-plugin
@@ -40,8 +40,8 @@ claude plugin install golem@styxis-plugin
 
 Use Golem Setup to select an exactly reviewed local launcher for that client. Native/runtime dependencies and permissions remain product-owned. Installation grants no Work access and imports no other client's approval. Replace an existing Golem connection only through a reviewed migration; keep one Golem installation per client.
 
-Claude Desktop is separate from Claude Code. Download the [Golem 0.2.10 MCPB](https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.10/golem-launcher-0.2.10.mcpb), compare its SHA-256 with `desktop_asset.sha256` in [release.json](../release.json), and open it in Desktop. Select an owner-private state directory explicitly prepared for the `claude-desktop` launcher. This launcher-only bundle does not configure or approve itself at startup, embed the native/MCP runtime, or open an Owner window automatically. The historical extension name `golem-prepare` preserves update identity; it grants no prepare profile rights.
+Claude Desktop is separate from Claude Code. Download the [Golem 0.2.11 MCPB](https://github.com/seadonggyun4/Golem/releases/download/golem-plugin-v0.2.11/golem-launcher-0.2.11.mcpb), compare its SHA-256 with `desktop_asset.sha256` in [release.json](../release.json), and open it in Desktop. Select an owner-private state directory explicitly prepared for the `claude-desktop` launcher. This launcher-only bundle does not configure or approve itself at startup, embed the native/MCP runtime, or open an Owner window automatically. The historical extension name `golem-prepare` preserves update identity; it grants no prepare profile rights.
 
-The Golem 0.2.10 Codex adapter requires Python 3.11+ and supports graceful refresh of an explicitly selected Golem connection. The Owner app and local runtime are separately reviewed; connection status is not proof of model tool delivery or action approval. Golem `connection-status` distinguishes server readiness, host catalog responses and model tool exposure. After selecting the reviewed new adapter path, use the supported host refresh and verify actual definitions in the chat's next turn. A notification or reload ACK alone is not acceptance; do not repeat installs or replay Work actions.
+The Golem 0.2.11 Codex adapter requires Python 3.11+ and supports graceful refresh of an explicitly selected Golem connection. The Owner app and local runtime are separately reviewed; connection status is not proof of model tool delivery or action approval. Golem `connection-status` distinguishes server readiness, host catalog responses and model tool exposure. After selecting the reviewed new adapter path, use the supported host refresh and verify actual definitions in the chat's next turn. A notification or reload ACK alone is not acceptance; do not repeat installs or replay Work actions.
 
 See [Codex/Claude Code setup](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-codex-plugin.md), [Desktop setup](https://github.com/seadonggyun4/Golem/blob/main/docs/integration-mcpb.md), and the [candidate promotion procedure](releasing.md#golem-candidate). Catalog/package verification does not establish client installation, model tool discovery or Work execution success. An existing execution HOLD remains in force.

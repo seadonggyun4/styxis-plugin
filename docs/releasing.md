@@ -18,7 +18,7 @@ MCP 수정은 제품 패키지만 게시하고 끝내지 않습니다. Truthound
 
 ## Golem candidate
 
-Golem 0.2.10은 공개 source와 전체 plugin inventory를 대조해 등록했습니다. 아래 절차는 다음 **신규 제품 등록 후보**에도 재사용할 수 있습니다. `register_plugin.py`는 이미 등록된 이름의 덮어쓰기·다운그레이드를 거부합니다. 기존 제품 업데이트는 새 공개 source/artifact를 검토하고 두 catalog와 release pin을 함께 갱신합니다.
+Golem 0.2.11은 공개 source와 전체 plugin inventory를 대조해 등록했습니다. 아래 절차는 다음 **신규 제품 등록 후보**에도 재사용할 수 있습니다. `register_plugin.py`는 이미 등록된 이름의 덮어쓰기·다운그레이드를 거부합니다. 기존 제품 업데이트는 새 공개 source/artifact를 검토하고 두 catalog와 release pin을 함께 갱신합니다.
 
 1. owner-private 위치에 `UNPUBLISHED_CANDIDATE` JSON을 준비합니다. `entry`에는 Claude catalog 필드와 source의 URL·path·ref만 기록하고, 공개 전 `sha`를 만들지 않습니다. `source_file_sha256`에는 plugin 전체 파일을 고정합니다. 로컬 검사는 서버·설치·Work를 실행하지 않습니다. `--source-tree`에는 Git 소스 파일만 담긴 깨끗한 추출본을 사용하며 `__pycache__` 등 추가 파일도 거부됩니다.
 
@@ -34,7 +34,7 @@ python3 scripts/register_plugin.py --candidate /absolute/path/to/candidate.json 
 python3 scripts/register_plugin.py --candidate /absolute/path/to/candidate.json --source-sha PUBLISHED_40_CHARACTER_SHA --apply
 ```
 
-3. Desktop MCPB를 제공한다면 먼저 같은 제품의 GitHub Release에 artifact를 게시하고 다음 metadata를 고정합니다. Golem은 `golem-plugin-v0.2.10/golem-launcher-0.2.10.mcpb`를 사용하며 전체 SHA는 `release.json`이 기준입니다.
+3. Desktop MCPB를 제공한다면 먼저 같은 제품의 GitHub Release에 artifact를 게시하고 다음 metadata를 고정합니다. Golem은 `golem-plugin-v0.2.11/golem-launcher-0.2.11.mcpb`를 사용하며 전체 SHA는 `release.json`이 기준입니다.
 
 ```json
 "desktop_asset": {

@@ -1,5 +1,11 @@
 # Changelog
 
+## Golem 0.2.11 — 2026-11-12
+
+- Pin the reviewed Golem source, complete 14-file plugin inventory and matching Desktop launcher artifact.
+- Add read-only adapter-state inspection and correlate current tool definitions with an external same-chat observation before preparing a new exact action. Connection readiness is not approval or Work execution.
+- Preserve Truthound entries, client-specific grants, historical records and execution HOLD. Catalog verification does not establish installed Desktop or model acceptance.
+
 ## Golem 0.2.10 — 2026-11-11
 
 - Pin the public Golem source and matching Desktop launcher artifact.
